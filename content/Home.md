@@ -1,24 +1,9 @@
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel voluptatem delectus maxime blanditiis eligendi temporibus! Temporibus eum, hic voluptas
+Hey there, I am Akul, self trained software developer. I have done bachelors in Computer Science Engineering from Babu Banarasi Das: National Institute of Technology and Management, Lucknow. I am currently working at <a href='https://vogo.in/' target='_blank'>Vogo</a> as Software Engineer (Frontend).
 
 <br />
 
-Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem laboriosam nihil unde ducimus doloribus illo beatae eos, facere assumenda architecto earum corrupti eaque laudantium accusamus sit reiciendis non voluptate libero. Officiis nostrum quam asperiores quidem suscipit esse sed quaerat deleniti
+I have experience in Javascript/Typescript ecosystem, and primarily work on the same. In frontend, I prefer React and Next.js where as in backend I have worked with Node/Express and MongoDB.
 
 <br />
 
-<div style='display:flex; flex-direction:column; align-items:center; justify-content:center'>
-
-![](https://picsum.photos/300/200)
-
-<small>This is an image</small>
-
-</div>
-
-<br />
-
-Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel, aliquid explicabo perferendis vitae, ullam odio architecto repellendus molestias harum natus porro sequi voluptatibus corporis nostrum facere eum beatae esse magnam illum et praesentium nihil? Aspernatur qui omnis autem natus porro, sapiente reiciendis aut aliquid quam? Labore dolorum amet esse sunt.
-
-<br />
-
-Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel, aliquid explicabo perferendis vitae, ullam odio architecto repellendus molestias harum natus porro sequi voluptatibus corporis nostrum facere eum beatae esse magnam illum et praesentium nihil? Aspernatur qui omnis autem natus porro, sapiente reiciendis aut aliquid quam? Labore dolorum amet esse sunt.
-Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel, aliquid explicabo perferendis vitae, ullam odio architecto repellendus molestias harum natus porro sequi voluptatibus corporis nostrum facere eum beatae esse magnam illum et praesentium nihil? Aspernatur qui omnis autem natus porro, sapiente reiciendis aut aliquid quam? Labore dolorum amet esse sunt.
+I have also put my hands in Mobile App Development, starting with Native Android Development (Android Studio), and eventually shifting to React Native for cross platform development. I have also published some of my apps on the Google Play, you can check them <a href='https://play.google.com/store/apps/developer?id=Akul+Srivastava' target='_blank'>here</a>.

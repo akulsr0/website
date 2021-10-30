@@ -1,6 +1,6 @@
 {
-  "name": "John Doe",
-  "meta_description": "Read blogs related to programming, technology and software engineering here",
+  "name": "Akul Srivastava",
+  "meta_description": "I am a self trained software engineer, currently working at Vogo. In my free time, I build web and mobile applications.",
   "menu": [
     { "title": "home", "href": "/" },
     { "title": "blogs", "href": "/blogs" },
@@ -8,9 +8,9 @@
     { "title": "contact", "href": "/contact" }
   ],
   "social_links": {
-    "github": "https://github.com/username/",
-    "instagram": "https://instagram.com/username/",
-    "linkedin": "https://linkedin.com/in/username/",
-    "twitter": "https://twitter.com/username/"
+    "github": "https://github.com/akulsr0/",
+    "instagram": "https://instagram.com/akulsr0/",
+    "linkedin": "https://linkedin.com/in/akulsr0/",
+    "twitter": "https://twitter.com/akulsr0/"
   }
 }

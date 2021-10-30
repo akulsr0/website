@@ -1,5 +1,5 @@
-Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet esse harum deleniti voluptatibus hic sint quod nesciunt saepe corporis enim exercitationem, vitae tenetur eligendi molestiae quas expedita quam sed corrupti.
+If you have any feedback or would like to say something, you can dm me on <a href='https://instagram.com/akulsr0/' target='_blank'>instagram</a> or mail me at below address.
 
 <br />
 
-You can contact me here - contact@johndoe.com
+You can contact me here - akulsr0@gmail.com

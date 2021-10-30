@@ -8,6 +8,21 @@
   overflow-x: hidden;
 }
 
+a {
+  word-break: break-word;
+}
+
+ol,
+ul {
+  margin: 10px;
+  list-style: circle;
+  list-style-position: inside;
+}
+
+li {
+  padding-left: 4px;
+}
+
 @media only screen and (max-width: 720px) {
   img {
     max-width: 36rem;

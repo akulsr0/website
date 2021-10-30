@@ -3,6 +3,7 @@ import { useEffect, useRef } from "react";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import marked from "marked";
 
 import { Blog as BlogType } from "../../interfaces/Blog";
 import styles from "../../styles/Blog.module.css";
@@ -10,7 +11,6 @@ import styles from "../../styles/Blog.module.css";
 import Container from "../../components/Container";
 import Head from "../../components/_head";
 import Header from "../../components/Header";
-import marked from "marked";
 import Footer from "../../components/Footer";
 
 interface BlogProps {
