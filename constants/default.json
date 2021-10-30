@@ -1,0 +1,16 @@
+{
+  "name": "John Doe",
+  "meta_description": "Read blogs related to programming, technology and software engineering here",
+  "menu": [
+    { "title": "home", "href": "/" },
+    { "title": "blogs", "href": "/blogs" },
+    { "title": "about", "href": "/about" },
+    { "title": "contact", "href": "/contact" }
+  ],
+  "social_links": {
+    "github": "https://github.com/username/",
+    "instagram": "https://instagram.com/username/",
+    "linkedin": "https://linkedin.com/in/username/",
+    "twitter": "https://twitter.com/username/"
+  }
+}

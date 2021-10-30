@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Nunito Sans", sans-serif;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+@media only screen and (max-width: 720px) {
+  img {
+    max-width: 36rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  img {
+    max-width: 32rem;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  img {
+    max-width: 20rem;
+  }
+}

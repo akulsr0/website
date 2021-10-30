@@ -1,0 +1,16 @@
+.title {
+  font-size: 2.4rem;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.links {
+  margin-top: 10px;
+}
+
+.link {
+  margin-right: 10px;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
