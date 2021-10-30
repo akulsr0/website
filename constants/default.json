@@ -12,5 +12,39 @@
     "instagram": "https://instagram.com/akulsr0/",
     "linkedin": "https://linkedin.com/in/akulsr0/",
     "twitter": "https://twitter.com/akulsr0/"
+  },
+  "uses": {
+    "Hardware": {
+      "Laptop": "Macbook Air 2017",
+      "Phone": "Apple iPhone 8"
+    },
+    "Code": {
+      "Languages": "Javascript, Typescript, Python",
+      "Frameworks": "React, Next, React Native, Express, Django, TailwindCSS",
+      "Database": "MongoDB, PostgreSQL",
+      "Design": "Adobe XD",
+      "VCS": "Git, Github",
+      "Editor": "VSCode"
+    },
+    "Productivity": {
+      "Todos": {
+        "text": "Todos (My own todos pwa)",
+        "link": "http://todospwa.surge.sh/"
+      },
+      "Documentation": "Notion",
+      "Notes": "Apple Notes"
+    },
+    "Others": {
+      "Browser": "Brave",
+      "Code Snapshots": "Carbon",
+      "Clipboard": {
+        "text": "Pelican",
+        "link": "https://apps.apple.com/us/app/id1524721688"
+      },
+      "Storage": "Apple iCloud",
+      "API Testing": "Postman, Insomnia",
+      "Emoji": "Rocket",
+      "VCS": "Github Desktop"
+    }
   }
 }
