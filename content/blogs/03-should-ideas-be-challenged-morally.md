@@ -5,7 +5,7 @@ slug: should-ideas-be-challenged-morally
 date: 04-Nov-2021
 ---
 
-Thinking is a good creative practice. The beauty of the process of thinking lies in the fact that there is no limit to it, this limit is both qualitative and quantitative. It leads you to different ideas and perspectives, ideas which might or might not be morally accepted. But when we happen to have these thoughts, which aren't familiar to our social surroundings, which are not talked openly about or which are told wrong/immoral to us, then these reasons act as a constraint in the process of thinking further. Instead of discovering our own answers, we unconciously agree to the things which have been told to us, which eventually results in making choices for ourselves which are not free choices. In order to make a free choice, free thinking is a must, thinking in a space where there are no constraints. It could lead to any kind of thought or idea, good or bad, right or wrong, which could be judged later.
+Thinking is a good creative practice. The beauty of the process of thinking lies in the fact that there is no limit to it, this limit is both qualitative and quantitative. It leads you to different ideas and perspectives, ideas which might or might not be morally accepted. But when we happen to have these thoughts, which aren't familiar to our social surroundings, which are not talked openly about or which are told wrong/immoral to us, then these reasons act as a constraint in the process of thinking further. Instead of discovering our own answers, we unconsciously agree to the things which have been told to us, which eventually results in making choices for ourselves which are not free choices. In order to make a free choice, free thinking is a must, thinking in a space where there are no constraints. It could lead to any kind of thought or idea, good or bad, right or wrong, which could be judged later.
 
 <br />
 
@@ -15,8 +15,8 @@ Thinking is a good creative practice. The beauty of the process of thinking lies
 
 Different people have different understanding of morality, and it's subjective or objective nature. But before going into if its subjective or objective, we must know what these terms actually mean.
 
-- **subjective**: if we say something (eg. xyz) is _subjective_, it means that the trueness of xyz depends from person to person. In other words, the trueness of xyz depends upon the observer (eg. _person_) rather than the object (eg. _xyz_).
-- **objective**: if we say something (eg. xyz) is _objective_, it means that the trueness of xyz doesn't depend upon any exterior observer. Whether the observer (eg. _person_) exist or not, the trueness of xyz will solely depend on the object (eg. _xyz_) itself.
+- **subjective**: if we say trueness of something (eg. xyz) is _subjective_, it means that the trueness of xyz depends from person to person. In other words, the trueness of xyz depends upon the observer (eg. _person_) rather than the object (eg. _xyz_).
+- **objective**: if we say trueness of something (eg. xyz) is _objective_, it means that the trueness of xyz doesn't depend upon any exterior observer. Whether the observer (eg. _person_) exist or not, the trueness of xyz will solely depend on the object (eg. _xyz_) itself.
 
 Let's see an example:
 
@@ -37,7 +37,7 @@ Before continuing to read this further, take a pause and try to think of somethi
 Let get to some of these examples,
 
 - This example would be slightly in context to India. Let's take an idea of a person having second marriage, the reason could be an unsuccessful relationship, demise of the partner or any other reason. This idea could be considered moral or immoral depending upon different people.
-- In India, there used to be a historic pratice of widow sacrifice known as Sati. It was a practice in which a woman who out of moral heroism chooses sati, rather than choosing to enter ascetic widowhood. At that time, majority of people used to considered it as moral.
+- In India, there used to be a historic practice of widow sacrifice known as Sati. It was a practice in which a woman who out of moral heroism chooses sati, rather than choosing to enter ascetic widowhood. At that time, majority of people used to considered it as moral.
 - In our school days, we all have been taught to respect our elders, by giving morality as the reason behind this. This is another example which many people will consider as moral and others don't.
 
 morality is subjective? well, we had three examples, which on reading can make you think that morality is subjective, but it may also lead you to the thought that what if someone does something obvious bad and because of their different opinion we can't put it in objectively immoral category.
