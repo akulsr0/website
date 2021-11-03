@@ -24,14 +24,17 @@ const Blog: NextPage<BlogProps> = (props) => {
   useEffect(() => {
     const blogContentMarkup = marked(blog.content);
     blogContentRef.current &&
-      (blogContentRef.current.innerHTML = blogContentMarkup);
+      (blogContentRef.current.innerHTML += blogContentMarkup);
   }, []);
 
   return (
     <Container>
       <Head title={blog.data.title} metaDescription={blog.data.description} />
       <Header />
-      <div ref={blogContentRef} className={styles.blogContent}></div>
+      <div ref={blogContentRef} className={styles.blogContent}>
+        <h2>{blog.data.title}</h2>
+        <br />
+      </div>
       <Footer />
     </Container>
   );
