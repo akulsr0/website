@@ -37,7 +37,7 @@ Before continuing to read this further, take a pause and try to think of somethi
 Let get to some of these examples,
 
 - This example would be slightly in context to India. Let's take an idea of a person having second marriage, the reason could be an unsuccessful relationship, demise of the partner or any other reason. This idea could be considered moral or immoral depending upon different people.
-- In India, there used to be a historic practice of widow sacrifice known as Sati. It was a practice in which a woman who out of moral heroism chooses sati, rather than choosing to enter ascetic widowhood. At that time, majority of people used to considered it as moral.
+- In India, there used to be a historic practice of widow sacrifice known as Sati. It was a practice in which a woman who out of moral heroism chooses sati, rather than choosing to enter ascetic widowhood. At that time, majority of people used to consider it as moral.
 - In our school days, we all have been taught to respect our elders, by giving morality as the reason behind this. This is another example which many people will consider as moral and others don't.
 
 morality is subjective? well, we had three examples, which on reading can make you think that morality is subjective, but it may also lead you to the thought that what if someone does something obvious bad and because of their different opinion we can't put it in objectively immoral category.
