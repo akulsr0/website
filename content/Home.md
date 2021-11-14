@@ -2,12 +2,20 @@ Hey there, I am Akul, self trained software developer. I have done bachelors in 
 
 <br />
 
-I have experience in Javascript/Typescript ecosystem, and primarily work on the same. In frontend, I prefer React and Next.js where as in backend I have worked with Node/Express and MongoDB.
+#### Links
 
-<br />
-
-I have also put my hands in Mobile App Development, starting with Native Android Development (Android Studio), and eventually shifting to React Native for cross platform development. I have also published some of my apps on the Google Play, you can check them <a href='https://play.google.com/store/apps/developer?id=Akul+Srivastava' target='_blank'>here</a>.
-
-<br />
-
-I also like to explore opensource projects and contribute to them. Recently, I created <a href='https://github.com/sanesource' target='_blank'>sanesource</a> where I will be sharing my opensource work from now on.
+<ul style="list-style-type:disclosure-closed;">
+<li><a href="https://www.npmjs.com/~akulsr0" target="_blank">npm</a></li>
+<li><a href="/resume.pdf" target="_blank">resume</a></li>
+<li><a href="/uses">uses</a></li>
+<li><a href="https://play.google.com/store/apps/developer?id=Akul+Srivastava" target="_blank">playstore</a></li>
+<details style="padding-left:4px;cursor:pointer;">
+    <summary>social</summary>
+    <ul style="margin-top:0">
+        <li><a href="/github">github</a></li>
+        <li><a href="/instagram">instagram</a></li>
+        <li><a href="/linkedin">linkedin</a></li>
+        <li><a href="/twitter">twitter</a></li>
+    </ul>
+</details>
+</ul>
