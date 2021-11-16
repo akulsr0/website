@@ -1,3 +1,11 @@
+.blogCategories {
+  margin-top: 1rem;
+}
+.blogCategories span {
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
 .blogListItem {
   margin-top: 1.2rem;
 }

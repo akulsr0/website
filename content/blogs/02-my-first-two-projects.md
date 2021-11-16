@@ -3,6 +3,7 @@ title: My first two projects
 description: First things are always special and memorable. Today, sitting at home, writing some code, just recalled two of my first projects or creations and thought of writing about that.
 slug: my-first-two-projects
 date: 21-Sept-2021
+isTechBlog: true
 ---
 
 First things are always special and memorable. Today, sitting at home, writing some code, just recalled two of my first projects or creations and thought of writing about that.

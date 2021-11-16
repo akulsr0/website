@@ -3,6 +3,7 @@ title: Why what others think shouldn't bother you
 description: Before diving in and analyzing the above sentence, let's first break it down into parts and define them for the sake of definiteness.
 slug: why-what-others-think-shouldnt-bother-you
 date: 13-Sept-2021
+isTechBlog: false
 ---
 
 Before diving in and analyzing the above sentence, let's first break it down into parts and define them for the sake of definiteness.

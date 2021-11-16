@@ -3,6 +3,7 @@ title: Should ideas be challenged morally
 description: Thinking is a good creative practice. The beauty of the process of thinking lies in the fact that there is no limit to it, this limit is both qualitative and quantitative.
 slug: should-ideas-be-challenged-morally
 date: 04-Nov-2021
+isTechBlog: false
 ---
 
 Thinking is a good creative practice. The beauty of the process of thinking lies in the fact that there is no limit to it, this limit is both qualitative and quantitative. It leads you to different ideas and perspectives, ideas which might or might not be morally accepted. But when we happen to have these thoughts, which aren't familiar to our social surroundings, which are not talked openly about or which are told wrong/immoral to us, then these reasons act as a constraint in the process of thinking further. Instead of discovering our own answers, we unconsciously agree to the things which have been told to us, which eventually results in making choices for ourselves which are not free choices. In order to make a free choice, free thinking is a must, thinking in a space where there are no constraints. It could lead to any kind of thought or idea, good or bad, right or wrong, which could be judged later.

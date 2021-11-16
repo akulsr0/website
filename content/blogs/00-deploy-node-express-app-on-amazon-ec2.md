@@ -3,6 +3,7 @@ title: Deploy Node/Express App on Amazon EC2
 description: In this tutorial, let's learn how can we deploy a node/express app on Amazon EC2 server.
 slug: deploy-node-express-app-on-amazon-ec2
 date: 18-Aug-2021
+isTechBlog: true
 ---
 
 In this tutorial, let's learn how can we deploy a node/express app on Amazon EC2 server.

@@ -9,6 +9,8 @@ import Head from "../../components/_head";
 import Header from "../../components/Header";
 import BlogsList from "../../components/Blogs/BlogList";
 import Footer from "../../components/Footer";
+import styles from "../../styles/Blog.module.css";
+import { useEffect, useState } from "react";
 
 interface BlogsProps {
   blogsContent: Array<Blog>;
@@ -16,12 +18,40 @@ interface BlogsProps {
 
 const Blogs: NextPage<BlogsProps> = (props) => {
   const { blogsContent } = props;
+  const [selectedCategory, setSelectedCategory] = useState("all");
+  const [blogs, setBlogs] = useState<Array<Blog>>(blogsContent);
+
+  useEffect(() => {
+    switch (selectedCategory) {
+      case "all":
+        setBlogs(blogsContent);
+        break;
+      case "tech":
+        const techBlogs = blogsContent.filter((b) => b.data.isTechBlog);
+        setBlogs(techBlogs);
+        break;
+      case "non-tech":
+        const nonTechBlogs = blogsContent.filter(
+          (b) => b.data.isTechBlog === false
+        );
+        setBlogs(nonTechBlogs);
+        break;
+      default:
+        setBlogs(blogsContent);
+        break;
+    }
+  }, [selectedCategory]);
 
   return (
     <Container>
       <Head title="Blogs" />
       <Header />
-      <BlogsList blogs={blogsContent} />
+      <div className={styles.blogCategories}>
+        <span onClick={() => setSelectedCategory("all")}>all</span>
+        <span onClick={() => setSelectedCategory("tech")}>tech</span>
+        <span onClick={() => setSelectedCategory("non-tech")}>non-tech</span>
+      </div>
+      <BlogsList blogs={blogs} />
       <Footer />
     </Container>
   );
