@@ -120,7 +120,7 @@ console.timeEnd("appendChild");
 
 <br />
 
-#### innerHTML Results
+#### appendChild Results
 
 <br />
 
