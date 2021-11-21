@@ -3,8 +3,13 @@ import Link from "next/link";
 import styles from "../styles/Header.module.css";
 import { name, menu } from "../constants/default.json";
 
+interface IMenuItem {
+  title: string;
+  href: string;
+}
+
 const Header: NextPage = () => {
-  const Links = menu.map((link) => (
+  const Links = (menu as Array<IMenuItem>).map((link) => (
     <Link key={link.title} href={link.href} passHref>
       <span className={styles.link}>{link.title}</span>
     </Link>

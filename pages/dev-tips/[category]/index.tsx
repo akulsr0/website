@@ -18,7 +18,7 @@ const DevTipCategory: NextPage<DevTipCategoryProps> = (props) => {
 
   const Tips = (
     <ul>
-      {tips.map((t) => (
+      {tips?.map((t) => (
         <li key={t}>
           <Link href={`/dev-tips/${category}/${t.toLowerCase()}`}>
             {t.split("-").join(" ")}

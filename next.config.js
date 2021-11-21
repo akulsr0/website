@@ -11,7 +11,9 @@ const socialRedirects = Object.entries(social_links).map(([s, l]) => {
 
 module.exports = {
   reactStrictMode: true,
-
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   async redirects() {
     return [...socialRedirects];
   },
