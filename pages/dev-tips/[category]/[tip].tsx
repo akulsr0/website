@@ -72,7 +72,12 @@ export async function getStaticPaths() {
   devTipsCategories.forEach((category) => {
     const devTips = fs.readdirSync(`content/dev-tips/${category}`);
     devTips.forEach((tip) => {
-      const path = { params: { category, tip } };
+      const path = {
+        params: {
+          category,
+          tip: tip.split("-").slice(1).join("-").replace(".md", ""),
+        },
+      };
       paths.push(path);
     });
   });
