@@ -28,6 +28,7 @@ const DevTip: NextPage<DevTipProps> = (props) => {
   const tipContentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    console.log("hit...");
     content &&
       tipContentRef.current &&
       (tipContentRef.current.innerHTML += marked(content));
@@ -76,30 +77,9 @@ export async function getStaticPaths() {
     });
   });
 
-  //   console.log(JSON.stringify(paths, null, 2));
-
   return {
-    paths: [
-      {
-        params: {
-          category: "others",
-          tip: "00-easiest-way-to-host-website.md",
-        },
-      },
-      {
-        params: {
-          category: "vscode",
-          tip: "00-avoid-horizontal-scroll-in-vscode.md",
-        },
-      },
-      {
-        params: {
-          category: "vscode",
-          tip: "01-emoji-in-vscode.md",
-        },
-      },
-    ],
-    fallback: true,
+    paths,
+    fallback: false,
   };
 }
 
