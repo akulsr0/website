@@ -28,7 +28,6 @@ const DevTip: NextPage<DevTipProps> = (props) => {
   const tipContentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    console.log("hit...");
     content &&
       tipContentRef.current &&
       (tipContentRef.current.innerHTML += marked(content));
