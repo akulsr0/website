@@ -23,7 +23,7 @@ interface DevTipProps {
 }
 
 const DevTip: NextPage<DevTipProps> = (props) => {
-  const title = props?.tip?.data?.title || "";
+  const title = props?.tip?.data.title || "";
   const content = props?.tip?.content;
   const tipContentRef = useRef<HTMLDivElement>(null);
 
@@ -49,19 +49,19 @@ const DevTip: NextPage<DevTipProps> = (props) => {
 };
 
 export async function getStaticProps(ctx: GetStaticPropsContext) {
-  //   const params = ctx.params!;
-  //   const { category, tip } = params;
+  const params = ctx.params!;
+  const { category, tip } = params;
 
-  //   const tipsPath = path.join(`content/dev-tips/${category}`);
-  //   const tips = fs.readdirSync(tipsPath);
-  //   const _tip = tips.find((b) => b.toLowerCase().includes(tip as string))!;
-  //   const tipContent = fs.readFileSync(
-  //     path.join(`content/dev-tips/${category}/${_tip}`),
-  //     "utf-8"
-  //   );
-  //   const { data, content } = matter(tipContent);
+  const tipsPath = path.join(`content/dev-tips/${category}`);
+  const tips = fs.readdirSync(tipsPath);
+  const _tip = tips.find((b) => b.toLowerCase().includes(tip as string))!;
+  const tipContent = fs.readFileSync(
+    path.join(`content/dev-tips/${category}/${_tip}`),
+    "utf-8"
+  );
+  const { data, content } = matter(tipContent);
 
-  return { props: { tip: { data: "abcd", content: "xyz" } } };
+  return { props: { tip: { data, content } } };
 }
 
 export async function getStaticPaths() {
