@@ -23,6 +23,12 @@ li {
   padding-left: 4px;
 }
 
+th,
+td {
+  border: 1px solid black;
+  padding: 0 2rem;
+}
+
 @media only screen and (max-width: 720px) {
   img {
     max-width: 36rem;
