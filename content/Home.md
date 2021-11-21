@@ -8,6 +8,7 @@ Hey there, I am Akul, self trained software developer. I have done bachelors in 
 <li><a href="https://www.npmjs.com/~akulsr0" target="_blank">npm</a></li>
 <li><a href="/resume.pdf" target="_blank">resume</a></li>
 <li><a href="/uses">uses</a></li>
+<li><a href="/dev-tips">dev tips</a></li>
 <li><a href="https://play.google.com/store/apps/developer?id=Akul+Srivastava" target="_blank">playstore</a></li>
 <li><a href="/stackoverflow">stackoverflow</a></li>
 <li><a href="/github">github</a></li>
