@@ -23,6 +23,7 @@ Hey there, I am Akul, self trained software developer. I have done bachelors in 
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    user-select: none;
 }
 .box span {
     margin-top: 0.6rem;
