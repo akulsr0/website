@@ -142,8 +142,8 @@ console.timeEnd("appendChild");
 
 #### what's the difference?
 
-- If a element (say el) markup is set using innerHTML, it will rebuild all the DOM element's inside that element (el).
-- If a element (say el) markup is set by adding child using appendChild, it will only build that particular element node and append it. Saving the performance in rebuilding all the DOM element's inside that element (el).
+- If an element (say el) markup is set using innerHTML, it will rebuild all the DOM element's inside that element (el).
+- If an element (say el) markup is set by adding child using appendChild, it will only build that particular element node and append it. Saving the performance in rebuilding all the DOM element's inside that element (el).
 
 #### when to use?
 
