@@ -47,6 +47,10 @@ Hey there, I am Akul, self trained software developer. I have done bachelors in 
         <img src='/icons/file.svg' alt='resume' >
         <span>Resume</span>
     </div>
+    <div class="box" onclick="window.open('https:/\/www.buymeacoffee.com/akulsr0')">
+        <img src='/icons/coffee.svg' alt='buymeacoffee' >
+        <span>Support</span>
+    </div>
 </div>
 
 <br />
