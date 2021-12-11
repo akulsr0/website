@@ -6,7 +6,7 @@ date: 11-Dec-2021
 isTechBlog: true
 ---
 
-Wikipedia is surely one of the best things on the Internet, I use it to read about different things on a daily basis. I have a immense respect for it, and being a engineer I thought to check how things were working behind there.
+Wikipedia is surely one of the best things on the Internet, I use it to read about different things on a daily basis. I have immense respect for it, and being an engineer I thought to check how things were working behind there.
 
 <br />
 
@@ -77,6 +77,10 @@ Here is how the solution looks:
 <br />
 
 ![solution](https://user-images.githubusercontent.com/43666833/145687540-d070ce45-4e44-49d0-8933-d83bb8151e19.gif)
+
+<br />
+
+In the above solution, you can see that for the first time API call is made for each word but after first attempt no API call is being made.
 
 <br />
 
