@@ -1,11 +1,17 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap");
+@font-face {
+  font-family: athelas;
+  src: local("athelas-regular") url("/fonts/athelas-regular") format("woff"),
+    local("athelas-bold") url("/fonts/athelas-bold") format("woff");
+}
 
 * {
   margin: 0;
   padding: 0;
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "athelas", sans-serif;
   box-sizing: border-box;
   overflow-x: hidden;
+  font-size: 1.03em;
+  line-height: 1.5em;
 }
 
 a {
