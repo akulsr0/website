@@ -8,6 +8,8 @@ import Footer from "../../../components/Footer";
 import Header from "../../../components/Header";
 import Head from "../../../components/_head";
 
+import styles from "../../../styles/DevTips.module.css";
+
 interface DevTipCategoryProps {
   category: string;
   tips: Array<string>;
@@ -32,8 +34,7 @@ const DevTipCategory: NextPage<DevTipCategoryProps> = (props) => {
     <Container>
       <Head title={`${category} DevTips`} />
       <Header />
-      <br />
-      <h3>{category} tips</h3>
+      <h3 className={styles.devTipsTitle}>{category} tips</h3>
       {Tips}
       <Footer />
     </Container>

@@ -1,0 +1,21 @@
+.devTipsTitle {
+  margin-top: 0.8rem;
+}
+
+.devTipsCategories {
+  margin-top: 0.5rem;
+}
+
+.devTipsCategories span {
+  margin-right: 10px;
+  white-space: nowrap;
+}
+
+.devTipsTagline {
+  margin: 1rem 0;
+  overflow: hidden;
+}
+
+.devTipsList li {
+  margin-top: 0.5rem;
+}

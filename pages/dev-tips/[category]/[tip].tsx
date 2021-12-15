@@ -10,6 +10,8 @@ import Footer from "../../../components/Footer";
 import Header from "../../../components/Header";
 import Head from "../../../components/_head";
 
+import styles from "../../../styles/DevTips.module.css";
+
 interface ITip {
   data: {
     title: string;
@@ -37,8 +39,7 @@ const DevTip: NextPage<DevTipProps> = (props) => {
     <Container>
       <Head title={title} />
       <Header />
-      <br />
-      <h3>{title}</h3>
+      <h3 className={styles.devTipsTitle}>{title}</h3>
       <div ref={tipContentRef}>
         <br />
       </div>

@@ -8,30 +8,40 @@ import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import Head from "../../components/_head";
 
+import styles from "../../styles/DevTips.module.css";
+
 interface DevTipsProps {
   contents: Array<string>;
+  devTips: Array<Record<string, string>>;
 }
 
 const DevTips: NextPage<DevTipsProps> = (props) => {
-  const { contents } = props;
+  const { contents, devTips } = props;
 
-  const DevTipsList = (
-    <ul>
-      {contents.map((c) => (
-        <li key={c}>
-          <Link href={`/dev-tips/${c}`}>{c}</Link>
-        </li>
-      ))}
-    </ul>
-  );
+  const DevTipsCategories = contents.map((c) => (
+    <span key={c}>
+      <Link href={`/dev-tips/${c}`}>{c}</Link>
+    </span>
+  ));
+
+  const DevTipsList = devTips.map(({ category, tip }) => (
+    <li key={tip}>
+      <Link href={`/dev-tips/${category}/${tip}`}>
+        {tip.split("-").join(" ")}
+      </Link>
+    </li>
+  ));
 
   return (
     <Container>
       <Head title="Dev Tips" />
       <Header />
-      <br />
-      <h3>dev tips</h3>
-      {DevTipsList}
+      <h3 className={styles.devTipsTitle}>Dev Tips</h3>
+      <div className={styles.devTipsCategories}>{DevTipsCategories}</div>
+      <blockquote className={styles.devTipsTagline}>
+        New DevTips every weekend.
+      </blockquote>
+      <ul className={styles.devTipsList}>{DevTipsList}</ul>
       <Footer />
     </Container>
   );
@@ -40,7 +50,28 @@ const DevTips: NextPage<DevTipsProps> = (props) => {
 export async function getStaticProps() {
   const contentPath = path.join("content/dev-tips");
   const contents = fs.readdirSync(contentPath);
-  return { props: { contents: contents.sort() } };
+  const devTips: Array<Record<string, string>> = [];
+  for (let content of contents) {
+    const _cPath = path.join(contentPath, content);
+    const _devTips = fs.readdirSync(_cPath);
+    _devTips.forEach((tip) => {
+      devTips.push({
+        category: content,
+        tip: tip.split("-").slice(1).join("-").replace(/.md/, ""),
+      });
+    });
+  }
+
+  devTips.sort((a, b) =>
+    a.tip.toLowerCase().localeCompare(b.tip.toLowerCase())
+  );
+
+  return {
+    props: {
+      contents: contents.sort(),
+      devTips: devTips,
+    },
+  };
 }
 
 export default DevTips;

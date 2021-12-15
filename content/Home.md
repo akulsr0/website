@@ -27,6 +27,7 @@ Hey there, I am Akul, self trained software developer. I have done bachelors in 
 }
 .box span {
     margin-top: 0.6rem;
+    font-size: 1rem;
 }
 </style>
 
