@@ -54,6 +54,36 @@ blockquote p {
   display: inline;
 }
 
+/* Subscribe Form Start */
+
+.subscribe-form {
+  padding: 0.5rem;
+  border: 1px solid lightgrey;
+  border-style: dashed;
+  border-radius: 4px;
+  font-size: 1rem;
+  margin: 1rem 0;
+}
+.subscribe-form > p {
+  font-weight: bold;
+}
+.subscribe-form div {
+  display: flex;
+  flex-direction: row;
+  margin-top: 0.5rem;
+}
+.subscribe-form div #tlemail {
+  flex: 1;
+  margin-right: 0.4rem;
+  padding: 0 0.2rem;
+}
+.subscribe-form div input[type="submit"] {
+  padding: 0 0.5rem;
+  cursor: pointer;
+}
+
+/* Subscribe Form End */
+
 @media only screen and (max-width: 720px) {
   img {
     max-width: 36rem;

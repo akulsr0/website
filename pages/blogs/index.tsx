@@ -8,6 +8,7 @@ import Container from "../../components/Container";
 import Head from "../../components/_head";
 import Header from "../../components/Header";
 import BlogsList from "../../components/Blogs/BlogList";
+import NewsLetterForm from "../../components/NewsletterForm";
 import Footer from "../../components/Footer";
 import styles from "../../styles/Blog.module.css";
 import { useEffect, useState } from "react";
@@ -52,6 +53,7 @@ const Blogs: NextPage<BlogsProps> = (props) => {
         <span onClick={() => setSelectedCategory("non-tech")}>non-tech</span>
       </div>
       <BlogsList blogs={blogs} />
+      <NewsLetterForm />
       <Footer />
     </Container>
   );

@@ -4,9 +4,10 @@ import fs from "fs";
 import path from "path";
 
 import Container from "../../components/Container";
-import Footer from "../../components/Footer";
-import Header from "../../components/Header";
 import Head from "../../components/_head";
+import Header from "../../components/Header";
+import NewsLetterForm from "../../components/NewsletterForm";
+import Footer from "../../components/Footer";
 
 import styles from "../../styles/DevTips.module.css";
 
@@ -42,6 +43,7 @@ const DevTips: NextPage<DevTipsProps> = (props) => {
         New DevTips every weekend.
       </blockquote>
       <ul className={styles.devTipsList}>{DevTipsList}</ul>
+      <NewsLetterForm />
       <Footer />
     </Container>
   );
