@@ -30,7 +30,7 @@ const Uses: NextPage = () => {
     <Container>
       <Head title="Uses" />
       <Header />
-      <br />
+      <h2 style={{ margin: "1rem 0" }}>Uses</h2>
       <div>
         {Object.entries(uses).map(([category, subuses]) => (
           <div key={category} style={{ marginBottom: 10 }}>

@@ -27,7 +27,7 @@ const Work: NextPage<WorkProps> = (props) => {
     <Container>
       <Head title="Work" />
       <Header />
-      <br />
+      <h2 style={{ margin: "1rem 0" }}>Work</h2>
       <div ref={contentRef}></div>
       <Footer />
     </Container>
