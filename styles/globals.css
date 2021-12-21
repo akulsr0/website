@@ -13,6 +13,10 @@
   line-height: 1.5em;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 a {
   word-break: break-word;
 }

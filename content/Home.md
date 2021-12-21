@@ -7,6 +7,7 @@ Hey there, I am Akul, self trained software developer. I have done bachelors in 
     overflow: scroll;
     -ms-overflow-style: none;
     scrollbar-width: none;  
+    padding: 0.2rem 0;
 }
 .wrapper::-webkit-scrollbar { 
     display: none;  
@@ -32,26 +33,26 @@ Hey there, I am Akul, self trained software developer. I have done bachelors in 
 </style>
 
 <div class="wrapper">
-    <div class="box" onclick="window.open('/dev-tips', '_self')">
+    <a class='box' href='/dev-tips'>
         <img src='/icons/code.svg' alt='dev-tips' >
         <span>Dev Tips</span>
-    </div>
-    <div class="box" onclick="window.open('/uses', '_self')">
+    </a>
+    <a class="box" href='/uses'>
         <img src='/icons/tool.svg' alt='uses' >
         <span>Uses</span>
-    </div>
-    <div class="box" onclick="window.open('/work', '_self')">
+    </a>
+    <a class="box" href='/work'>
         <img src='/icons/briefcase.svg' alt='work' >
         <span>Work</span>
-    </div>
-    <div class="box" onclick="window.open('/resume.pdf')">
+    </a>
+    <a class="box" href='resume.pdf' target='_blank' >
         <img src='/icons/file.svg' alt='resume' >
         <span>Resume</span>
-    </div>
-    <div class="box" onclick="window.open('https:/\/www.buymeacoffee.com/akulsr0')">
+    </a>
+    <a class="box" href='https://www.buymeacoffee.com/akulsr0' target='_blank' >
         <img src='/icons/coffee.svg' alt='buymeacoffee' >
         <span>Support</span>
-    </div>
+    </a>
 </div>
 
 <form 

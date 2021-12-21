@@ -28,7 +28,7 @@ const About: NextPage<AboutProps> = (props) => {
       <Head title="About" />
       <Header />
       <br />
-      <div ref={contentRef}></div>
+      <div id="content" ref={contentRef}></div>
       <Footer />
     </Container>
   );

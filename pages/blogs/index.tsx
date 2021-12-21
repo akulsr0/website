@@ -52,7 +52,9 @@ const Blogs: NextPage<BlogsProps> = (props) => {
         <span onClick={() => setSelectedCategory("tech")}>tech</span>
         <span onClick={() => setSelectedCategory("non-tech")}>non-tech</span>
       </div>
-      <BlogsList blogs={blogs} />
+      <div id="content">
+        <BlogsList blogs={blogs} />
+      </div>
       <NewsLetterForm />
       <Footer />
     </Container>

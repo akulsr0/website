@@ -39,9 +39,11 @@ const DevTip: NextPage<DevTipProps> = (props) => {
     <Container>
       <Head title={title} />
       <Header />
-      <h3 className={styles.devTipsTitle}>{title}</h3>
-      <div ref={tipContentRef}>
-        <br />
+      <div id="content">
+        <h3 className={styles.devTipsTitle}>{title}</h3>
+        <div ref={tipContentRef}>
+          <br />
+        </div>
       </div>
       <Footer />
     </Container>

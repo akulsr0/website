@@ -28,7 +28,7 @@ const Contact: NextPage<ContactProps> = (props) => {
       <Head title="Contact" />
       <Header />
       <br />
-      <div ref={contentRef}></div>
+      <div id="content" ref={contentRef}></div>
       <Footer />
     </Container>
   );

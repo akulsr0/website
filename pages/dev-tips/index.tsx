@@ -39,11 +39,13 @@ const DevTips: NextPage<DevTipsProps> = (props) => {
       <Header />
       <h3 className={styles.devTipsTitle}>Dev Tips</h3>
       <div className={styles.devTipsCategories}>{DevTipsCategories}</div>
-      <blockquote className={styles.devTipsTagline}>
-        New DevTips every weekend.
-      </blockquote>
-      <ul className={styles.devTipsList}>{DevTipsList}</ul>
-      <NewsLetterForm />
+      <div id="content">
+        <blockquote className={styles.devTipsTagline}>
+          New DevTips every weekend.
+        </blockquote>
+        <ul className={styles.devTipsList}>{DevTipsList}</ul>
+        <NewsLetterForm />
+      </div>
       <Footer />
     </Container>
   );

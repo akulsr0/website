@@ -1,3 +1,17 @@
+.skipNavigation {
+  background-color: black;
+  color: white;
+  position: absolute;
+  outline: none;
+  padding: 0.6rem;
+  border-radius: 0.2rem;
+  transform: translateY(-200%);
+  transition: ease 0.5s;
+}
+.skipNavigation:focus {
+  transform: translateY(120%);
+}
+
 .title {
   font-size: 2.4rem;
   font-weight: 900;

@@ -31,7 +31,7 @@ const Blog: NextPage<BlogProps> = (props) => {
     <Container>
       <Head title={blog.data.title} metaDescription={blog.data.description} />
       <Header />
-      <div ref={blogContentRef} className={styles.blogContent}>
+      <div id="content" ref={blogContentRef} className={styles.blogContent}>
         <h2>{blog.data.title}</h2>
         <br />
       </div>
