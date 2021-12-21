@@ -75,10 +75,13 @@ blockquote p {
   flex: 1;
   margin-right: 0.4rem;
   padding: 0 0.2rem;
+  min-height: 2rem;
 }
 .subscribe-form div input[type="submit"] {
   padding: 0 0.5rem;
   cursor: pointer;
+  -webkit-appearance: button;
+  min-height: 2rem;
 }
 
 /* Subscribe Form End */
