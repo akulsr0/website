@@ -74,14 +74,24 @@ blockquote p {
 .subscribe-form div #tlemail {
   flex: 1;
   margin-right: 0.4rem;
-  padding: 0 0.2rem;
+  padding: 0 0.4rem;
   min-height: 2rem;
+  border: none;
+  background-color: #f0f0f0;
+  border-radius: 0.2rem;
+  font-size: 1rem;
+  outline: none;
 }
 .subscribe-form div input[type="submit"] {
   padding: 0 0.5rem;
   cursor: pointer;
   -webkit-appearance: button;
   min-height: 2rem;
+  border: none;
+  border-radius: 0.2rem;
+  font-size: 1rem;
+  background-color: #0e7afe;
+  color: white;
 }
 
 /* Subscribe Form End */
