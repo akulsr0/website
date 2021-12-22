@@ -32,7 +32,10 @@ const DevTipCategory: NextPage<DevTipCategoryProps> = (props) => {
 
   return (
     <Container>
-      <Head title={`${category} DevTips`} />
+      <Head
+        title={`${category} DevTips`}
+        metaDescription={`${category} tips | DevTips by Akul Srivastava`}
+      />
       <Header />
       <div id="content">
         <h3 className={styles.devTipsTitle}>{category} tips</h3>

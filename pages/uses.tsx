@@ -28,7 +28,7 @@ const Uses: NextPage = () => {
 
   return (
     <Container>
-      <Head title="Uses" />
+      <Head title="Uses" metaDescription="What do I use?" />
       <Header />
       <h2 style={{ margin: "1rem 0" }}>Uses</h2>
       <div>

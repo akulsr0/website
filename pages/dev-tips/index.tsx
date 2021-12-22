@@ -35,7 +35,10 @@ const DevTips: NextPage<DevTipsProps> = (props) => {
 
   return (
     <Container>
-      <Head title="Dev Tips" />
+      <Head
+        title="Dev Tips"
+        metaDescription="I share useful dev tips every weekend here."
+      />
       <Header />
       <h3 className={styles.devTipsTitle}>Dev Tips</h3>
       <div className={styles.devTipsCategories}>{DevTipsCategories}</div>

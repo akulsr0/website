@@ -45,7 +45,10 @@ const Blogs: NextPage<BlogsProps> = (props) => {
 
   return (
     <Container>
-      <Head title="Blogs" />
+      <Head
+        title="Blogs"
+        metaDescription="I do write sometimes, you can find my blogs here."
+      />
       <Header />
       <div className={styles.blogCategories}>
         <span onClick={() => setSelectedCategory("all")}>all</span>

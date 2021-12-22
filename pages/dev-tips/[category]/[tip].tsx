@@ -37,7 +37,7 @@ const DevTip: NextPage<DevTipProps> = (props) => {
 
   return (
     <Container>
-      <Head title={title} />
+      <Head title={title} metaDescription={title} />
       <Header />
       <div id="content">
         <h3 className={styles.devTipsTitle}>{title}</h3>

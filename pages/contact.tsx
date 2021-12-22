@@ -25,7 +25,10 @@ const Contact: NextPage<ContactProps> = (props) => {
 
   return (
     <Container>
-      <Head title="Contact" />
+      <Head
+        title="Contact"
+        metaDescription="If you have any feedback or would like to say something, you can dm me on instagram or mail me at below address."
+      />
       <Header />
       <br />
       <div id="content" ref={contentRef}></div>

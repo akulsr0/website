@@ -25,7 +25,10 @@ const About: NextPage<AboutProps> = (props) => {
 
   return (
     <Container>
-      <Head title="About" />
+      <Head
+        title="About"
+        metaDescription="About me | I am Akul, self trained software developer. I have done bachelors in Computer Science Engineering from Babu Banarasi Das: National Institute of Technology and Management, Lucknow."
+      />
       <Header />
       <br />
       <div id="content" ref={contentRef}></div>
