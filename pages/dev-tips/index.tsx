@@ -44,7 +44,7 @@ const DevTips: NextPage<DevTipsProps> = (props) => {
       <div className={styles.devTipsCategories}>{DevTipsCategories}</div>
       <div id="content">
         <blockquote className={styles.devTipsTagline}>
-          New DevTips every weekend.
+          New DevTips every week.
         </blockquote>
         <ul className={styles.devTipsList}>{DevTipsList}</ul>
         <NewsLetterForm />
