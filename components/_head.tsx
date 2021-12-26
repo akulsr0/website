@@ -17,6 +17,11 @@ const Head: NextPage<HeadProps> = (props) => {
     <NextHead>
       <title>{_title}</title>
       <meta name="description" content={_metaDescription} />
+      <script
+        async
+        defer
+        src="https://scripts.simpleanalyticscdn.com/latest.js"
+      ></script>
     </NextHead>
   );
 };
