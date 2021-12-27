@@ -1,6 +1,7 @@
 ---
 title: Minimize file explorer shortcut in VSCode
 category: vscode
+date: 30-Nov-2021
 ---
 
 ![minimize-file-explorer-vscode](https://user-images.githubusercontent.com/43666833/144000711-bb82378c-d35a-42e9-bf52-e5ad03392073.gif)

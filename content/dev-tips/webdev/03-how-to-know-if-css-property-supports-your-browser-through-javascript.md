@@ -1,6 +1,7 @@
 ---
 title: How to know if a CSS property is supported by your browser through Javascript?
 category: webdev
+date: 25-Dec-2021
 ---
 
 There could be cases where you need to add styles to markup through javascript, but before doing that you need to be sure if that is supported by the browser on which it's running. So that you can choose what to do accordingly.

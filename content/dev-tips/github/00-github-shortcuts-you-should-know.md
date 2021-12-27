@@ -1,6 +1,7 @@
 ---
 title: Github Shortcuts - You should know
 category: github
+date: 11-Dec-2021
 ---
 
 ![gh-shortcuts](https://user-images.githubusercontent.com/43666833/145679471-b185d107-14f4-4d49-b840-047ec631e73b.gif)

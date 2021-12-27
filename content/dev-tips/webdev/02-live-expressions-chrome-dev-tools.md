@@ -1,6 +1,7 @@
 ---
 title: Live Expression - Chrome Dev Tools
 category: webdev
+date: 04-Dec-2021
 ---
 
 ![todo-app](https://user-images.githubusercontent.com/43666833/144659984-5f499278-68ba-4ae6-b9e0-2010c39a7fd9.gif)

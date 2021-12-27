@@ -16,6 +16,28 @@
   overflow: hidden;
 }
 
-.devTipsList li {
+.devTipSeach {
+  display: flex;
+}
+
+.devTipsList {
   margin-top: 0.5rem;
+}
+
+.devTipsList div {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.devTipsList div a {
+  font-size: 1.1rem;
+  margin-left: 1rem;
+}
+
+.devTipsList div span {
+  color: #888;
+  min-width: 6rem;
+  white-space: nowrap;
+  font-weight: 700;
 }

@@ -1,6 +1,7 @@
 ---
 title: Check website memory performance
 category: others
+date: 16-Dec-2021
 ---
 
 ![check-website-memory](https://user-images.githubusercontent.com/43666833/146376286-2b7cd42d-0716-47e9-81fe-d6e495a76b39.gif)

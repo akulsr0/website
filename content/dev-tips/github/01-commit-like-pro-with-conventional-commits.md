@@ -1,6 +1,7 @@
 ---
 title: Commit like PRO w/ Conventional Commits
 category: github
+date: 24-Dec-2021
 ---
 
 While building software(s), a crucial part is to maintain the versions of it. Github/Git is most popular and widely used for the same.

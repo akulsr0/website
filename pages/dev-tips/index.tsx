@@ -1,7 +1,9 @@
 import { NextPage } from "next";
+import React from "react";
 import Link from "next/link";
 import fs from "fs";
 import path from "path";
+import matter from "gray-matter";
 
 import Container from "../../components/Container";
 import Head from "../../components/_head";
@@ -19,19 +21,40 @@ interface DevTipsProps {
 const DevTips: NextPage<DevTipsProps> = (props) => {
   const { contents, devTips } = props;
 
+  const [tips, setTips] = React.useState(devTips);
+
   const DevTipsCategories = contents.map((c) => (
     <span key={c}>
       <Link href={`/dev-tips/${c}`}>{c}</Link>
     </span>
   ));
 
-  const DevTipsList = devTips.map(({ category, tip }) => (
-    <li key={tip}>
-      <Link href={`/dev-tips/${category}/${tip}`}>
-        {tip.split("-").join(" ")}
-      </Link>
-    </li>
-  ));
+  const DevTipsList = tips.map(({ category, date, tip }) => {
+    const [dd, mm, yyyy] = date.split("-");
+    return (
+      <div key={tip}>
+        <span>{`${mm} ${dd}, ${yyyy}`}</span>
+        {"-"}
+        <Link href={`/dev-tips/${category}/${tip}`}>
+          {tip.split("-").join(" ")}
+        </Link>
+      </div>
+    );
+  });
+
+  function onSearchDevTip(event: React.ChangeEvent<HTMLInputElement>) {
+    const searchText = event.target.value;
+    if (!searchText) setTips(devTips);
+    const searchKeywords = searchText.split(" ");
+    const searchedTips = devTips.filter(({ tip }) => {
+      let result = false;
+      searchKeywords.forEach((keyword) => {
+        if (tip.toLowerCase().includes(keyword.toLowerCase())) result = true;
+      });
+      return result;
+    });
+    setTips(searchedTips);
+  }
 
   return (
     <Container>
@@ -46,7 +69,10 @@ const DevTips: NextPage<DevTipsProps> = (props) => {
         <blockquote className={styles.devTipsTagline}>
           New DevTips every week.
         </blockquote>
-        <ul className={styles.devTipsList}>{DevTipsList}</ul>
+        <div className={styles.devTipSeach}>
+          <input type="search" placeholder="Search" onChange={onSearchDevTip} />
+        </div>
+        <div className={styles.devTipsList}>{DevTipsList}</div>
         <NewsLetterForm />
       </div>
       <Footer />
@@ -58,20 +84,23 @@ export async function getStaticProps() {
   const contentPath = path.join("content/dev-tips");
   const contents = fs.readdirSync(contentPath);
   const devTips: Array<Record<string, string>> = [];
+
   for (let content of contents) {
     const _cPath = path.join(contentPath, content);
     const _devTips = fs.readdirSync(_cPath);
     _devTips.forEach((tip) => {
+      const tipDate = matter(
+        fs.readFileSync(path.join(contentPath, content, tip), "utf-8")
+      ).data.date;
       devTips.push({
         category: content,
+        date: tipDate,
         tip: tip.split("-").slice(1).join("-").replace(/.md/, ""),
       });
     });
   }
 
-  devTips.sort((a, b) =>
-    a.tip.toLowerCase().localeCompare(b.tip.toLowerCase())
-  );
+  devTips.sort((a, b) => Date.parse(b.date) - Date.parse(a.date));
 
   return {
     props: {

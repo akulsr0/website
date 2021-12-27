@@ -1,6 +1,7 @@
 ---
 title: Manage your clipboard more efficiently (MacOS)
 category: others
+date: 05-Dec-2021
 ---
 
 ![pelican-appstore](https://user-images.githubusercontent.com/43666833/144721175-1d6eb02a-f281-449a-adba-53f02748fd97.png)

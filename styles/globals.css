@@ -57,6 +57,18 @@ blockquote p {
   display: inline;
 }
 
+input:not([type="submit"]) {
+  flex: 1 1;
+  margin-right: 0.4rem;
+  padding: 0 0.8rem;
+  min-height: 2.2rem;
+  border: none;
+  background-color: #f0f0f0;
+  border-radius: 0.2rem;
+  font-size: 1rem;
+  outline: none;
+}
+
 /* Subscribe Form Start */
 
 .subscribe-form {
@@ -75,17 +87,7 @@ blockquote p {
   flex-direction: row;
   margin-top: 0.5rem;
 }
-.subscribe-form div #tlemail {
-  flex: 1;
-  margin-right: 0.4rem;
-  padding: 0 0.4rem;
-  min-height: 2rem;
-  border: none;
-  background-color: #f0f0f0;
-  border-radius: 0.2rem;
-  font-size: 1rem;
-  outline: none;
-}
+button,
 .subscribe-form div input[type="submit"] {
   padding: 0 0.5rem;
   cursor: pointer;
