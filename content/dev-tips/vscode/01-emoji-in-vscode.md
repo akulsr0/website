@@ -1,6 +1,7 @@
 ---
 title: Emoji in VSCode
 category: vscode
+date: 21-Nov-2021
 ---
 
 ![emoji-in-vscode](https://user-images.githubusercontent.com/43666833/142738239-ce45a585-a92f-4cf4-be54-b6e460476b96.gif)

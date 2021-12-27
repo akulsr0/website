@@ -1,6 +1,7 @@
 ---
 title: Easiest way to host website
 category: others
+date: 21-Nov-2021
 ---
 
 ![project](https://user-images.githubusercontent.com/43666833/142752044-f6ffd64a-442c-46f0-bb40-1b37c405e828.png)

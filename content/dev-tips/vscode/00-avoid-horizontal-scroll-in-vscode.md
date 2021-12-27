@@ -1,6 +1,7 @@
 ---
 title: Avoid horizontal scroll in VSCode
 category: vscode
+date: 21-Nov-2021
 ---
 
 ![avoid-horizontal-scroll-in-vsCode](https://user-images.githubusercontent.com/43666833/142735959-05702fa7-3d4e-4ac7-91ac-097f01b40dca.gif)

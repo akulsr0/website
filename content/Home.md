@@ -8,6 +8,7 @@ Hey there, I am Akul, self trained software developer. I have done bachelors in 
     -ms-overflow-style: none;
     scrollbar-width: none;  
     padding: 0.2rem 0;
+    margin-top: 1.2rem;
 }
 .wrapper::-webkit-scrollbar { 
     display: none;  
@@ -17,7 +18,6 @@ Hey there, I am Akul, self trained software developer. I have done bachelors in 
     min-height: 6rem;
     background-color: #f2f2f2;
     border-radius: 0.5rem;
-    margin-top: 1.2rem;
     margin-right: 1rem;
     cursor: pointer;
     display: flex;
@@ -25,10 +25,13 @@ Hey there, I am Akul, self trained software developer. I have done bachelors in 
     align-items: center;
     justify-content: center;
     user-select: none;
+    text-decoration: none;
+    color: #333;
 }
 .box span {
     margin-top: 0.6rem;
     font-size: 1rem;
+    font-weight: bold;
 }
 </style>
 
@@ -61,7 +64,7 @@ Hey there, I am Akul, self trained software developer. I have done bachelors in 
     method="post" 
     target="popupwindow" 
     onsubmit="window.open('https://tinyletter.com/akulsr0', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true">
-    <p><label for="tlemail">Subscribe to our Newsletter</label></p>
+    <p><label for="tlemail">Subscribe to my Newsletter</label></p>
     <div>
     <input type="text" name="email" id="tlemail" placeholder="Email" />
     <input type="hidden" value="1" name="embed"/>

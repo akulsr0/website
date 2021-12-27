@@ -1,6 +1,7 @@
 ---
 title: Transfer files between different devices on same network
 category: others
+date: 26-Dec-2021
 ---
 
 While work, we often have the need to transfer files between different device on same network.
