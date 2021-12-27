@@ -33,6 +33,13 @@
   margin-top: 1.2rem;
 }
 
+.blogInfoLine {
+  display: flex;
+  margin-top: 0.4rem;
+  color: #888;
+  font-weight: bold;
+}
+
 /* New Blog List Item */
 
 .blogListItemWrapper {

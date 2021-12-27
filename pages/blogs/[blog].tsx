@@ -2,6 +2,7 @@ import { NextPage, GetStaticPropsContext } from "next";
 import { useEffect, useRef } from "react";
 import fs from "fs";
 import path from "path";
+import readingTime from "reading-time";
 import matter from "gray-matter";
 import marked from "marked";
 
@@ -19,7 +20,9 @@ interface BlogProps {
 
 const Blog: NextPage<BlogProps> = (props) => {
   const { blog } = props;
+  const [dd, mm, yyyy] = blog.data.date.split("-");
   const blogContentRef = useRef<HTMLDivElement>(null);
+  const readTime = readingTime(blog.content);
 
   useEffect(() => {
     const blogContentMarkup = marked(blog.content);
@@ -33,6 +36,9 @@ const Blog: NextPage<BlogProps> = (props) => {
       <Header />
       <div id="content" ref={blogContentRef} className={styles.blogContent}>
         <h2>{blog.data.title}</h2>
+        <span className={styles.blogInfoLine}>
+          {readTime.text} &nbsp;&bull;&nbsp; {`${mm} ${dd}, ${yyyy}`}
+        </span>
         <br />
       </div>
       <Footer />
