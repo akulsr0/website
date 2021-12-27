@@ -1,10 +1,12 @@
 import { NextPage } from "next";
-import { uses } from "../constants/default.json";
+import defaults from "../constants/default.json";
 
 import Container from "../components/Container";
 import Head from "../components/_head";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+
+const { uses } = defaults;
 
 const Uses: NextPage = () => {
   const Uses = (
