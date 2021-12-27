@@ -1,6 +1,8 @@
 import type { NextPage } from "next";
 import NextHead from "next/head";
-import { name, meta_description } from "../constants/default.json";
+import defaults from "../constants/default.json";
+
+const { name, meta_description } = defaults;
 
 interface HeadProps {
   title?: string;

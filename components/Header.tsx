@@ -1,7 +1,9 @@
 import type { NextPage } from "next";
 import Link from "next/link";
 import styles from "../styles/Header.module.css";
-import { name, menu } from "../constants/default.json";
+import defaults from "../constants/default.json";
+
+const { name, menu } = defaults;
 
 interface IMenuItem {
   title: string;
