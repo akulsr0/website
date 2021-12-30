@@ -8,12 +8,12 @@ pre {
   padding: 0.5rem 0.6rem;
   border-radius: 0.4rem;
   overflow: scroll;
-  font-size: 0.8rem;
   margin: 0.8rem 0;
 }
 
 code[class*="language-"],
 pre[class*="language-"] {
+  font-family: monospace !important;
   color: #f8f8f2;
   background: none;
   text-align: left;
@@ -39,6 +39,7 @@ pre[class*="language-"] {
   margin: 0.5em 0;
   overflow: auto;
   border-radius: 0.3em;
+  font-family: monospace !important;
 }
 
 :not(pre) > code[class*="language-"],
@@ -51,6 +52,10 @@ pre[class*="language-"] {
   padding: 0.1em;
   border-radius: 0.3em;
   white-space: normal;
+}
+
+.token {
+  font-family: monospace;
 }
 
 .token.comment,

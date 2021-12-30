@@ -69,6 +69,19 @@ input:not([type="submit"]) {
   outline: none;
 }
 
+.table-wrapper {
+  overflow: scroll;
+}
+
+details {
+  margin: 10px 0;
+}
+details summary {
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+}
+
 /* Subscribe Form Start */
 
 .subscribe-form {
