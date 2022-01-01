@@ -5,6 +5,7 @@ import matter from "gray-matter";
 import marked from "marked";
 import path from "path";
 import readingTime from "reading-time";
+import * as timeago from "timeago.js";
 
 import Container from "../../../components/Container";
 import Footer from "../../../components/Footer";
@@ -29,7 +30,8 @@ interface DevTipProps {
 const DevTip: NextPage<DevTipProps> = (props) => {
   const title = props?.tip?.data.title || "";
   const content = props?.tip?.content;
-  const [dd, mm, yyyy] = props?.tip?.data.date.split("-");
+  const date = props?.tip?.data.date;
+  const timeAgo = timeago.format(date);
   const tipContentRef = useRef<HTMLDivElement>(null);
   const readTime = readingTime(content);
 
@@ -46,7 +48,7 @@ const DevTip: NextPage<DevTipProps> = (props) => {
       <div id="content">
         <h3 className={styles.devTipsTitle}>{title}</h3>
         <span className={styles.devTipInfoLine}>
-          {readTime.text} &nbsp;&bull;&nbsp; {`${mm} ${dd}, ${yyyy}`}
+          {readTime.text} &nbsp;&bull;&nbsp; {timeAgo}
         </span>
         <div ref={tipContentRef}>
           <br />

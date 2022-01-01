@@ -18,7 +18,7 @@ const NewsLetterForm: NextPage = () => {
       }}
     >
       <p>
-        <label htmlFor="tlemail">Subscribe to our Newsletter</label>
+        <label htmlFor="tlemail">Subscribe to my Newsletter</label>
       </p>
       <div>
         <input type="text" name="email" id="tlemail" placeholder="Email" />
