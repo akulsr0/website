@@ -21,8 +21,7 @@ interface BlogProps {
 
 const Blog: NextPage<BlogProps> = (props) => {
   const { blog } = props;
-  const date = blog.data.date;
-  const timeAgo = timeago.format(date);
+  const timeAgo = blog.data.timeAgo;
   const blogContentRef = useRef<HTMLDivElement>(null);
   const readTime = readingTime(blog.content);
 
@@ -55,7 +54,17 @@ export async function getStaticProps(ctx: GetStaticPropsContext) {
   const blog = blogs.find((b) => b.includes(slug))!;
   const blogContent = fs.readFileSync(path.join(blogsPath, blog), "utf-8");
   const { data, content } = matter(blogContent);
-  return { props: { blog: { data, content } } };
+  return {
+    props: {
+      blog: {
+        data: {
+          ...data,
+          timeAgo: timeago.format(data.date),
+        },
+        content,
+      },
+    },
+  };
 }
 
 export async function getStaticPaths() {

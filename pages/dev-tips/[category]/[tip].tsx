@@ -19,6 +19,7 @@ interface ITip {
     title: string;
     category: string;
     date: string;
+    timeAgo: string;
   };
   content: string;
 }
@@ -30,8 +31,7 @@ interface DevTipProps {
 const DevTip: NextPage<DevTipProps> = (props) => {
   const title = props?.tip?.data.title || "";
   const content = props?.tip?.content;
-  const date = props?.tip?.data.date;
-  const timeAgo = timeago.format(date);
+  const timeAgo = props?.tip?.data.timeAgo;
   const tipContentRef = useRef<HTMLDivElement>(null);
   const readTime = readingTime(content);
 
@@ -72,7 +72,17 @@ export async function getStaticProps(ctx: GetStaticPropsContext) {
   );
   const { data, content } = matter(tipContent);
 
-  return { props: { tip: { data, content } } };
+  return {
+    props: {
+      tip: {
+        data: {
+          ...data,
+          timeAgo: timeago.format(data.date),
+        },
+        content,
+      },
+    },
+  };
 }
 
 export async function getStaticPaths() {

@@ -3,6 +3,7 @@ interface BlogData {
   description: string;
   slug: string;
   date: string;
+  timeAgo: string;
   isTechBlog: boolean;
 }
 
