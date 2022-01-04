@@ -5,7 +5,7 @@ import path from "path";
 import readingTime from "reading-time";
 import matter from "gray-matter";
 import marked from "marked";
-import * as timeago from "timeago.js";
+import moment from "moment";
 
 import { Blog as BlogType } from "../../interfaces/Blog";
 import styles from "../../styles/Blog.module.css";
@@ -59,7 +59,7 @@ export async function getStaticProps(ctx: GetStaticPropsContext) {
       blog: {
         data: {
           ...data,
-          timeAgo: timeago.format(data.date),
+          timeAgo: moment(data.date).fromNow(),
         },
         content,
       },

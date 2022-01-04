@@ -5,7 +5,7 @@ import matter from "gray-matter";
 import marked from "marked";
 import path from "path";
 import readingTime from "reading-time";
-import * as timeago from "timeago.js";
+import moment from "moment";
 
 import Container from "../../../components/Container";
 import Footer from "../../../components/Footer";
@@ -77,7 +77,7 @@ export async function getStaticProps(ctx: GetStaticPropsContext) {
       tip: {
         data: {
           ...data,
-          timeAgo: timeago.format(data.date),
+          timeAgo: moment(data.date).fromNow(),
         },
         content,
       },
