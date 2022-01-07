@@ -5,7 +5,6 @@ import matter from "gray-matter";
 import marked from "marked";
 import path from "path";
 import readingTime from "reading-time";
-import moment from "moment";
 
 import Container from "../../../components/Container";
 import Footer from "../../../components/Footer";
@@ -19,7 +18,6 @@ interface ITip {
     title: string;
     category: string;
     date: string;
-    timeAgo: string;
   };
   content: string;
 }
@@ -31,7 +29,7 @@ interface DevTipProps {
 const DevTip: NextPage<DevTipProps> = (props) => {
   const title = props?.tip?.data.title || "";
   const content = props?.tip?.content;
-  const timeAgo = props?.tip?.data.timeAgo;
+  const [dd, mm, yyyy] = props?.tip?.data.date.split("-");
   const tipContentRef = useRef<HTMLDivElement>(null);
   const readTime = readingTime(content);
 
@@ -48,7 +46,7 @@ const DevTip: NextPage<DevTipProps> = (props) => {
       <div id="content">
         <h3 className={styles.devTipsTitle}>{title}</h3>
         <span className={styles.devTipInfoLine}>
-          {readTime.text} &nbsp;&bull;&nbsp; {timeAgo}
+          {readTime.text} &nbsp;&bull;&nbsp; {`${dd} ${mm} ${yyyy}`}
         </span>
         <div ref={tipContentRef}>
           <br />
@@ -75,10 +73,7 @@ export async function getStaticProps(ctx: GetStaticPropsContext) {
   return {
     props: {
       tip: {
-        data: {
-          ...data,
-          timeAgo: moment(data.date).fromNow(),
-        },
+        data,
         content,
       },
     },

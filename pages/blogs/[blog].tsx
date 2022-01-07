@@ -5,7 +5,6 @@ import path from "path";
 import readingTime from "reading-time";
 import matter from "gray-matter";
 import marked from "marked";
-import moment from "moment";
 
 import { Blog as BlogType } from "../../interfaces/Blog";
 import styles from "../../styles/Blog.module.css";
@@ -21,7 +20,7 @@ interface BlogProps {
 
 const Blog: NextPage<BlogProps> = (props) => {
   const { blog } = props;
-  const timeAgo = blog.data.timeAgo;
+  const [dd, mm, yyyy] = props.blog.data.date.split("-");
   const blogContentRef = useRef<HTMLDivElement>(null);
   const readTime = readingTime(blog.content);
 
@@ -38,7 +37,7 @@ const Blog: NextPage<BlogProps> = (props) => {
       <div id="content" ref={blogContentRef} className={styles.blogContent}>
         <h2>{blog.data.title}</h2>
         <span className={styles.blogInfoLine}>
-          {readTime.text} &nbsp;&bull;&nbsp; {timeAgo}
+          {readTime.text} &nbsp;&bull;&nbsp; {`${dd} ${mm} ${yyyy}`}
         </span>
         <br />
       </div>
@@ -57,10 +56,7 @@ export async function getStaticProps(ctx: GetStaticPropsContext) {
   return {
     props: {
       blog: {
-        data: {
-          ...data,
-          timeAgo: moment(data.date).fromNow(),
-        },
+        data,
         content,
       },
     },
