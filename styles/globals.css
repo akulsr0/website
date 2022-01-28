@@ -1,7 +1,6 @@
 @font-face {
   font-family: athelas;
-  src: local("athelas-regular") url("/fonts/athelas-regular") format("woff"),
-    local("athelas-bold") url("/fonts/athelas-bold") format("woff");
+  src: url("/fonts/athelas-regular.ttf"), url("/fonts/athelas-bold.ttf");
 }
 
 * {
@@ -11,6 +10,7 @@
   box-sizing: border-box;
   overflow-x: hidden;
   line-height: 1.5em;
+  -webkit-tap-highlight-color: transparent;
 }
 
 html {
