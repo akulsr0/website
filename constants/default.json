@@ -17,7 +17,7 @@
   "uses": {
     "Hardware": {
       "Laptop": "Macbook Air 2017",
-      "Phone": "Apple iPhone 8"
+      "Phone": "Apple iPhone 8 | Google Pixel 4A"
     },
     "Code": {
       "Languages": "Javascript, Typescript, Python",
