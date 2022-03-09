@@ -60,14 +60,14 @@ const DevTips: NextPage<DevTipsProps> = (props) => {
     <Container>
       <Head
         title="Dev Tips"
-        metaDescription="I share useful dev tips every weekend here."
+        metaDescription="I share useful development tips here."
       />
       <Header />
       <h3 className={styles.devTipsTitle}>Dev Tips</h3>
       <div className={styles.devTipsCategories}>{DevTipsCategories}</div>
       <div id="content">
         <blockquote className={styles.devTipsTagline}>
-          New DevTips every week.
+          Bookmark this place for development tips.
         </blockquote>
         <div className={styles.devTipSeach}>
           <input type="search" placeholder="Search" onChange={onSearchDevTip} />
