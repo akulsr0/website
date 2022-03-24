@@ -1,12 +1,12 @@
 @font-face {
-  font-family: athelas;
-  src: url("/fonts/athelas-regular.ttf"), url("/fonts/athelas-bold.ttf");
+  font-family: lora;
+  src: url("/fonts/lora.ttf");
 }
 
 * {
   margin: 0;
   padding: 0;
-  font-family: "athelas", sans-serif;
+  font-family: "lora", sans-serif;
   box-sizing: border-box;
   overflow-x: hidden;
   line-height: 1.5em;
