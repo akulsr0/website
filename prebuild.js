@@ -7,7 +7,7 @@ writeDevTipsJSON(JSON.stringify(devTips));
 
 function writeDevTipsJSON(tips) {
   console.log("Writing devTips.json");
-  const filePath = path.join("content/devtips.json");
+  const filePath = path.join("./content/devtips.json");
   console.log("PATH: ", filePath);
   console.log("CONTENT: ", `{"devTips": ${tips}}`);
   fs.writeFileSync(filePath, `{"devTips": ${tips}}`);
