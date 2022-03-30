@@ -58,6 +58,8 @@ Hey there, I am Akul, self trained software developer. I have done bachelors in 
     </a>
 </div>
 
+<p style="margin-top:1rem;">In my free time I also share <a href='/dev-tips'>development tips</a>, and write <a href='/blogs'>blogs</a> on technology, software engineering, programming and some other thoughts. If you want to stay updated with the same, you can consider subscribing to my newsletter below.</p>
+
 <form 
     class="subscribe-form"
     action="https://tinyletter.com/akulsr0" 
