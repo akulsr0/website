@@ -48,3 +48,11 @@
   white-space: nowrap;
   font-weight: 700;
 }
+
+.devTipsList > span {
+  display: flex;
+  margin-top: 1rem;
+  justify-content: center;
+  cursor: pointer;
+  text-decoration: underline;
+}
