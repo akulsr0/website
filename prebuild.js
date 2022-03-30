@@ -11,6 +11,9 @@ function writeDevTipsJSON(tips) {
   console.log("PATH: ", filePath);
   console.log("CONTENT: ", `{"devTips": ${tips}}`);
   fs.writeFileSync(filePath, `{"devTips": ${tips}}`);
+  console.log("Written successfully");
+  const contentData = fs.readdirSync(path.join("content/"));
+  console.log("contentData", contentData);
 }
 
 function getDevTips() {
