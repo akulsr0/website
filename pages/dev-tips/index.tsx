@@ -56,11 +56,9 @@ const DevTips: NextPage<DevTipsProps> = (props) => {
   DevTipsList.push(<ViewMore key="view-more" />);
 
   function onClickViewMore() {
-    if (tips.length + DEV_TIP_COUNT > devTips.length) {
-      setShowViewMore(false);
-      return;
-    }
-    setTips(devTips.slice(0, tips.length + DEV_TIP_COUNT));
+    const _newTips = devTips.slice(0, tips.length + DEV_TIP_COUNT);
+    setTips(_newTips);
+    if (_newTips.length >= devTips.length) setShowViewMore(false);
   }
 
   function onSearchDevTip(event: React.ChangeEvent<HTMLInputElement>) {
