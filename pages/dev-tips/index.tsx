@@ -3,7 +3,8 @@ import React from "react";
 import Link from "next/link";
 import fs from "fs";
 import path from "path";
-import matter from "gray-matter";
+
+import defaults from "../../constants/default.json";
 
 import Container from "../../components/Container";
 import Head from "../../components/_head";
@@ -13,6 +14,8 @@ import Footer from "../../components/Footer";
 
 import styles from "../../styles/DevTips.module.css";
 
+const DEV_TIP_COUNT = defaults.dev_tips_count;
+
 interface DevTipsProps {
   contents: Array<string>;
   devTips: Array<Record<string, string>>;
@@ -21,7 +24,9 @@ interface DevTipsProps {
 const DevTips: NextPage<DevTipsProps> = (props) => {
   const { contents, devTips } = props;
 
-  const [tips, setTips] = React.useState(devTips);
+  const _tips = devTips.slice(0, DEV_TIP_COUNT);
+  const [tips, setTips] = React.useState(_tips);
+  const [showViewMore, setShowViewMore] = React.useState(true);
 
   const DevTipsCategories = contents.map((c) => (
     <span key={c}>
@@ -42,9 +47,28 @@ const DevTips: NextPage<DevTipsProps> = (props) => {
     );
   });
 
+  function ViewMore() {
+    return showViewMore ? (
+      <span onClick={onClickViewMore}>View More</span>
+    ) : null;
+  }
+
+  DevTipsList.push(<ViewMore key="view-more" />);
+
+  function onClickViewMore() {
+    const _newTips = devTips.slice(0, tips.length + DEV_TIP_COUNT);
+    setTips(_newTips);
+    if (_newTips.length >= devTips.length) setShowViewMore(false);
+  }
+
   function onSearchDevTip(event: React.ChangeEvent<HTMLInputElement>) {
     const searchText = event.target.value;
-    if (!searchText) setTips(devTips);
+    if (!searchText) {
+      setShowViewMore(true);
+      setTips(devTips.slice(0, DEV_TIP_COUNT));
+      return;
+    }
+    setShowViewMore(false);
     const searchKeywords = searchText.split(" ");
     const searchedTips = devTips.filter(({ tip }) => {
       let result = false;
@@ -83,24 +107,12 @@ const DevTips: NextPage<DevTipsProps> = (props) => {
 export async function getStaticProps() {
   const contentPath = path.join("content/dev-tips");
   const contents = fs.readdirSync(contentPath);
-  const devTips: Array<Record<string, string>> = [];
+  const devTipsString = fs.readFileSync(
+    path.join("content/devtips.json"),
+    "utf-8"
+  );
 
-  for (let content of contents) {
-    const _cPath = path.join(contentPath, content);
-    const _devTips = fs.readdirSync(_cPath);
-    _devTips.forEach((tip) => {
-      const tipDate = matter(
-        fs.readFileSync(path.join(contentPath, content, tip), "utf-8")
-      ).data.date;
-      devTips.push({
-        category: content,
-        date: tipDate,
-        tip: tip.split("-").slice(1).join("-").replace(/.md/, ""),
-      });
-    });
-  }
-
-  devTips.sort((a, b) => Date.parse(b.date) - Date.parse(a.date));
+  const { devTips } = JSON.parse(devTipsString);
 
   return {
     props: {
