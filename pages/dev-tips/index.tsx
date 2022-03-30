@@ -110,7 +110,7 @@ export async function getStaticProps() {
   const contentPath = path.join("content/dev-tips");
   const contents = fs.readdirSync(contentPath);
   const devTipsString = fs.readFileSync(
-    path.join("content/devTips.json"),
+    path.join("content/devtips.json"),
     "utf-8"
   );
 
