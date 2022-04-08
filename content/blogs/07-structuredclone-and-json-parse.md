@@ -58,7 +58,7 @@ userCopy.name = "Elon";
 console.log(user, userCopy); // {name: 'Akul'} {name: 'Elon'}
 ```
 
-Let's analyze the performance of both ways by having an array of 5000 objects and creating its deep copy using above ways.
+Let's analyze the performance of both ways by having an array of 50000 objects and creating its deep copy using above ways.
 
 ```javascript
 const x = Array(50000)
