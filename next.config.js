@@ -11,6 +11,9 @@ const socialRedirects = Object.entries(social_links).map(([s, l]) => {
 
 module.exports = {
   reactStrictMode: true,
+  images: {
+    domains: ["user-images.githubusercontent.com"],
+  },
   eslint: {
     ignoreDuringBuilds: true,
   },
