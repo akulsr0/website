@@ -2,8 +2,14 @@ const fs = require("fs");
 const path = require("path");
 const matter = require("gray-matter");
 
-const devTips = getDevTips();
-writeDevTipsJSON(JSON.stringify(devTips));
+main();
+
+function main() {
+  const devTips = getDevTips();
+  const blogs = getBlogs();
+  writeDevTipsJSON(JSON.stringify(devTips));
+  writeBlogsJSON(JSON.stringify(blogs));
+}
 
 function writeDevTipsJSON(tips) {
   const filePath = path.join("./content/devtips.json");
@@ -32,4 +38,22 @@ function getDevTips() {
 
   devTips.sort((a, b) => Date.parse(b.date) - Date.parse(a.date));
   return devTips;
+}
+
+function writeBlogsJSON(blogs) {
+  const filePath = path.join("./content/blogs.json");
+  fs.writeFileSync(filePath, `{"blogs": ${blogs}}`);
+}
+
+function getBlogs() {
+  const blogsPath = path.join("content/blogs");
+  const blogs = fs.readdirSync(blogsPath);
+  const blogsContent = blogs
+    .map((blog) => {
+      const blogContent = fs.readFileSync(path.join(blogsPath, blog));
+      const { data } = matter(blogContent);
+      return { data };
+    })
+    .reverse();
+  return blogsContent;
 }
