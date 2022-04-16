@@ -82,6 +82,7 @@ You can find me at following places:
 <li><a href="/linkedin">linkedin</a></li>
 <li><a href="/twitter">twitter</a></li>
 <li><a href="/stackoverflow">stackoverflow</a></li>
+<li><a href="https://akulsr0.gumroad.com/" target="_blank">gumroad</a></li>
 <li><a href="https://www.npmjs.com/~akulsr0" target="_blank">npm</a></li>
 <li><a href="https://play.google.com/store/apps/developer?id=Akul+Srivastava" target="_blank">playstore</a></li>
 </ul>
