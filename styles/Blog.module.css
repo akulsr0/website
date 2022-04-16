@@ -6,6 +6,14 @@
   cursor: pointer;
 }
 
+.blogList > span {
+  display: flex;
+  margin-top: 1rem;
+  justify-content: center;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 .blogListItem {
   margin-top: 1.2rem;
 }
