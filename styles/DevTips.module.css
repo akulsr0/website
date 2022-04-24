@@ -57,6 +57,10 @@
   text-decoration: underline;
 }
 
+.tipContent {
+  margin-top: 1rem;
+}
+
 .recommendedTips {
   margin-top: 2rem;
   display: flex;

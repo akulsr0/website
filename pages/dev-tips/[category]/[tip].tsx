@@ -42,7 +42,7 @@ const DevTip: NextPage<DevTipProps> = (props) => {
   useEffect(() => {
     content &&
       tipContentRef.current &&
-      (tipContentRef.current.innerHTML += marked(content));
+      (tipContentRef.current.innerHTML = marked(content));
   }, [content]);
 
   function getRecommendedTipLink(tip: Record<string, string>, title: string) {
@@ -65,9 +65,7 @@ const DevTip: NextPage<DevTipProps> = (props) => {
         <span className={styles.devTipInfoLine}>
           {readTime.text} &nbsp;&bull;&nbsp; {`${dd} ${mm} ${yyyy}`}
         </span>
-        <div ref={tipContentRef}>
-          <br />
-        </div>
+        <div className={styles.tipContent} ref={tipContentRef}></div>
         <div className={styles.recommendedTips}>
           {recommendedTips.prev &&
             getRecommendedTipLink(recommendedTips.prev, "Previous")}
