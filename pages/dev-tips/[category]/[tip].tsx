@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { GetStaticPropsContext, NextPage } from "next";
+import Link from "next/link";
 import fs from "fs";
 import matter from "gray-matter";
 import marked from "marked";
@@ -11,6 +12,9 @@ import Footer from "../../../components/Footer";
 import Header from "../../../components/Header";
 import Head from "../../../components/_head";
 
+import { IRecommendedTip } from "../../../interfaces/DevTips";
+import { getNameFromSlug, getRecommendedDevTips } from "../../../helpers";
+
 import styles from "../../../styles/DevTips.module.css";
 
 interface ITip {
@@ -20,6 +24,7 @@ interface ITip {
     date: string;
   };
   content: string;
+  recommended: IRecommendedTip;
 }
 
 interface DevTipProps {
@@ -30,6 +35,7 @@ const DevTip: NextPage<DevTipProps> = (props) => {
   const title = props?.tip?.data.title || "";
   const content = props?.tip?.content;
   const [dd, mm, yyyy] = props?.tip?.data.date.split("-");
+  const recommendedTips = props?.tip?.recommended;
   const tipContentRef = useRef<HTMLDivElement>(null);
   const readTime = readingTime(content);
 
@@ -38,6 +44,17 @@ const DevTip: NextPage<DevTipProps> = (props) => {
       tipContentRef.current &&
       (tipContentRef.current.innerHTML += marked(content));
   }, [content]);
+
+  function getRecommendedTipLink(tip: Record<string, string>, title: string) {
+    return (
+      <div>
+        <strong>{title}</strong>
+        <Link href={`/dev-tips/${tip.category}/${tip.tip}`}>
+          {getNameFromSlug(tip.tip)}
+        </Link>
+      </div>
+    );
+  }
 
   return (
     <Container>
@@ -50,6 +67,12 @@ const DevTip: NextPage<DevTipProps> = (props) => {
         </span>
         <div ref={tipContentRef}>
           <br />
+        </div>
+        <div className={styles.recommendedTips}>
+          {recommendedTips.prev &&
+            getRecommendedTipLink(recommendedTips.prev, "Previous")}
+          {recommendedTips.next &&
+            getRecommendedTipLink(recommendedTips.next, "Next")}
         </div>
       </div>
       <Footer />
@@ -68,6 +91,14 @@ export async function getStaticProps(ctx: GetStaticPropsContext) {
     path.join(`content/dev-tips/${category}/${_tip}`),
     "utf-8"
   );
+
+  const devTipsString = fs.readFileSync(
+    path.join("content/devtips.json"),
+    "utf-8"
+  );
+  const { devTips } = JSON.parse(devTipsString);
+  const recommended = getRecommendedDevTips(devTips, tip as string);
+
   const { data, content } = matter(tipContent);
 
   return {
@@ -75,6 +106,7 @@ export async function getStaticProps(ctx: GetStaticPropsContext) {
       tip: {
         data,
         content,
+        recommended,
       },
     },
   };
