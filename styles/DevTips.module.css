@@ -56,3 +56,23 @@
   cursor: pointer;
   text-decoration: underline;
 }
+
+.recommendedTips {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.recommendedTips > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.recommendedTips > div:first-child {
+  text-align: left !important;
+}
+.recommendedTips > div:last-child {
+  text-align: right;
+}
