@@ -20,13 +20,6 @@ const Head: NextPage<HeadProps> = (props) => {
     <NextHead>
       <title>{_title}</title>
       <meta name="description" content={_metaDescription} />
-      {isProduction() && (
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8438074706231459"
-          crossOrigin="anonymous"
-        ></script>
-      )}
     </NextHead>
   );
 };
