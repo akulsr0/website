@@ -5,7 +5,6 @@
     { "title": "home", "href": "/" },
     { "title": "blogs", "href": "/blogs" },
     { "title": "about", "href": "/about" },
-    { "title": "store", "href": "/store" },
     { "title": "contact", "href": "/contact" }
   ],
   "social_links": {
