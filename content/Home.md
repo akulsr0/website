@@ -16,7 +16,8 @@ Hey there, I am Akul, self trained software developer. I have done bachelors in 
 .box {
     min-width: 6rem;
     min-height: 6rem;
-    background-color: #f2f2f2;
+    background-color: #fff7ed;
+    border: 1px solid rgba(188, 143, 143, 0.2);
     border-radius: 0.5rem;
     margin-right: 1rem;
     cursor: pointer;

@@ -19,6 +19,7 @@ const Head: NextPage<HeadProps> = (props) => {
   return (
     <NextHead>
       <title>{_title}</title>
+      <meta name="theme-color" content="antiquewhite" />
       <meta name="description" content={_metaDescription} />
     </NextHead>
   );
