@@ -34,6 +34,15 @@ Hey there, I am Akul, self trained software developer. I have done bachelors in 
     font-size: 1rem;
     font-weight: bold;
 }
+ul {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+}
+ul li {
+
+}
 </style>
 
 <div class="wrapper">
@@ -74,6 +83,8 @@ Hey there, I am Akul, self trained software developer. I have done bachelors in 
     <input type="submit" value="Subscribe" />
     </div>
 </form>
+
+<p style="margin:1rem 0;">Other than the day job and side-projects, I also like to explore opensource projects. I have also contributed to some of the opensource projects at Facebook, Microsoft, Vue etc...; references for which could be find <a href='/opensource'>here</a>.</p>
 
 You can find me at following places:
 

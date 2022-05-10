@@ -1,0 +1,24 @@
+.wrapper {
+  margin-top: 1rem;
+}
+
+.wrapper > div {
+  margin-top: 0.8rem;
+}
+
+.wrapper > div > a {
+  font-weight: 700;
+}
+
+.wrapper > div > a > span {
+  color: #1b1464;
+}
+
+.wrapper > div > h4 {
+  color: #576574;
+  font-weight: 700;
+}
+
+.wrapper > div > h4 > a {
+  color: #576574;
+}
