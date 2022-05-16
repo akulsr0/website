@@ -27,11 +27,14 @@ a {
   word-break: break-word;
 }
 
+ol {
+  list-style: decimal-leading-zero !important;
+}
 ol,
 ul {
   margin: 10px;
   list-style: circle;
-  list-style-position: inside;
+  list-style-position: inside !important;
 }
 
 li {

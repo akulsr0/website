@@ -19,15 +19,18 @@ const DevTipCategory: NextPage<DevTipCategoryProps> = (props) => {
   const { category, tips } = props;
 
   const Tips = (
-    <ul>
+    <ol reversed>
       {tips?.map((t) => (
         <li key={t}>
-          <Link href={`/dev-tips/${category}/${t.toLowerCase()}`}>
-            {t.split("-").join(" ")}
-          </Link>
+          <>
+            &nbsp;
+            <Link href={`/dev-tips/${category}/${t.toLowerCase()}`}>
+              {t.split("-").join(" ")}
+            </Link>
+          </>
         </li>
       ))}
-    </ul>
+    </ol>
   );
 
   return (
@@ -38,7 +41,9 @@ const DevTipCategory: NextPage<DevTipCategoryProps> = (props) => {
       />
       <Header />
       <div id="content">
-        <h3 className={styles.devTipsTitle}>{category} tips</h3>
+        <h3 className={styles.devTipsTitle}>
+          {category} tips ({tips.length})
+        </h3>
         {Tips}
       </div>
       <Footer />

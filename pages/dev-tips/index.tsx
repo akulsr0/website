@@ -30,7 +30,9 @@ const DevTips: NextPage<DevTipsProps> = (props) => {
 
   const DevTipsCategories = contents.map((c) => (
     <span key={c}>
-      <Link href={`/dev-tips/${c}`}>{c}</Link>
+      <Link href={`/dev-tips/${c}`}>
+        {`${c} (${devTips.filter((dt) => dt.category === c).length})`}
+      </Link>
     </span>
   ));
 
@@ -87,7 +89,7 @@ const DevTips: NextPage<DevTipsProps> = (props) => {
         metaDescription="I share useful development tips here."
       />
       <Header />
-      <h3 className={styles.devTipsTitle}>Dev Tips</h3>
+      <h3 className={styles.devTipsTitle}>Dev Tips ({devTips.length}) </h3>
       <div className={styles.devTipsCategories}>{DevTipsCategories}</div>
       <div id="content">
         <blockquote className={styles.devTipsTagline}>
