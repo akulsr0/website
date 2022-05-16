@@ -1,11 +1,10 @@
 import * as React from "react";
-import Image from "next/image";
 import Container from "../../components/Container";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import Head from "../../components/_head";
 
-import { store } from "../../constants/default.json";
+import defaults from "../../constants/default.json";
 import styles from "../../styles/Store.module.css";
 import { ProductCard } from "../../components/Store";
 
@@ -20,7 +19,7 @@ const Store = () => {
       <br />
       <h2>Store</h2>
       <div className={styles.productsList}>
-        {store.products.map((product) => (
+        {defaults.store?.products?.map((product) => (
           <ProductCard key={product.title} {...product} />
         ))}
       </div>

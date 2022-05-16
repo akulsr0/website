@@ -42,7 +42,7 @@ const DevTipCategory: NextPage<DevTipCategoryProps> = (props) => {
       <Header />
       <div id="content">
         <h3 className={styles.devTipsTitle}>
-          {category} tips ({tips.length})
+          {category} tips ({tips?.length})
         </h3>
         {Tips}
       </div>
