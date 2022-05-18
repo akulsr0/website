@@ -31,7 +31,7 @@ const About: NextPage<AboutProps> = (props) => {
       />
       <Header />
       <br />
-      <div id="content" ref={contentRef}></div>
+      <div id="content" ref={contentRef} />
       <Footer />
     </Container>
   );
