@@ -11,4 +11,8 @@ interface Blog {
   content: string;
 }
 
-export type { BlogData, Blog };
+interface BlogListItemProps {
+  blog: Blog;
+}
+
+export type { BlogData, Blog, BlogListItemProps };

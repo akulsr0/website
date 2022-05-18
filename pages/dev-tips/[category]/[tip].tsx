@@ -65,7 +65,7 @@ const DevTip: NextPage<DevTipProps> = (props) => {
         <span className={styles.devTipInfoLine}>
           {readTime.text} &nbsp;&bull;&nbsp; {`${dd} ${mm} ${yyyy}`}
         </span>
-        <div className={styles.tipContent} ref={tipContentRef}></div>
+        <div className={styles.tipContent} ref={tipContentRef} />
         <div className={styles.recommendedTips}>
           {recommendedTips.prev &&
             getRecommendedTipLink(recommendedTips.prev, "Previous")}
