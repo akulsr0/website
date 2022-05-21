@@ -7,7 +7,7 @@ test.describe("DevTips - Web", function () {
   const categories = fs.readdirSync(categoriesPath);
 
   test.beforeEach(async function ({ page }) {
-    await page.goto("https://localhost:3000/dev-tips/");
+    await page.goto("https://akulsrivastava.com/dev-tips/");
   });
 
   test("categories should be visible", async function ({ page }) {
@@ -19,7 +19,7 @@ test.describe("DevTips - Web", function () {
   test("every category should have tips inside it", async function ({ page }) {
     for (let category of categories) {
       await page.locator(`text=${category}`).first().click();
-      const tips = await page.locator("#content > ul > li").count();
+      const tips = await page.locator("#content > ol > li").count();
       expect(tips).toBeGreaterThan(0);
       await page.goBack();
     }
