@@ -1,7 +1,6 @@
 import { NextPage } from "next";
 import fs from "fs";
 import path from "path";
-import matter from "gray-matter";
 
 import { Blog } from "../../interfaces/Blog";
 import Container from "../../components/Container";
@@ -55,7 +54,7 @@ const Blogs: NextPage<BlogsProps> = (props) => {
         <span onClick={() => setSelectedCategory("tech")}>tech</span>
         <span onClick={() => setSelectedCategory("non-tech")}>non-tech</span>
       </div>
-      <div id="content">
+      <div className={styles.blogList} id="content">
         <BlogsList blogs={blogs} />
       </div>
       <NewsLetterForm />
@@ -65,16 +64,10 @@ const Blogs: NextPage<BlogsProps> = (props) => {
 };
 
 export async function getStaticProps() {
-  const blogsPath = path.join("content/blogs");
-  const blogs = fs.readdirSync(blogsPath);
-  const blogsContent = blogs
-    .map((blog) => {
-      const blogContent = fs.readFileSync(path.join(blogsPath, blog));
-      const { data, content } = matter(blogContent);
-      return { data, content };
-    })
-    .reverse();
-  return { props: { blogsContent } };
+  const blogsData = fs.readFileSync(path.join("content/blogs.json"), "utf-8");
+  const { blogs } = JSON.parse(blogsData);
+
+  return { props: { blogsContent: blogs } };
 }
 
 export default Blogs;

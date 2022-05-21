@@ -1,4 +1,4 @@
-<img src='https://user-images.githubusercontent.com/43666833/139535025-cfc5f2d4-f016-402a-be01-ed84db0bf51d.jpeg' alt='akul' style='width:150px;border-radius:1000px;'>
+<img src='https://github.com/akulsr0.png?size=500' alt='akul' style='width:150px;border-radius:1000px;'>
 
 <br />
 <br />

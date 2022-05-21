@@ -1,15 +1,21 @@
 @font-face {
-  font-family: lora;
-  src: url("/fonts/lora.ttf");
+  font-family: merriweather;
+  src: url("/fonts/merriweather-regular.ttf");
+}
+
+@font-face {
+  font-family: merriweather;
+  font-weight: 700;
+  src: url("/fonts/merriweather-bold.ttf");
 }
 
 * {
   margin: 0;
   padding: 0;
-  font-family: "lora", sans-serif;
+  font-family: "merriweather", sans-serif;
   box-sizing: border-box;
   overflow-x: hidden;
-  line-height: 1.5em;
+  line-height: 1.75em;
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -21,11 +27,14 @@ a {
   word-break: break-word;
 }
 
+ol {
+  list-style: decimal-leading-zero !important;
+}
 ol,
 ul {
   margin: 10px;
   list-style: circle;
-  list-style-position: inside;
+  list-style-position: inside !important;
 }
 
 li {

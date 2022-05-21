@@ -20,7 +20,7 @@ const Header: NextPage = () => {
   ));
 
   return (
-    <header>
+    <header className={styles.header}>
       <a className={styles.skipNavigation} href="#content">
         Skip Navigation
       </a>

@@ -16,7 +16,8 @@ Hey there, I am Akul, self trained software developer. I have done bachelors in 
 .box {
     min-width: 6rem;
     min-height: 6rem;
-    background-color: #f2f2f2;
+    background-color: #fff7ed;
+    border: 1px solid rgba(188, 143, 143, 0.2);
     border-radius: 0.5rem;
     margin-right: 1rem;
     cursor: pointer;
@@ -32,6 +33,15 @@ Hey there, I am Akul, self trained software developer. I have done bachelors in 
     margin-top: 0.6rem;
     font-size: 1rem;
     font-weight: bold;
+}
+ul {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+}
+ul li {
+
 }
 </style>
 
@@ -58,6 +68,8 @@ Hey there, I am Akul, self trained software developer. I have done bachelors in 
     </a>
 </div>
 
+<p style="margin-top:1rem;">In my free time I also share <a href='/dev-tips'>development tips</a>, and write <a href='/blogs'>blogs</a> on technology, software engineering, programming and some other thoughts. If you want to stay updated with the same, you can consider subscribing to my newsletter below.</p>
+
 <form 
     class="subscribe-form"
     action="https://tinyletter.com/akulsr0" 
@@ -72,6 +84,8 @@ Hey there, I am Akul, self trained software developer. I have done bachelors in 
     </div>
 </form>
 
+<p style="margin:1rem 0;">Other than the day job and side-projects, I also like to explore opensource projects. I have also contributed to some of the opensource projects at Facebook, Microsoft, Vue etc...; references for which could be find <a href='/opensource'>here</a>.</p>
+
 You can find me at following places:
 
 <ul>
@@ -80,6 +94,7 @@ You can find me at following places:
 <li><a href="/linkedin">linkedin</a></li>
 <li><a href="/twitter">twitter</a></li>
 <li><a href="/stackoverflow">stackoverflow</a></li>
+<li><a href="https://akulsr0.gumroad.com/" target="_blank">gumroad</a></li>
 <li><a href="https://www.npmjs.com/~akulsr0" target="_blank">npm</a></li>
 <li><a href="https://play.google.com/store/apps/developer?id=Akul+Srivastava" target="_blank">playstore</a></li>
 </ul>

@@ -47,5 +47,17 @@
       "Emoji": "Rocket",
       "VCS": "Github Desktop"
     }
-  }
+  },
+  "store": {
+    "products": [
+      {
+        "title": "Store App UI",
+        "techStack": "React Native",
+        "thumbnail": "https://user-images.githubusercontent.com/43666833/162993678-aab3d13e-d64b-433c-af6e-6b479d92f1bd.png",
+        "url": "https://akulsr0.gumroad.com/l/store-app-1"
+      }
+    ]
+  },
+  "dev_tips_count": 10,
+  "blogs_count": 5
 }
