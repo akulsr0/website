@@ -23,14 +23,18 @@ const DirectContact: React.FC = () => {
   if (!defaults.show_contact_form) return null;
 
   const [message, setMessage] = useState<string | null>(null);
+  const [isSending, setIsSending] = useState<boolean>(false);
 
   function onSend() {
+    setIsSending(true);
     if (!message || message === "") {
+      setIsSending(false);
       return alert("Message can't be empty");
     }
     api.sendContactMessage(
       message,
       (err: any, data: Record<string, any> | null) => {
+        setIsSending(false);
         if (err || !data?.success) return null;
         alert("Your message has been sent.");
       }
@@ -43,7 +47,13 @@ const DirectContact: React.FC = () => {
         placeholder="You can write up here also"
         onChange={(e) => setMessage(e.target.value!)}
       ></textarea>
-      <button onClick={onSend}>Send</button>
+      <button
+        className={isSending ? styles.btnSending : undefined}
+        onClick={onSend}
+        disabled={isSending}
+      >
+        {isSending ? "Sending" : "Send"}
+      </button>
     </div>
   );
 };

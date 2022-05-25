@@ -7,10 +7,16 @@
 .directContact textarea {
   height: 140px;
   padding: 0.4rem 0.6rem;
+  font-size: 1rem;
+  outline: none;
 }
 
 .directContact button {
   margin-top: 0.4rem;
   padding: 0.4rem 0;
   font-weight: bold;
+}
+
+.btnSending {
+  opacity: 0.5;
 }
