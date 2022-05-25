@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { NextPage } from "next";
 import { useEffect, useRef } from "react";
 import fs from "fs";
@@ -9,10 +10,43 @@ import Container from "../components/Container";
 import Header from "../components/Header";
 import Head from "../components/_head";
 import Footer from "../components/Footer";
+import styles from "../styles/Contact.module.css";
+
+import defaults from "../constants/default.json";
+import { api } from "../services/APIService";
 
 interface ContactProps {
   contactContent: string;
 }
+
+const DirectContact: React.FC = () => {
+  if (!defaults.show_contact_form) return null;
+
+  const [message, setMessage] = useState<string | null>(null);
+
+  function onSend() {
+    if (!message || message === "") {
+      return alert("Message can't be empty");
+    }
+    api.sendContactMessage(
+      message,
+      (err: any, data: Record<string, any> | null) => {
+        if (err || !data?.success) return null;
+        alert("Your message has been sent.");
+      }
+    );
+  }
+
+  return (
+    <div className={styles.directContact}>
+      <textarea
+        placeholder="You can write up here also"
+        onChange={(e) => setMessage(e.target.value!)}
+      ></textarea>
+      <button onClick={onSend}>Send</button>
+    </div>
+  );
+};
 
 const Contact: NextPage<ContactProps> = (props) => {
   const { contactContent } = props;
@@ -32,6 +66,7 @@ const Contact: NextPage<ContactProps> = (props) => {
       <Header />
       <br />
       <div id="content" ref={contentRef} />
+      <DirectContact />
       <Footer />
     </Container>
   );

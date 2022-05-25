@@ -1,0 +1,16 @@
+.directContact {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.directContact textarea {
+  height: 140px;
+  padding: 0.4rem 0.6rem;
+}
+
+.directContact button {
+  margin-top: 0.4rem;
+  padding: 0.4rem 0;
+  font-weight: bold;
+}
