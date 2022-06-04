@@ -16,6 +16,8 @@ interface BlogsProps {
   blogsContent: Array<Blog>;
 }
 
+const CATEGORIES = ["all", "tech", "non-tech"];
+
 const Blogs: NextPage<BlogsProps> = (props) => {
   const { blogsContent } = props;
   const [selectedCategory, setSelectedCategory] = useState("all");
@@ -50,9 +52,17 @@ const Blogs: NextPage<BlogsProps> = (props) => {
       />
       <Header />
       <div className={styles.blogCategories}>
-        <span onClick={() => setSelectedCategory("all")}>all</span>
-        <span onClick={() => setSelectedCategory("tech")}>tech</span>
-        <span onClick={() => setSelectedCategory("non-tech")}>non-tech</span>
+        {CATEGORIES.map((c) => (
+          <span
+            key={c}
+            onClick={() => setSelectedCategory(c)}
+            style={{
+              textDecoration: selectedCategory === c ? "underline" : "none",
+            }}
+          >
+            {c}
+          </span>
+        ))}
       </div>
       <div className={styles.blogList} id="content">
         <BlogsList blogs={blogs} />

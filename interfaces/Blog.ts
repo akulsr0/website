@@ -15,4 +15,9 @@ interface BlogListItemProps {
   blog: Blog;
 }
 
-export type { BlogData, Blog, BlogListItemProps };
+interface BlogRecommended {
+  prev?: { data: BlogData };
+  next?: { data: BlogData };
+}
+
+export type { BlogData, Blog, BlogListItemProps, BlogRecommended };
