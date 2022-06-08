@@ -26,6 +26,10 @@ date: 8-Jun-2021
 The touch command is used to create an empty file, or change the access timestamp of a file.
 
 <p class="lc-paragraph">
+<strong>Syntax:&nbsp;</strong>touch [options] filename
+</p>
+
+<p class="lc-paragraph">
 <strong>Example:</strong>
 </p>
 
