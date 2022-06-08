@@ -122,9 +122,17 @@ button,
   color: white;
 }
 
+/* Learning Content CSS */
+.lc-paragraph {
+  margin-top: 12px;
+}
+.lc-img {
+  border-radius: 4px;
+}
+
 /* Subscribe Form End */
 
-@media only screen and (max-width: 720px) {
+/* @media only screen and (max-width: 720px) {
   img {
     max-width: 36rem;
   }
@@ -134,10 +142,10 @@ button,
   img {
     max-width: 32rem;
   }
-}
+} */
 
 @media only screen and (max-width: 540px) {
   img {
-    max-width: 20rem;
+    max-width: 100%;
   }
 }

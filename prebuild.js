@@ -9,6 +9,46 @@ function main() {
   const blogs = getBlogs();
   writeDevTipsJSON(JSON.stringify(devTips));
   writeBlogsJSON(JSON.stringify(blogs));
+  writeLearningSeriesIndex();
+  writeLearningContentJSON();
+}
+
+function writeLearningSeriesIndex() {
+  const learningPath = path.join("content/learning");
+  const learningContent = fs.readdirSync(learningPath);
+  for (const series of learningContent) {
+    const seriesPath = path.join(learningPath, series);
+    const seriesContent = fs.readdirSync(seriesPath);
+    const res = [];
+    for (const sc of seriesContent) {
+      if (sc === "index.md") continue;
+      const id = sc.split("_")[0];
+      const title = sc.split("_")[1].split(".md")[0];
+      const markup = `<li>&nbsp;<a href='/learning/${series}/${title}'>${title}</a></li>`;
+      res.push({ id, markup });
+    }
+    const finalMarkupArr = res
+      .sort((a, b) => Number(a.id) - Number(b.id))
+      .map((e) => e.markup);
+    const finalMarkup = `<ol>${finalMarkupArr.join("")}</ol>`;
+    fs.writeFileSync(seriesPath + "/index.md", finalMarkup);
+  }
+}
+
+function writeLearningContentJSON() {
+  const learningPath = path.join("content/learning");
+  const learningContent = fs.readdirSync(learningPath);
+  const content = learningContent.map((lc) => {
+    const childrenPath = path.join(learningPath, lc);
+    const children = fs.readdirSync(childrenPath);
+    return {
+      slug: lc,
+      title: lc.split("-").join(" "),
+      children,
+    };
+  });
+  const filepath = path.join("./content/learning.json");
+  fs.writeFileSync(filepath, JSON.stringify(content));
 }
 
 function writeDevTipsJSON(tips) {
