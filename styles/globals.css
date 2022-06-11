@@ -129,20 +129,25 @@ button,
 .lc-img {
   border-radius: 4px;
 }
-
-/* Subscribe Form End */
-
-/* @media only screen and (max-width: 720px) {
-  img {
-    max-width: 36rem;
-  }
+/* Learning - Linux Commands Content CSS */
+.command-option {
+  display: flex;
+  flex-direction: row;
+  padding: 8px 10px;
+  border-left: 8px solid burlywood;
+  margin: 10px 0;
+}
+.command-option:not(:first-of-type) {
+  margin-top: 24px;
+}
+.command-option > strong {
+  flex: 1;
+}
+.command-option > span {
+  flex: 3;
 }
 
-@media only screen and (max-width: 600px) {
-  img {
-    max-width: 32rem;
-  }
-} */
+/* Subscribe Form End */
 
 @media only screen and (max-width: 540px) {
   img {

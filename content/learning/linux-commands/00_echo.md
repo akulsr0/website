@@ -4,23 +4,6 @@ title: echo command
 date: 7-Jun-2021
 ---
 
-<style>
-    .command-option {
-        display: flex;
-        flex-direction: row;
-        padding: 8px 0px;
-    }
-    .command-option:not(:first-of-type) {
-        margin-top:24px;
-    }
-    .command-option > strong {
-        flex: 1;
-    }
-    .command-option > span {
-        flex: 3;
-    }
-</style>
-
 ### echo command
 
 It is used to print something on the terminal through standard output (stdout).

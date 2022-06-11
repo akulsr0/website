@@ -4,23 +4,6 @@ title: mkdir command
 date: 10-Jun-2021
 ---
 
-<style>
-    .command-option {
-        display: flex;
-        flex-direction: row;
-        padding: 8px 0px;
-    }
-    .command-option:not(:first-of-type) {
-        margin-top:24px;
-    }
-    .command-option > strong {
-        flex: 1;
-    }
-    .command-option > span {
-        flex: 3;
-    }
-</style>
-
 ### mkdir command
 
 The mkdir command is used to create new folder(s).

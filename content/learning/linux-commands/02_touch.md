@@ -4,23 +4,6 @@ title: pwd command
 date: 8-Jun-2021
 ---
 
-<style>
-    .command-option {
-        display: flex;
-        flex-direction: row;
-        padding: 8px 0px;
-    }
-    .command-option:not(:first-of-type) {
-        margin-top:24px;
-    }
-    .command-option > strong {
-        flex: 1;
-    }
-    .command-option > span {
-        flex: 3;
-    }
-</style>
-
 ### touch command
 
 The touch command is used to create an empty file, or change the access timestamp of a file.
