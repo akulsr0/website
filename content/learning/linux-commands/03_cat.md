@@ -55,6 +55,8 @@ cat -n note.txt
 
 <img class='lc-img' src='https://user-images.githubusercontent.com/43666833/172653942-d3bcdca9-7c1e-47cb-b9f1-7be41ecc61fd.png' alt='number-lines-output' >
 
+<p class="lc-paragraph"><strong>Options:</strong></p>
+
 <div class="command-option">
     <strong>-b</strong>
     <span>To show number for each non blank line</span>
