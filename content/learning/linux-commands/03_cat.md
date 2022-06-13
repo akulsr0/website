@@ -1,6 +1,6 @@
 ---
 id: 3
-title: pwd command
+title: cat command
 date: 8-Jun-2021
 ---
 

@@ -1,6 +1,6 @@
 ---
 id: 2
-title: pwd command
+title: touch command
 date: 8-Jun-2021
 ---
 
