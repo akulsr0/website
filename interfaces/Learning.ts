@@ -4,4 +4,9 @@ interface ILearning {
   children: string[];
 }
 
-export type { ILearning };
+interface ILearningRecommended {
+  prev?: string;
+  next?: string;
+}
+
+export type { ILearning, ILearningRecommended };

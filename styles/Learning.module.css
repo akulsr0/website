@@ -8,3 +8,21 @@
   display: flex;
   flex-direction: column;
 }
+
+.recommended {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.recommended > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.recommended > div:first-child {
+  text-align: left !important;
+}
+.recommended > div:last-child {
+  text-align: right;
+}
