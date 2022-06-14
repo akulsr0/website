@@ -11,10 +11,10 @@ export function getRecommendedLearningContent(
   const recommended: ILearningRecommended = {};
   for (let i = 0; i < series.length; i++) {
     if (series[i] === title) {
-      if (i > 0) {
+      if (i > 0 && series[i - 1] !== "index.md") {
         recommended.prev = getLearningTitleFromFileName(series[i - 1]);
       }
-      if (i < series.length - 1) {
+      if (i < series.length - 1 && series[i + 1] !== "index.md") {
         recommended.next = getLearningTitleFromFileName(series[i + 1]);
       }
     }
