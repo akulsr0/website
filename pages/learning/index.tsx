@@ -20,8 +20,8 @@ const Learning: NextPage<ILearningProps> = (props) => {
   return (
     <Container>
       <Head
-        title="About"
-        metaDescription="About me | I am Akul, self trained software developer. I have done bachelors in Computer Science Engineering from Babu Banarasi Das: National Institute of Technology and Management, Lucknow."
+        title="Learning"
+        metaDescription="Learning | I share my learnings here in form of written series."
       />
       <Header />
       <br />

@@ -9,7 +9,7 @@ import Container from "../../../components/Container";
 import Head from "../../../components/_head";
 import Header from "../../../components/Header";
 import Footer from "../../../components/Footer";
-import { getNameFromSlug } from "../../../helpers";
+import { getNameFromSlug, toTitleCase } from "../../../helpers";
 
 import styles from "../../../styles/Learning.module.css";
 
@@ -20,7 +20,7 @@ interface ILearningSeries {
 
 const LearningSeries: NextPage<ILearningSeries> = (props) => {
   const { series, indexContent } = props;
-  const title = getNameFromSlug(series);
+  const title = toTitleCase(getNameFromSlug(series));
   const seriesIndexRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
@@ -30,8 +30,8 @@ const LearningSeries: NextPage<ILearningSeries> = (props) => {
   return (
     <Container>
       <Head
-        title="About"
-        metaDescription="About me | I am Akul, self trained software developer. I have done bachelors in Computer Science Engineering from Babu Banarasi Das: National Institute of Technology and Management, Lucknow."
+        title={title}
+        metaDescription={`${title} | Sharing learning of ${title} here.`}
       />
       <Header />
       <br />

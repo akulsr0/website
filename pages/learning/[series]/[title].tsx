@@ -25,7 +25,7 @@ interface ILearningContentPageProps {
 }
 
 const LearningContentPage: NextPage<ILearningContentPageProps> = (props) => {
-  const { series, content, recommended } = props;
+  const { series, content, recommended, title } = props;
   const seriesTitle = getNameFromSlug(series);
   const contentRef = React.useRef<HTMLDivElement>(null);
 
@@ -46,7 +46,10 @@ const LearningContentPage: NextPage<ILearningContentPageProps> = (props) => {
 
   return (
     <Container>
-      <Head />
+      <Head
+        title={title}
+        metaDescription={`${title} | Sharing learning of ${title} here.`}
+      />
       <Header />
       <br />
       <Link href={`/learning/${series}`} passHref>
