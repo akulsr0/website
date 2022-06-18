@@ -2,7 +2,9 @@
 
 /content/devTips.json
 /content/blogs.json
+/content/learning.json
 
+/content/learning/**/index.md
 
 # dependencies
 /node_modules

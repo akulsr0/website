@@ -122,22 +122,35 @@ button,
   color: white;
 }
 
+/* Learning Content CSS */
+.lc-paragraph {
+  margin-top: 12px;
+}
+.lc-img {
+  border-radius: 4px;
+}
+/* Learning - Linux Commands Content CSS */
+.command-option {
+  display: flex;
+  flex-direction: row;
+  padding: 8px 10px;
+  border-left: 8px solid burlywood;
+  margin: 10px 0;
+}
+.command-option:not(:first-of-type) {
+  margin-top: 24px;
+}
+.command-option > strong {
+  flex: 1;
+}
+.command-option > span {
+  flex: 3;
+}
+
 /* Subscribe Form End */
-
-@media only screen and (max-width: 720px) {
-  img {
-    max-width: 36rem;
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  img {
-    max-width: 32rem;
-  }
-}
 
 @media only screen and (max-width: 540px) {
   img {
-    max-width: 20rem;
+    max-width: 100%;
   }
 }
