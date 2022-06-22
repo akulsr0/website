@@ -1,24 +1,30 @@
-.wrapper {
+.ossCard:first-of-type {
   margin-top: 1rem;
 }
-
-.wrapper > div {
-  margin-top: 0.8rem;
+.ossCard:not(:first-of-type) {
+  margin-top: 2rem;
 }
 
-.wrapper > div > a {
+.ossCard > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.ossCard > div > a {
   font-weight: 700;
 }
-
-.wrapper > div > a > span {
-  color: #1b1464;
+.ossCard > div > p {
+  min-width: min-content;
+  font-weight: bold;
 }
 
-.wrapper > div > h4 {
-  color: #576574;
-  font-weight: 700;
+.ossCard > p {
+  margin-top: 0.2rem;
 }
-
-.wrapper > div > h4 > a {
-  color: #576574;
+.ossCard > p > span {
+  color: white;
+  font-weight: bold;
+  padding: 4px 6px;
+  margin-right: 4px;
+  border-radius: 4px;
 }
