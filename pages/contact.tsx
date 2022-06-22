@@ -20,10 +20,10 @@ interface ContactProps {
 }
 
 const DirectContact: React.FC = () => {
-  if (!defaults.show_contact_form) return null;
-
   const [message, setMessage] = useState<string | null>(null);
   const [isSending, setIsSending] = useState<boolean>(false);
+
+  if (!defaults.show_contact_form) return null;
 
   function onSend() {
     setIsSending(true);
