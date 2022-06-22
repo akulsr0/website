@@ -50,6 +50,10 @@ ul li {
         <img src='/icons/code.svg' alt='dev-tips' >
         <span>Dev Tips</span>
     </a>
+    <a class='box' href='/learning'>
+        <img src='/icons/edit.svg' alt='learning' >
+        <span>Learning</span>
+    </a>
     <a class="box" href='/uses'>
         <img src='/icons/tool.svg' alt='uses' >
         <span>Uses</span>
