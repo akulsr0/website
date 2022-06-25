@@ -8,7 +8,7 @@ isTechBlog: true
 
 If you're reading this, I am assuming that you already know that with React 18 Strict Mode `useEffect` is being called twice in development mode. If you haven't saw it yet, below is a sample for it, we can see that _Hello React 18_ log is coming twice in the console.
 
-<img src='https://user-images.githubusercontent.com/43666833/175785599-249b6a52-305a-409f-9579-c4e61588babf.gif' alt='twice-effect'>
+<img style="width:100%;margin:10px 0;border-radius:4px;" src='https://user-images.githubusercontent.com/43666833/175785599-249b6a52-305a-409f-9579-c4e61588babf.gif' alt='twice-effect'>
 
 Now seeing this behaviour there might be multiple questions, why is it getting called twice? and that too only in development? and not in production?
 
