@@ -8,7 +8,7 @@ isTechBlog: true
 
 If you're reading this, I am assuming that you already know that with React 18 Strict Mode `useEffect` is being called twice in development mode. If you haven't saw it yet, below is a sample for it, we can see that _Hello React 18_ log is coming twice in the console.
 
-<iframe class='sandbox-iframe' title='useeffect-twice-iframe' src='https://stackblitz.com/edit/react-hqd7xp?devToolsHeight=50&embed=1&file=src/App.js'></iframe>
+<img src='https://user-images.githubusercontent.com/43666833/175785599-249b6a52-305a-409f-9579-c4e61588babf.gif' alt='twice-effect'>
 
 Now seeing this behaviour there might be multiple questions, why is it getting called twice? and that too only in development? and not in production?
 
@@ -37,7 +37,34 @@ const api = {
 
 Now, let's implement the above requirements:
 
-<iframe style="margin-bottom:20px;" class='sandbox-iframe' src='https://stackblitz.com/edit/react-ug4uuc?file=src/App.js'></iframe>
+```js
+export default function App() {
+  const [userId, setUserId] = useState(0);
+  const [userName, setUserName] = useState("");
+
+  useEffect(() => {
+    setUserName("");
+    api.fetchData(userId).then((data) => {
+      setUserName(data);
+    });
+  }, [userId]);
+
+  return (
+    <div>
+      <input
+        type="number"
+        defaultValue={0}
+        placeholder="User Id"
+        onChange={(e) => {
+          setUserId(e.target.valueAsNumber);
+        }}
+      />
+      <h3>Id: {userId}</h3>
+      {userName && <h3>User: {userName}</h3>}
+    </div>
+  );
+}
+```
 
 ### problem with above approach
 
@@ -57,7 +84,45 @@ According to <a href='https://beta.reactjs.org/learn/synchronizing-with-effects#
 
 We can create a variable (done) and initialize it as false and on unmount we can change its value to true, and we can check value of done before updating the state.
 
-<iframe class='sandbox-iframe' src='https://stackblitz.com/edit/react-gdpuek?embed=1&file=src/App.js'></iframe>
+```js
+export default function App() {
+  const [userId, setUserId] = useState(0);
+  const [userName, setUserName] = useState("");
+
+  useEffect(() => {
+    let done = false;
+
+    const fetchAndSetData = (id) => {
+      setUserName("");
+
+      api.fetchData(id).then((data) => {
+        !done && setUserName(data);
+      });
+    };
+
+    fetchAndSetData(userId);
+
+    return () => {
+      done = true;
+    };
+  }, [userId]);
+
+  return (
+    <div>
+      <input
+        type="number"
+        defaultValue={0}
+        placeholder="User Id"
+        onChange={(e) => {
+          setUserId(e.target.valueAsNumber);
+        }}
+      />
+      <h3>Id: {userId}</h3>
+      {userName && <h3>User: {userName}</h3>}
+    </div>
+  );
+}
+```
 
 And, let's check how it solves our problem:
 
@@ -67,3 +132,10 @@ And, let's check how it solves our problem:
 
 With the above example, we can see the importance of cleanup function in our react code. Same is helpful when we are dealing with connection, subscriptions, event listeners etc... but often time devs can miss to handle such conditions.
 To help the developer notice such issues, **React 18 (StrictMode) remounts the component once after initial mount** (in development only), which helps in identifying such issues and further fix them by adding required cleanup function.
+
+<br />
+
+### References
+
+- <a href='https://beta.reactjs.org/learn/synchronizing-with-effects' target='_blank'>React Docs</a>
+- <a href='https://stackblitz.com/edit/react-vsjaru?file=src/App.js' target='_blank'>Sandbox Link</a>

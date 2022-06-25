@@ -91,16 +91,6 @@ details summary {
   outline: none;
 }
 
-/* Sandbox */
-.sandbox-iframe {
-  height: 50vh;
-  min-height: 320px;
-  width: 100%;
-  margin: 10px 0;
-  border: none;
-  border-radius: 4px;
-}
-
 /* Subscribe Form Start */
 
 .subscribe-form {
