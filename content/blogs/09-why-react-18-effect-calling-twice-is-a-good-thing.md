@@ -66,6 +66,8 @@ export default function App() {
 }
 ```
 
+<br />
+
 ### problem with above approach
 
 The above solution works, but if you have looked closely there is something wrong. If we try to change _userId_ quickly (eg: from 4 to 6), what happens is we get response for **userId 6 after 300ms** and for **userId 5 after 600ms**, and eventually the userName of userId 5 gets set even though our current userId is 6.
@@ -78,7 +80,7 @@ We can see the problem in the above example, i.e. even when the _userId 5_ compo
 
 According to <a href='https://beta.reactjs.org/learn/synchronizing-with-effects#fetching-data' target="_blank">React Docs</a>, "If your Effect fetches something, the cleanup function should either abort the fetch or ignore its result"
 
-<br/>
+<br />
 
 ### let's fix this problem by adding a cleanup function
 
@@ -130,7 +132,7 @@ And, let's check how it solves our problem:
 
 ### But why does React runs useEffect(fn, []) twice
 
-With the above example, we can see the importance of cleanup function in our react code. Same is helpful when we are dealing with connection, subscriptions, event listeners etc... but often time devs can miss to handle such conditions.
+With the above example, we can see the importance of cleanup function in our react code. Same is helpful when we are dealing with connection, subscriptions, event listeners etc... but often times devs can miss to handle such conditions.
 To help the developer notice such issues, **React 18 (StrictMode) remounts the component once after initial mount** (in development only), which helps in identifying such issues and further fix them by adding required cleanup function.
 
 <br />
