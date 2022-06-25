@@ -128,7 +128,7 @@ And, let's check how it solves our problem:
 
 <img style="width:100%;margin:10px 0;border-radius:4px;" src='https://user-images.githubusercontent.com/43666833/175784120-be1c305a-0529-43d5-9bcd-41a6d8c0666f.gif' alt='with-cleanup'>
 
-### But why does React runs useEffect(fn, []) runs twice
+### But why does React runs useEffect(fn, []) twice
 
 With the above example, we can see the importance of cleanup function in our react code. Same is helpful when we are dealing with connection, subscriptions, event listeners etc... but often time devs can miss to handle such conditions.
 To help the developer notice such issues, **React 18 (StrictMode) remounts the component once after initial mount** (in development only), which helps in identifying such issues and further fix them by adding required cleanup function.
