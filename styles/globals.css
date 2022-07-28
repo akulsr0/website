@@ -23,6 +23,11 @@ html {
   scroll-behavior: smooth;
 }
 
+img {
+  max-width: -webkit-fill-available;
+  border-radius: 4px;
+}
+
 a {
   word-break: break-word;
 }
