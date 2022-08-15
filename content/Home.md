@@ -72,21 +72,7 @@ ul li {
     </a>
 </div>
 
-<p style="margin-top:1rem;">In my free time I also share <a href='/dev-tips'>development tips</a>, and write <a href='/blogs'>blogs</a> on technology, software engineering, programming and some other thoughts. If you want to stay updated with the same, you can consider subscribing to my newsletter below.</p>
-
-<form 
-    class="subscribe-form"
-    action="https://tinyletter.com/akulsr0" 
-    method="post" 
-    target="popupwindow" 
-    onsubmit="window.open('https://tinyletter.com/akulsr0', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true">
-    <p><label for="tlemail">Subscribe to my Newsletter</label></p>
-    <div>
-    <input type="text" name="email" id="tlemail" placeholder="Email" />
-    <input type="hidden" value="1" name="embed"/>
-    <input type="submit" value="Subscribe" />
-    </div>
-</form>
+<p style="margin-top:1rem;">In my free time I also share <a href='/dev-tips'>development tips</a>, and write <a href='/blogs'>blogs</a> on technology, software engineering, programming and some other thoughts.</p>
 
 <p style="margin:1rem 0;">Other than the day job and side-projects, I also like to explore opensource projects. I have also contributed to some of the opensource projects at Facebook, Microsoft, Vue etc...; references for which could be find <a href='/opensource'>here</a>.</p>
 
