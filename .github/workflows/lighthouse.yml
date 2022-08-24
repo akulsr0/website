@@ -24,6 +24,7 @@ jobs:
           uploadArtifacts: true
           temporaryPublicStorage: true
 
+      # Step copied from - https://github.com/OskarAhl/Lighthouse-github-action-comment
       - name: Format lighthouse score
         id: format_lighthouse_score
         uses: actions/github-script@v3
