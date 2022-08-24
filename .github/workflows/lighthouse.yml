@@ -7,7 +7,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: Lighthouse
-          uses: treosh/lighthouse-ci-action@v8
-          with:
-            uploadArtifacts: true 
-            temporaryPublicStorage: true
+        uses: treosh/lighthouse-ci-action@v8
+        with:
+          uploadArtifacts: true
+          temporaryPublicStorage: true
