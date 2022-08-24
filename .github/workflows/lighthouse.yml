@@ -6,14 +6,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      - name: Capture Vercel preview URL
-        id: vercel_preview_url
-        uses: aaron-binary/vercel-preview-url-action@v0.0.3
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Lighthouse
-        uses: foo-software/lighthouse-check-action@master
-        with:
-          urls: ${{ steps.vercel_preview_url.outputs.vercel_preview_url }}
-          prCommentEnabled: true
-          gitHubAccessToken: ${{ secrets.LIGHTHOUSE_CHECK_GITHUB_ACCESS_TOKEN }}
+          uses: treosh/lighthouse-ci-action@v8
+          with:
+            uploadArtifacts: true 
+            temporaryPublicStorage: true
