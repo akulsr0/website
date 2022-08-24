@@ -6,6 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
+
       - name: Waiting for Vercel Preview
         uses: patrickedqvist/wait-for-vercel-preview@v1.2.0
         id: vercelPreview
@@ -13,10 +14,10 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           check_interval: 10
           max_timeout: 180
-      - run: echo ${{steps.vercelPreview.outputs.url}}
 
       - name: Lighthouse
         uses: treosh/lighthouse-ci-action@v8
+        id: lighthouse_audit
         with:
           urls: ${{steps.vercelPreview.outputs.url}}
           configPath: "./lighthouserc.json"
