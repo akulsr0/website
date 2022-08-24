@@ -12,7 +12,7 @@ jobs:
         id: vercelPreview
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          check_interval: 10
+          check_interval: 30
           max_timeout: 180
 
       - name: Lighthouse
@@ -20,11 +20,10 @@ jobs:
         id: lighthouse_audit
         with:
           urls: ${{steps.vercelPreview.outputs.url}}
+          runs: 3
           configPath: "./lighthouserc.json"
           uploadArtifacts: true
           temporaryPublicStorage: true
-
-      - run: echo ${{ steps.lighthouse_audit.outputs.manifest  }}
 
       - name: Format lighthouse score
         id: format_lighthouse_score
@@ -51,8 +50,6 @@ jobs:
             ].join('\n')
 
             core.setOutput("comment", comment);
-
-      - run: echo ${{ steps.format_lighthouse_score.outputs.comment }}
 
       - name: Add comment to PR
         id: comment_to_pr
