@@ -11,7 +11,8 @@ jobs:
         id: waitVercelPreview
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          max_timeout: 60
+          check_interval: 10
+          max_timeout: 180
       - run: echo ${{steps.waitVercelPreview.outputs.url}}
 
       # - name: Lighthouse
