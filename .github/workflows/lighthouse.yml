@@ -51,12 +51,23 @@ jobs:
 
             core.setOutput("comment", comment);
 
-      - name: Add comment to PR
-        id: comment_to_pr
-        uses: marocchino/sticky-pull-request-comment@v1
+      - uses: actions/github-script@v3
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          number: ${{ github.event.issue.number }}
-          header: lighthouse
-          message: |
-            ${{ steps.format_lighthouse_score.outputs.comment }}
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            github.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: ${{ steps.format_lighthouse_score.outputs.comment }}
+            });
+
+      # - name: Add comment to PR
+      #   id: comment_to_pr
+      #   uses: marocchino/sticky-pull-request-comment@v1
+      #   with:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #     number: ${{ github.event.issue.number }}
+      #     header: lighthouse
+      #     message: |
+      #       ${{ steps.format_lighthouse_score.outputs.comment }}
