@@ -6,8 +6,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      - name: Lighthouse
-        uses: treosh/lighthouse-ci-action@v8
+      - name: Waiting for Vercel Preview
+        uses: patrickedqvist/wait-for-vercel-preview@v1.2.0
+        id: waitVercelPreview
         with:
-          uploadArtifacts: true
-          temporaryPublicStorage: true
+          token: ${{ secrets.GITHUB_TOKEN }}
+          max_timeout: 60
+      - run: echo ${{steps.waitVercelPreview.outputs.url}}
+
+      # - name: Lighthouse
+      #   uses: treosh/lighthouse-ci-action@v8
+      #   with:
+      #     configPath: './lighthouserc.json'
+      #     uploadArtifacts: true
+      #     temporaryPublicStorage: true
