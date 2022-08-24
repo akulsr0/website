@@ -8,16 +8,17 @@ jobs:
       - uses: actions/checkout@master
       - name: Waiting for Vercel Preview
         uses: patrickedqvist/wait-for-vercel-preview@v1.2.0
-        id: waitVercelPreview
+        id: vercelPreview
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           check_interval: 10
           max_timeout: 180
-      - run: echo ${{steps.waitVercelPreview.outputs.url}}
+      - run: echo ${{steps.vercelPreview.outputs.url}}
 
-      # - name: Lighthouse
-      #   uses: treosh/lighthouse-ci-action@v8
-      #   with:
-      #     configPath: './lighthouserc.json'
-      #     uploadArtifacts: true
-      #     temporaryPublicStorage: true
+      - name: Lighthouse
+        uses: treosh/lighthouse-ci-action@v8
+        with:
+          urls: ${{steps.vercelPreview.outputs.url}}
+          configPath: "./lighthouserc.json"
+          uploadArtifacts: true
+          temporaryPublicStorage: true
