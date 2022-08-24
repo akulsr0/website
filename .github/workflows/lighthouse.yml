@@ -20,7 +20,6 @@ jobs:
         id: lighthouse_audit
         with:
           urls: ${{steps.vercelPreview.outputs.url}}
-          runs: 3
           configPath: "./lighthouserc.json"
           uploadArtifacts: true
           temporaryPublicStorage: true
@@ -56,24 +55,3 @@ jobs:
           message: ${{ steps.format_lighthouse_score.outputs.comment }}
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           repo-token-user-login: "github-actions[bot]"
-
-      # - uses: actions/github-script@v3
-      #   with:
-      #     github-token: ${{secrets.GITHUB_TOKEN}}
-      #     script: |
-      #       github.issues.createComment({
-      #         issue_number: context.issue.number,
-      #         owner: context.repo.owner,
-      #         repo: context.repo.repo,
-      #         body: ${{ steps.format_lighthouse_score.outputs.comment }}
-      #       });
-
-      # - name: Add comment to PR
-      #   id: comment_to_pr
-      #   uses: marocchino/sticky-pull-request-comment@v1
-      #   with:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #     number: ${{ github.event.issue.number }}
-      #     header: lighthouse
-      #     message: |
-      #       ${{ steps.format_lighthouse_score.outputs.comment }}
