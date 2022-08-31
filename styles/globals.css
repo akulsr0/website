@@ -1,10 +1,12 @@
 @font-face {
   font-family: merriweather;
+  font-display: swap;
   src: url("/fonts/merriweather-regular.ttf");
 }
 
 @font-face {
   font-family: merriweather;
+  font-display: swap;
   font-weight: 700;
   src: url("/fonts/merriweather-bold.ttf");
 }
