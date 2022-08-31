@@ -83,6 +83,15 @@ input:not([type="submit"]) {
   outline: none;
 }
 
+.not-found-wrapper {
+  height: 50vh;
+  display: grid;
+  place-items: center;
+}
+.not-found-wrapper > p {
+  font-size: 1.4rem;
+}
+
 .table-wrapper {
   overflow: scroll;
 }
