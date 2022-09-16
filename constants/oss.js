@@ -3,6 +3,7 @@ export const OPENSOURCE_CONTRIBUTIONS = [
   "microsoft/playwright",
   "vuejs/v2.vuejs.org",
   "vuejs/docs",
+  "facebook/react",
   "facebook/react-native-website",
   "reactjs/reactjs.org",
 ].sort();
