@@ -3,7 +3,6 @@ import type { AppProps } from "next/app";
 import Script from "next/script";
 import marked from "marked";
 import prism from "prismjs";
-import "prismjs/themes/prism-tomorrow.min.css";
 import "../styles/CodeHighlighting.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
