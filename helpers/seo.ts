@@ -1,5 +1,7 @@
 export function getOGImageURL(title: string, contentType: string | undefined) {
-  const shrinkedTitle = encodeURI(title);
+  const shrinkedTitle = encodeURI(
+    title.length > 55 ? title.substring(0, 50) + "..." : title
+  );
   const footer = contentType
     ? encodeURI(`${contentType} by Akul Srivastava`)
     : "";
