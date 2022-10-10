@@ -39,6 +39,8 @@ ul {
     flex-flow: row wrap;
     align-items: center;
     justify-content: center;
+    list-style: none;
+    column-gap: 0.6rem;
 }
 ul li {
 
