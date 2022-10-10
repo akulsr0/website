@@ -16,6 +16,7 @@ import { IRecommendedTip } from "../../../interfaces/DevTips";
 import { getNameFromSlug, getRecommendedDevTips } from "../../../helpers";
 
 import styles from "../../../styles/DevTips.module.css";
+import { getOGImageURL } from "../../../helpers/seo";
 
 interface ITip {
   data: {
@@ -56,9 +57,11 @@ const DevTip: NextPage<DevTipProps> = (props) => {
     );
   }
 
+  const ogImgUrl = getOGImageURL(title, "DevTip");
+
   return (
     <Container>
-      <Head title={title} metaDescription={title} />
+      <Head title={title} metaDescription={title} ogImage={ogImgUrl} />
       <Header />
       <div id="content">
         <h3 className={styles.devTipsTitle}>{title}</h3>

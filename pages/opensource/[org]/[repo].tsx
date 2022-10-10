@@ -35,6 +35,8 @@ const Repository: React.FC<null> = (): JSX.Element => {
     }
   }, [org, repo]);
 
+  if (!org || !repo) return <></>;
+
   return (
     <Container>
       <Head title={`OSS @ ${org}/${repo}`} />

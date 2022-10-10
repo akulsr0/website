@@ -19,6 +19,7 @@ import Head from "../../components/_head";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import { getNameFromSlug, getRecommendedBlog } from "../../helpers";
+import { getOGImageURL } from "../../helpers/seo";
 
 interface BlogProps {
   blog: BlogType;
@@ -36,7 +37,6 @@ const Blog: NextPage<BlogProps> = (props) => {
     const blogContentMarkup = marked(blog.content);
     blogContentRef.current &&
       (blogContentRef.current.innerHTML = blogContentMarkup);
-    blogHeadingRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [blog]);
 
   function getRecommendedBlogLink(blog: BlogData, title: string) {
@@ -48,9 +48,15 @@ const Blog: NextPage<BlogProps> = (props) => {
     );
   }
 
+  const ogImageUrl = getOGImageURL(blog.data.title, "Blog");
+
   return (
     <Container>
-      <Head title={blog.data.title} metaDescription={blog.data.description} />
+      <Head
+        title={blog.data.title}
+        metaDescription={blog.data.description}
+        ogImage={ogImageUrl}
+      />
       <Header />
       <br />
       <>
