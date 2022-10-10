@@ -9,7 +9,6 @@ import defaults from "../../constants/default.json";
 import Container from "../../components/Container";
 import Head from "../../components/_head";
 import Header from "../../components/Header";
-import NewsLetterForm from "../../components/NewsletterForm";
 import Footer from "../../components/Footer";
 
 import styles from "../../styles/DevTips.module.css";
@@ -99,7 +98,6 @@ const DevTips: NextPage<DevTipsProps> = (props) => {
           <input type="search" placeholder="Search" onChange={onSearchDevTip} />
         </div>
         <div className={styles.devTipsList}>{DevTipsList}</div>
-        <NewsLetterForm />
       </div>
       <Footer />
     </Container>
