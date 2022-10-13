@@ -6,4 +6,5 @@ export const OPENSOURCE_CONTRIBUTIONS = [
   "facebook/react",
   "facebook/react-native-website",
   "reactjs/reactjs.org",
+  "vercel/satori",
 ].sort();
