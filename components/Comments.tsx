@@ -10,7 +10,7 @@ const Comments = () => {
       "data-repo-id": "R_kgDOGTSwPA",
       "data-category": "Content",
       "data-category-id": "DIC_kwDOGTSwPM4CR9JS",
-      "data-mapping": "url",
+      "data-mapping": "pathname",
       "data-strict": "0",
       "data-reactions-enabled": "1",
       "data-emit-metadata": "0",
