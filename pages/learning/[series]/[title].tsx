@@ -15,6 +15,7 @@ import { getNameFromSlug } from "../../../helpers";
 
 import styles from "../../../styles/Learning.module.css";
 import { getRecommendedLearningContent } from "../../../helpers/learning";
+import Comments from "../../../components/Comments";
 
 interface ILearningContentPageProps {
   series: string;
@@ -59,6 +60,7 @@ const LearningContentPage: NextPage<ILearningContentPageProps> = (props) => {
         className={`${styles.mt1} ${styles.flexColumn}`}
         ref={contentRef}
       ></div>
+      <Comments />
       <div className={styles.recommended}>
         {recommended.prev &&
           getRecommendedTipLink(recommended.prev, "Previous")}

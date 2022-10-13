@@ -20,6 +20,7 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import { getNameFromSlug, getRecommendedBlog } from "../../helpers";
 import { getOGImageURL } from "../../helpers/seo";
+import Comments from "../../components/Comments";
 
 interface BlogProps {
   blog: BlogType;
@@ -70,6 +71,7 @@ const Blog: NextPage<BlogProps> = (props) => {
         ref={blogContentRef}
         className={styles.blogContent}
       ></div>
+      <Comments />
       <div className={styles.recommendedBlog}>
         {recommended.prev &&
           getRecommendedBlogLink(recommended.prev.data, "Previous")}

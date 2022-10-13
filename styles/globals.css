@@ -163,6 +163,10 @@ button,
   flex: 3;
 }
 
+.giscus {
+  margin-top: 1rem;
+}
+
 /* Subscribe Form End */
 
 @media only screen and (max-width: 540px) {

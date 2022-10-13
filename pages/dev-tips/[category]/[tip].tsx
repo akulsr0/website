@@ -17,6 +17,7 @@ import { getNameFromSlug, getRecommendedDevTips } from "../../../helpers";
 
 import styles from "../../../styles/DevTips.module.css";
 import { getOGImageURL } from "../../../helpers/seo";
+import Comments from "../../../components/Comments";
 
 interface ITip {
   data: {
@@ -69,6 +70,7 @@ const DevTip: NextPage<DevTipProps> = (props) => {
           {readTime.text} &nbsp;&bull;&nbsp; {`${dd} ${mm} ${yyyy}`}
         </span>
         <div className={styles.tipContent} ref={tipContentRef} />
+        <Comments />
         <div className={styles.recommendedTips}>
           {recommendedTips.prev &&
             getRecommendedTipLink(recommendedTips.prev, "Previous")}
