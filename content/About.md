@@ -3,7 +3,7 @@
 <br />
 <br />
 
-Hey there, I am Akul, self trained software developer. I have done bachelors in Computer Science Engineering from Babu Banarasi Das: National Institute of Technology and Management, Lucknow. I am currently working at <a href='https://vogo.in/' target='_blank'>Vogo</a> as Software Engineer (Frontend).
+Hey there, I am Akul, a self trained software developer. I have done bachelors in Computer Science Engineering from Babu Banarasi Das: National Institute of Technology and Management, Lucknow. I am currently working at <a href='https://vogo.in/' target='_blank'>Vogo</a> as Software Engineer (Frontend).
 
 <br />
 
@@ -15,4 +15,4 @@ I have also put my hands in Mobile App Development, starting with Native Android
 
 <br />
 
-I also like to explore opensource projects and contribute to them. Recently, I created <a href='https://github.com/sanesource' target='_blank'>sanesource</a> where I will be sharing my opensource work from now on.
+I also like to explore opensource projects and contribute to them. My opensource contributions can be found <a href='/opensource'>here</a>. Recently, I created <a href='https://github.com/sanesource' target='_blank'>sanesource</a> where I will be sharing my opensource work from now on.
