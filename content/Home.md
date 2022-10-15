@@ -1,38 +1,8 @@
-Hey there, I am Akul, a self trained software developer. I have done bachelors in Computer Science Engineering from Babu Banarasi Das: National Institute of Technology and Management, Lucknow. I am currently working at <a href='https://vogo.in/' target='_blank'>Vogo</a> as Software Engineer (Frontend).
-
 <style>
-.wrapper {
-    display: flex;
-    flex-direction: row;
-    overflow: scroll;
-    -ms-overflow-style: none;
-    scrollbar-width: none;  
-    padding: 0.2rem 0;
-    margin-top: 1.2rem;
-}
-.wrapper::-webkit-scrollbar { 
-    display: none;  
-}
-.box {
-    min-width: 6rem;
-    min-height: 6rem;
-    background-color: #fff7ed;
-    border: 1px solid rgba(188, 143, 143, 0.2);
-    border-radius: 0.5rem;
-    margin-right: 1rem;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    user-select: none;
-    text-decoration: none;
-    color: #333;
-}
-.box span {
-    margin-top: 0.6rem;
-    font-size: 1rem;
-    font-weight: bold;
+.intro img{
+    width: 7.8rem;
+    float: left;
+    margin-right:12px;
 }
 ul {
     display: flex;
@@ -42,12 +12,38 @@ ul {
     list-style: none;
     column-gap: 0.6rem;
 }
-ul li {
-
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.4rem 0.4rem;
+    margin-top: 1rem;
+}
+.box {
+    background: antiquewhite;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0.4rem 0.6rem;
+    border-radius: 0.2rem;
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+}
+.box img {
+    width: 1rem;
+    margin-right: 0.4rem;
 }
 </style>
 
-<div class="wrapper">
+<p class='intro'>
+    <img class='akul-image' src='/images/akul/front-1.jpg' />
+    This is me, Akul Srivastava, a self-trained software developer based in Lucknow and working remotely. I have done my bachelor's in Engineering (Computer Science) from <abbr title='Babu Banarasi Das: National Institute of Technology and Management, Lucknow'>BBD: NITM</abbr>. I primarily do web and mobile application development and am interested in the same.
+    <br />
+    I currently work at <a href='https://vogo.in/' target='_blank'>Vogo</a> as a software engineer on their consumer web application and react native mobile application.
+</p>
+
+<div class='wrapper'>
     <a class='box' href='/dev-tips'>
         <img src='/icons/code.svg' alt='dev-tips' >
         <span>Dev Tips</span>
