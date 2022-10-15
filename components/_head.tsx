@@ -21,8 +21,16 @@ const Head: NextPage<HeadProps> = (props) => {
       <title>{_title}</title>
       <link rel="icon" type="image/x-icon" href="/favicon.ico" />
       <meta name="theme-color" content="antiquewhite" />
+      <meta name="title" content="Akul Srivastava" />
+      <meta
+        name="keywords"
+        content="akul srivastava, akul srivastava dev tips, akul srivastava blogs, akul srivastava learning,about akul srivastava, akul srivastava github, akulsr0, akul srivastava opensource"
+      />
       <meta name="description" content={_metaDescription} />
+      <meta property="og:type" content="website" />
+      <meta property="og:site_name" content="Akul Srivastava" />
       {ogImage && <meta property="og:image" content={ogImage} />}
+      <meta name="robots" content="index, follow" />
     </NextHead>
   );
 };

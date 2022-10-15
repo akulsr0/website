@@ -9,6 +9,11 @@ const socialRedirects = Object.entries(social_links).map(([s, l]) => {
   };
 });
 
+const otherRedirects = [
+  { source: "/about-us", destination: "/about", permanent: true },
+  { source: "/contact-us", destination: "/contact", permanent: true },
+];
+
 module.exports = {
   reactStrictMode: true,
   images: {
@@ -18,6 +23,6 @@ module.exports = {
     ignoreDuringBuilds: true,
   },
   async redirects() {
-    return [...socialRedirects];
+    return [...socialRedirects, ...otherRedirects];
   },
 };
