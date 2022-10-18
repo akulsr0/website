@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { NextPage } from "next";
-import { useEffect, useRef } from "react";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
@@ -60,12 +59,6 @@ const DirectContact: React.FC = () => {
 
 const Contact: NextPage<ContactProps> = (props) => {
   const { contactContent } = props;
-  const contentRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const contactContentMarkup = marked(contactContent);
-    contentRef.current && (contentRef.current.innerHTML = contactContentMarkup);
-  }, []);
 
   return (
     <Container>
@@ -75,7 +68,7 @@ const Contact: NextPage<ContactProps> = (props) => {
       />
       <Header />
       <br />
-      <div id="content" ref={contentRef} />
+      <div id="content" dangerouslySetInnerHTML={{ __html: contactContent }} />
       <DirectContact />
       <Footer />
     </Container>
@@ -89,7 +82,7 @@ export async function getStaticProps() {
     "utf-8"
   );
   const { content } = matter(contactContent);
-  return { props: { contactContent: content } };
+  return { props: { contactContent: marked(content) } };
 }
 
 export default Contact;

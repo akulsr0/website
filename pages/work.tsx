@@ -1,5 +1,4 @@
 import { NextPage } from "next";
-import { useEffect, useRef } from "react";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
@@ -16,19 +15,13 @@ interface WorkProps {
 
 const Work: NextPage<WorkProps> = (props) => {
   const { workContent } = props;
-  const contentRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const workContentMarkup = marked(workContent);
-    contentRef.current && (contentRef.current.innerHTML = workContentMarkup);
-  }, []);
 
   return (
     <Container>
       <Head title="Work" />
       <Header />
       <h2 style={{ margin: "1rem 0" }}>Work</h2>
-      <div ref={contentRef} />
+      <div dangerouslySetInnerHTML={{ __html: workContent }} />
       <Footer />
     </Container>
   );
@@ -38,7 +31,7 @@ export async function getStaticProps() {
   const workContentPath = path.join("content");
   const workContent = fs.readFileSync(workContentPath + "/Work.md", "utf-8");
   const { content } = matter(workContent);
-  return { props: { workContent: content } };
+  return { props: { workContent: marked(content) } };
 }
 
 export default Work;
