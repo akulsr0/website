@@ -38,14 +38,7 @@ const DevTip: NextPage<DevTipProps> = (props) => {
   const content = props?.tip?.content;
   const [dd, mm, yyyy] = props?.tip?.data.date.split("-");
   const recommendedTips = props?.tip?.recommended;
-  const tipContentRef = useRef<HTMLDivElement>(null);
   const readTime = readingTime(content);
-
-  useEffect(() => {
-    content &&
-      tipContentRef.current &&
-      (tipContentRef.current.innerHTML = marked(content));
-  }, [content]);
 
   function getRecommendedTipLink(tip: Record<string, string>, title: string) {
     return (
@@ -69,7 +62,10 @@ const DevTip: NextPage<DevTipProps> = (props) => {
         <span className={styles.devTipInfoLine}>
           {readTime.text} &nbsp;&bull;&nbsp; {`${dd} ${mm} ${yyyy}`}
         </span>
-        <div className={styles.tipContent} ref={tipContentRef} />
+        <div
+          className={styles.tipContent}
+          dangerouslySetInnerHTML={{ __html: content }}
+        />
         <Comments />
         <div className={styles.recommendedTips}>
           {recommendedTips.prev &&
@@ -108,7 +104,7 @@ export async function getStaticProps(ctx: GetStaticPropsContext) {
     props: {
       tip: {
         data,
-        content,
+        content: marked(content),
         recommended,
       },
     },

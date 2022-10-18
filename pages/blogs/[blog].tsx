@@ -1,5 +1,5 @@
 import { NextPage, GetStaticPropsContext } from "next";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import fs from "fs";
 import path from "path";
 import Link from "next/link";
@@ -30,15 +30,7 @@ interface BlogProps {
 const Blog: NextPage<BlogProps> = (props) => {
   const { blog, recommended } = props;
   const [dd, mm, yyyy] = props.blog.data.date.split("-");
-  const blogContentRef = useRef<HTMLDivElement>(null);
   const readTime = readingTime(blog.content);
-  const blogHeadingRef = useRef<HTMLHeadingElement>(null);
-
-  useEffect(() => {
-    const blogContentMarkup = marked(blog.content);
-    blogContentRef.current &&
-      (blogContentRef.current.innerHTML = blogContentMarkup);
-  }, [blog]);
 
   function getRecommendedBlogLink(blog: BlogData, title: string) {
     return (
@@ -61,16 +53,16 @@ const Blog: NextPage<BlogProps> = (props) => {
       <Header />
       <br />
       <>
-        <h2 ref={blogHeadingRef}>{blog.data.title}</h2>
+        <h2>{blog.data.title}</h2>
         <span className={styles.blogInfoLine}>
           {readTime.text} &nbsp;&bull;&nbsp; {`${dd} ${mm} ${yyyy}`}
         </span>
       </>
       <div
         id="content"
-        ref={blogContentRef}
         className={styles.blogContent}
-      ></div>
+        dangerouslySetInnerHTML={{ __html: blog.content }}
+      />
       <Comments />
       <div className={styles.recommendedBlog}>
         {recommended.prev &&
@@ -100,7 +92,7 @@ export async function getStaticProps(ctx: GetStaticPropsContext) {
     props: {
       blog: {
         data,
-        content,
+        content: marked(content),
       },
       recommended,
     },

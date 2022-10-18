@@ -28,13 +28,6 @@ interface ILearningContentPageProps {
 const LearningContentPage: NextPage<ILearningContentPageProps> = (props) => {
   const { series, content, recommended, title } = props;
   const seriesTitle = getNameFromSlug(series);
-  const contentRef = React.useRef<HTMLDivElement>(null);
-
-  React.useEffect(() => {
-    if (content && contentRef.current) {
-      contentRef.current.innerHTML = marked(content);
-    }
-  }, [content]);
 
   function getRecommendedTipLink(lc: string, title: string) {
     return (
@@ -58,7 +51,7 @@ const LearningContentPage: NextPage<ILearningContentPageProps> = (props) => {
       </Link>
       <div
         className={`${styles.mt1} ${styles.flexColumn}`}
-        ref={contentRef}
+        dangerouslySetInnerHTML={{ __html: content }}
       ></div>
       <Comments />
       <div className={styles.recommended}>
@@ -120,7 +113,7 @@ export async function getStaticProps(ctx: GetStaticPropsContext) {
     props: {
       series,
       title,
-      content,
+      content: marked(content),
       data,
       recommended,
     },

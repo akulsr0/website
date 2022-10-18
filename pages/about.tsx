@@ -1,5 +1,4 @@
 import { NextPage } from "next";
-import { useEffect, useRef } from "react";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
@@ -16,12 +15,6 @@ interface AboutProps {
 
 const About: NextPage<AboutProps> = (props) => {
   const { aboutContent } = props;
-  const contentRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const aboutContentMarkup = marked(aboutContent);
-    contentRef.current && (contentRef.current.innerHTML = aboutContentMarkup);
-  }, []);
 
   return (
     <Container>
@@ -31,7 +24,7 @@ const About: NextPage<AboutProps> = (props) => {
       />
       <Header />
       <br />
-      <div id="content" ref={contentRef} />
+      <div id="content" dangerouslySetInnerHTML={{ __html: aboutContent }} />
       <Footer />
     </Container>
   );
@@ -41,7 +34,7 @@ export async function getStaticProps() {
   const aboutContentPath = path.join("content");
   const aboutContent = fs.readFileSync(aboutContentPath + "/About.md", "utf-8");
   const { content } = matter(aboutContent);
-  return { props: { aboutContent: content } };
+  return { props: { aboutContent: marked(content) } };
 }
 
 export default About;
