@@ -7,4 +7,5 @@ export const OPENSOURCE_CONTRIBUTIONS = [
   "facebook/react-native-website",
   "reactjs/reactjs.org",
   "vercel/satori",
+  "jsx-eslint/eslint-plugin-react",
 ].sort();
