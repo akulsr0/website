@@ -40,7 +40,7 @@ ul {
     <img class='akul-image' src='/images/akul/front-1.jpg' />
     This is me, Akul Srivastava, a self-trained software developer based in Lucknow and working remotely. I have done my bachelor's in Engineering (Computer Science) from <abbr title='Babu Banarasi Das: National Institute of Technology and Management, Lucknow'>BBD: NITM</abbr>. I primarily do web and mobile application development and am interested in the same.
     <br />
-    I currently work at <a href='https://vogo.in/' target='_blank'>Vogo</a> as a software engineer on their consumer web application and react native mobile application.
+    I currently work at <a href='https://smallcase.com/' target='_blank'>smallcase</a> as a software engineer. Previously, I have worked at <a href='https://vogo.in/' target="_blank" >Vogo.</a>
 </p>
 
 <div class='wrapper'>
