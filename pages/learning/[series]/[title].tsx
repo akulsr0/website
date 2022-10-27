@@ -14,8 +14,12 @@ import { ILearning, ILearningRecommended } from "../../../interfaces/Learning";
 import { getNameFromSlug } from "../../../helpers";
 
 import styles from "../../../styles/Learning.module.css";
-import { getRecommendedLearningContent } from "../../../helpers/learning";
+import {
+  getLearningLink,
+  getRecommendedLearningContent,
+} from "../../../helpers/learning";
 import Comments from "../../../components/Comments";
+import ShareButtons from "../../../components/SocialShareButtons";
 
 interface ILearningContentPageProps {
   series: string;
@@ -49,6 +53,7 @@ const LearningContentPage: NextPage<ILearningContentPageProps> = (props) => {
       <Link href={`/learning/${series}`} passHref>
         <h2 className={styles.pointer}>&#8592;&nbsp;&nbsp;{seriesTitle}</h2>
       </Link>
+      <ShareButtons url={getLearningLink(series, title)} />
       <div
         className={`${styles.mt1} ${styles.flexColumn}`}
         dangerouslySetInnerHTML={{ __html: content }}

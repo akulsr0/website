@@ -1,5 +1,4 @@
 import { NextPage, GetStaticPropsContext } from "next";
-import { useRef } from "react";
 import fs from "fs";
 import path from "path";
 import Link from "next/link";
@@ -18,9 +17,14 @@ import Container from "../../components/Container";
 import Head from "../../components/_head";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import { getNameFromSlug, getRecommendedBlog } from "../../helpers";
+import {
+  getBlogLink,
+  getNameFromSlug,
+  getRecommendedBlog,
+} from "../../helpers";
 import { getOGImageURL } from "../../helpers/seo";
 import Comments from "../../components/Comments";
+import ShareButtons from "../../components/SocialShareButtons";
 
 interface BlogProps {
   blog: BlogType;
@@ -29,6 +33,7 @@ interface BlogProps {
 
 const Blog: NextPage<BlogProps> = (props) => {
   const { blog, recommended } = props;
+  const { slug } = blog.data;
   const [dd, mm, yyyy] = props.blog.data.date.split("-");
   const readTime = readingTime(blog.content);
 
@@ -58,6 +63,7 @@ const Blog: NextPage<BlogProps> = (props) => {
           {readTime.text} &nbsp;&bull;&nbsp; {`${dd} ${mm} ${yyyy}`}
         </span>
       </>
+      <ShareButtons url={getBlogLink(slug)} />
       <div
         id="content"
         className={styles.blogContent}

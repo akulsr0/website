@@ -21,3 +21,7 @@ export function getRecommendedLearningContent(
   }
   return recommended;
 }
+
+export function getLearningLink(series: string, slug: string) {
+  return `https://akulsrivastava.com/learning/${series}/${slug}`;
+}

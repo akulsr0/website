@@ -1,4 +1,3 @@
-import { useEffect, useRef } from "react";
 import { GetStaticPropsContext, NextPage } from "next";
 import Link from "next/link";
 import fs from "fs";
@@ -11,9 +10,14 @@ import Container from "../../../components/Container";
 import Footer from "../../../components/Footer";
 import Header from "../../../components/Header";
 import Head from "../../../components/_head";
+import ShareButtons from "../../../components/SocialShareButtons";
 
 import { IRecommendedTip } from "../../../interfaces/DevTips";
-import { getNameFromSlug, getRecommendedDevTips } from "../../../helpers";
+import {
+  getDevTipLink,
+  getNameFromSlug,
+  getRecommendedDevTips,
+} from "../../../helpers";
 
 import styles from "../../../styles/DevTips.module.css";
 import { getOGImageURL } from "../../../helpers/seo";
@@ -24,6 +28,7 @@ interface ITip {
     title: string;
     category: string;
     date: string;
+    slug: string;
   };
   content: string;
   recommended: IRecommendedTip;
@@ -36,6 +41,7 @@ interface DevTipProps {
 const DevTip: NextPage<DevTipProps> = (props) => {
   const title = props?.tip?.data.title || "";
   const content = props?.tip?.content;
+  const { category, slug } = props.tip.data;
   const [dd, mm, yyyy] = props?.tip?.data.date.split("-");
   const recommendedTips = props?.tip?.recommended;
   const readTime = readingTime(content);
@@ -62,6 +68,7 @@ const DevTip: NextPage<DevTipProps> = (props) => {
         <span className={styles.devTipInfoLine}>
           {readTime.text} &nbsp;&bull;&nbsp; {`${dd} ${mm} ${yyyy}`}
         </span>
+        <ShareButtons url={getDevTipLink(category, slug)} />
         <div
           className={styles.tipContent}
           dangerouslySetInnerHTML={{ __html: content }}
@@ -103,7 +110,10 @@ export async function getStaticProps(ctx: GetStaticPropsContext) {
   return {
     props: {
       tip: {
-        data,
+        data: {
+          ...data,
+          slug: tip,
+        },
         content: marked(content),
         recommended,
       },
