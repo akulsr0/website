@@ -71,12 +71,18 @@ function getDevTips() {
       devTips.push({
         category: content,
         date: tipDate,
+        serial: tip.split("-")[0],
         tip: tip.split("-").slice(1).join("-").replace(/.md/, ""),
       });
     });
   }
 
-  devTips.sort((a, b) => Date.parse(b.date) - Date.parse(a.date));
+  devTips.sort((a, b) => {
+    if (a.date === b.date) {
+      return b.serial - a.serial;
+    }
+    return Date.parse(b.date) - Date.parse(a.date);
+  });
   return devTips;
 }
 
