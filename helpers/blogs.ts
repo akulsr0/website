@@ -18,3 +18,7 @@ export function getRecommendedBlog(
   }
   return recommended;
 }
+
+export function getBlogLink(slug: string) {
+  return `https://akulsrivastava.com/blogs/${slug}`;
+}

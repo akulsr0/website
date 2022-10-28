@@ -167,6 +167,13 @@ button,
   margin-top: 1rem;
 }
 
+.socialShareButtonsWrapper {
+  margin-top: 0.6rem;
+  display: flex;
+  flex-direction: row;
+  gap: 0.4rem;
+}
+
 /* Subscribe Form End */
 
 @media only screen and (max-width: 540px) {

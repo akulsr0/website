@@ -17,3 +17,7 @@ export function getRecommendedDevTips(
   }
   return recommended;
 }
+
+export function getDevTipLink(category: string, slug: string) {
+  return `https://akulsrivastava.com/dev-tips/${category}/${slug}`;
+}
