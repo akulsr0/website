@@ -3,6 +3,7 @@ import type { AppProps } from "next/app";
 import Script from "next/script";
 import marked from "marked";
 import prism from "prismjs";
+import { Analytics } from "@vercel/analytics/react";
 import "../styles/CodeHighlighting.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -18,6 +19,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <Script src="https://scripts.simpleanalyticscdn.com/latest.js" />
       <Component {...pageProps} />
+      <Analytics />
     </>
   );
 }
