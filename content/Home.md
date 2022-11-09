@@ -78,9 +78,9 @@ ul {
 
 <p style="margin-top:1rem;">In my free time I also share <a href='/dev-tips'>development tips</a>, and write <a href='/blogs'>blogs</a> on technology, software engineering, programming and some other thoughts.</p>
 
-<p style="margin-top:1rem;">This is me and the place where I write code!</p>
+<p style="margin-top:1rem;">And, this is the place where I write code!</p>
 
-<img class='akul-desk-img' src='/images/akul/akul-with-desk.jpg' alt='akul-with-work-desk' />
+<img class='akul-desk-img' src='/images/workplace-desk.jpg' alt='akul-with-work-desk' />
 
 <p style="margin:1rem 0;">Other than the day job and side-projects, I also like to explore opensource projects. I have also contributed to some of the opensource projects at Facebook, Microsoft, Vue etc...; references for which could be find <a href='/opensource'>here</a>.</p>
 
