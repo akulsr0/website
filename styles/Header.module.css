@@ -1,8 +1,17 @@
 .header {
-  margin: -1.5rem -0.8rem 0 -0.8rem;
-  padding: 1rem 0.8rem 0.6rem 0.8rem;
-  background-color: antiquewhite;
-  border-bottom: 0.25rem solid rosybrown;
+  background-color: #EEEEEE;
+  border-bottom: 0.25rem solid #a5a5a5;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+
+}
+
+.header > div {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 0.4rem 0.8rem;
 }
 
 .skipNavigation {

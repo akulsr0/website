@@ -32,17 +32,19 @@ const Uses: NextPage = () => {
     <Container>
       <Head title="Uses" metaDescription="What do I use?" />
       <Header />
-      <h2 style={{ margin: "1rem 0" }}>Uses</h2>
-      <div>
-        {Object.entries(uses).map(([category, subuses]) => (
-          <div key={category} style={{ marginBottom: 10 }}>
-            <h3>
-              <u>{category}</u>
-            </h3>
-            <span>{Uses(subuses)}</span>
-          </div>
-        ))}
-      </div>
+      <article className="main-content">
+        <h2 style={{ marginBottom: "1rem" }}>Uses</h2>
+        <div>
+          {Object.entries(uses).map(([category, subuses]) => (
+            <div key={category} style={{ marginBottom: 10 }}>
+              <h3>
+                <u>{category}</u>
+              </h3>
+              <span>{Uses(subuses)}</span>
+            </div>
+          ))}
+        </div>
+      </article>
       <Footer />
     </Container>
   );

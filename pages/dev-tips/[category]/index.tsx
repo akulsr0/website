@@ -40,12 +40,14 @@ const DevTipCategory: NextPage<DevTipCategoryProps> = (props) => {
         metaDescription={`${category} tips | DevTips by Akul Srivastava`}
       />
       <Header />
-      <div id="content">
-        <h3 className={styles.devTipsTitle}>
-          {category} tips ({tips?.length})
-        </h3>
-        {Tips}
-      </div>
+      <main className="main-content">
+        <div id="content">
+          <h3 className={styles.devTipsTitle}>
+            {category} tips ({tips?.length})
+          </h3>
+          {Tips}
+        </div>
+      </main>
       <Footer />
     </Container>
   );

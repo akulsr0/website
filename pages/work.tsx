@@ -20,8 +20,10 @@ const Work: NextPage<WorkProps> = (props) => {
     <Container>
       <Head title="Work" />
       <Header />
-      <h2 style={{ margin: "1rem 0" }}>Work</h2>
-      <div dangerouslySetInnerHTML={{ __html: workContent }} />
+      <article className="main-content">
+        <h2 style={{ marginBottom: "1rem" }}>Work</h2>
+        <div dangerouslySetInnerHTML={{ __html: workContent }} />
+      </article>
       <Footer />
     </Container>
   );

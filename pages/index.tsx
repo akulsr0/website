@@ -20,8 +20,9 @@ const Home: NextPage<HomeProps> = (props) => {
     <Container>
       <Head title="Home" />
       <Header />
-      <br />
-      <div id="content" dangerouslySetInnerHTML={{ __html: homeContent }} />
+      <main className="main-content">
+        <div id="content" dangerouslySetInnerHTML={{ __html: homeContent }} />
+      </main>
       <Footer />
     </Container>
   );

@@ -67,9 +67,13 @@ const Contact: NextPage<ContactProps> = (props) => {
         metaDescription="If you have any feedback or would like to say something, you can dm me on instagram or mail me at below address."
       />
       <Header />
-      <br />
-      <div id="content" dangerouslySetInnerHTML={{ __html: contactContent }} />
-      <DirectContact />
+      <article className="main-content">
+        <div
+          id="content"
+          dangerouslySetInnerHTML={{ __html: contactContent }}
+        />
+        <DirectContact />
+      </article>
       <Footer />
     </Container>
   );

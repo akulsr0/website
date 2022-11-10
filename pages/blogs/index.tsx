@@ -50,22 +50,24 @@ const Blogs: NextPage<BlogsProps> = (props) => {
         metaDescription="I do write sometimes, you can find my blogs here."
       />
       <Header />
-      <div className={styles.blogCategories}>
-        {CATEGORIES.map((c) => (
-          <span
-            key={c}
-            onClick={() => setSelectedCategory(c)}
-            style={{
-              textDecoration: selectedCategory === c ? "underline" : "none",
-            }}
-          >
-            {c}
-          </span>
-        ))}
-      </div>
-      <div className={styles.blogList} id="content">
-        <BlogsList blogs={blogs} />
-      </div>
+      <main className="main-content">
+        <div className={styles.blogCategories}>
+          {CATEGORIES.map((c) => (
+            <span
+              key={c}
+              onClick={() => setSelectedCategory(c)}
+              style={{
+                textDecoration: selectedCategory === c ? "underline" : "none",
+              }}
+            >
+              {c}
+            </span>
+          ))}
+        </div>
+        <div className={styles.blogList} id="content">
+          <BlogsList blogs={blogs} />
+        </div>
+      </main>
       <Footer />
     </Container>
   );

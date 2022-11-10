@@ -56,26 +56,27 @@ const Blog: NextPage<BlogProps> = (props) => {
         ogImage={ogImageUrl}
       />
       <Header />
-      <br />
-      <>
-        <h2>{blog.data.title}</h2>
-        <span className={styles.blogInfoLine}>
-          {readTime.text} &nbsp;&bull;&nbsp; {`${dd} ${mm} ${yyyy}`}
-        </span>
-      </>
-      <ShareButtons url={getBlogLink(slug)} />
-      <div
-        id="content"
-        className={styles.blogContent}
-        dangerouslySetInnerHTML={{ __html: blog.content }}
-      />
-      <Comments />
-      <div className={styles.recommendedBlog}>
-        {recommended.prev &&
-          getRecommendedBlogLink(recommended.prev.data, "Previous")}
-        {recommended.next &&
-          getRecommendedBlogLink(recommended.next.data, "Next")}
-      </div>
+      <article className="main-content">
+        <>
+          <h2>{blog.data.title}</h2>
+          <span className={styles.blogInfoLine}>
+            {readTime.text} &nbsp;&bull;&nbsp; {`${dd} ${mm} ${yyyy}`}
+          </span>
+        </>
+        <ShareButtons url={getBlogLink(slug)} />
+        <div
+          id="content"
+          className={styles.blogContent}
+          dangerouslySetInnerHTML={{ __html: blog.content }}
+        />
+        <Comments />
+        <div className={styles.recommendedBlog}>
+          {recommended.prev &&
+            getRecommendedBlogLink(recommended.prev.data, "Previous")}
+          {recommended.next &&
+            getRecommendedBlogLink(recommended.next.data, "Next")}
+        </div>
+      </article>
       <Footer />
     </Container>
   );
