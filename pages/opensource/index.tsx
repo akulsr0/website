@@ -11,8 +11,7 @@ const Opensource: React.FC<null> = (): JSX.Element => {
     <Container>
       <Head title="Opensource" />
       <Header />
-      <br />
-      <section>
+      <main className="main-content">
         <h2>Opensource Work</h2>
         <ul>
           {OPENSOURCE_CONTRIBUTIONS.map((oss) => (
@@ -21,7 +20,7 @@ const Opensource: React.FC<null> = (): JSX.Element => {
             </li>
           ))}
         </ul>
-      </section>
+      </main>
       <Footer />
     </Container>
   );

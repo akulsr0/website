@@ -41,8 +41,7 @@ const Repository: React.FC<null> = (): JSX.Element => {
     <Container>
       <Head title={`OSS @ ${org}/${repo}`} />
       <Header />
-      <br />
-      <section>
+      <main className="main-content">
         <h2>
           {org}/{repo}
         </h2>
@@ -63,7 +62,7 @@ const Repository: React.FC<null> = (): JSX.Element => {
               </p>
             </div>
           ))}
-      </section>
+      </main>
       <Footer />
     </Container>
   );
