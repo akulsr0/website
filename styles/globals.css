@@ -25,6 +25,10 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  background-color: #fdfdfd;
+}
+
 img {
   max-width: -webkit-fill-available;
   border-radius: 4px;
@@ -83,6 +87,13 @@ input:not([type="submit"]) {
   border-radius: 0.2rem;
   font-size: 1rem;
   outline: none;
+}
+
+main.main-content {
+  margin-top: 9.2rem;
+}
+article.main-content {
+  margin-top: 9.2rem;
 }
 
 .not-found-wrapper {

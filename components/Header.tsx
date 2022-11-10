@@ -21,13 +21,15 @@ const Header: NextPage = () => {
 
   return (
     <header className={styles.header}>
-      <a className={styles.skipNavigation} href="#content">
-        Skip Navigation
-      </a>
-      <Link href="/" passHref>
-        <h1 className={styles.title}>{name}</h1>
-      </Link>
-      <div className={styles.links}>{Links}</div>
+      <div>
+        <a className={styles.skipNavigation} href="#content">
+          Skip Navigation
+        </a>
+        <Link href="/" passHref>
+          <h1 className={styles.title}>{name}</h1>
+        </Link>
+        <nav className={styles.links}>{Links}</nav>
+      </div>
     </header>
   );
 };

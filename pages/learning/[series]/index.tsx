@@ -34,12 +34,13 @@ const LearningSeries: NextPage<ILearningSeries> = (props) => {
         metaDescription={`${title} | Sharing learning of ${title} here.`}
       />
       <Header />
-      <br />
-      <Link href="/learning" passHref>
-        <h2 className={styles.pointer}>&#8592;&nbsp;&nbsp;Learning</h2>
-      </Link>
-      <h3 className={styles.mt1}>{title}</h3>
-      <div ref={seriesIndexRef}></div>
+      <main className="main-content">
+        <Link href="/learning" passHref>
+          <h2 className={styles.pointer}>&#8592;&nbsp;&nbsp;Learning</h2>
+        </Link>
+        <h3 className={styles.mt1}>{title}</h3>
+        <div ref={seriesIndexRef}></div>
+      </main>
       <Footer />
     </Container>
   );

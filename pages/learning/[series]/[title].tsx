@@ -49,21 +49,22 @@ const LearningContentPage: NextPage<ILearningContentPageProps> = (props) => {
         metaDescription={`${title} | Sharing learning of ${title} here.`}
       />
       <Header />
-      <br />
-      <Link href={`/learning/${series}`} passHref>
-        <h2 className={styles.pointer}>&#8592;&nbsp;&nbsp;{seriesTitle}</h2>
-      </Link>
-      <ShareButtons url={getLearningLink(series, title)} />
-      <div
-        className={`${styles.mt1} ${styles.flexColumn}`}
-        dangerouslySetInnerHTML={{ __html: content }}
-      ></div>
-      <Comments />
-      <div className={styles.recommended}>
-        {recommended.prev &&
-          getRecommendedTipLink(recommended.prev, "Previous")}
-        {recommended.next && getRecommendedTipLink(recommended.next, "Next")}
-      </div>
+      <article className="main-content">
+        <Link href={`/learning/${series}`} passHref>
+          <h2 className={styles.pointer}>&#8592;&nbsp;&nbsp;{seriesTitle}</h2>
+        </Link>
+        <ShareButtons url={getLearningLink(series, title)} />
+        <div
+          className={`${styles.mt1} ${styles.flexColumn}`}
+          dangerouslySetInnerHTML={{ __html: content }}
+        ></div>
+        <Comments />
+        <div className={styles.recommended}>
+          {recommended.prev &&
+            getRecommendedTipLink(recommended.prev, "Previous")}
+          {recommended.next && getRecommendedTipLink(recommended.next, "Next")}
+        </div>
+      </article>
       <Footer />
     </Container>
   );

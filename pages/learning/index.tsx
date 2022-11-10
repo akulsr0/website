@@ -24,15 +24,16 @@ const Learning: NextPage<ILearningProps> = (props) => {
         metaDescription="Learning | I share my learnings here in form of written series."
       />
       <Header />
-      <br />
-      <h2>Learning</h2>
-      <ul>
-        {content.map((c) => (
-          <li key={c.slug}>
-            <a href={`/learning/${c.slug}`}>{c.title}</a>
-          </li>
-        ))}
-      </ul>
+      <main className="main-content">
+        <h2>Learning</h2>
+        <ul>
+          {content.map((c) => (
+            <li key={c.slug}>
+              <a href={`/learning/${c.slug}`}>{c.title}</a>
+            </li>
+          ))}
+        </ul>
+      </main>
       <Footer />
     </Container>
   );

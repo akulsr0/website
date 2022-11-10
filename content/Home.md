@@ -19,11 +19,11 @@ ul {
     margin-top: 1rem;
 }
 .box {
-    background: antiquewhite;
+    background: #EEEEEE;
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 0.4rem 0.6rem;
+    padding: 0.5rem 0.6rem;
     border-radius: 0.2rem;
     font-size: 0.9rem;
     text-decoration: none;

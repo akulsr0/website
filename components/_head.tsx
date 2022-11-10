@@ -20,7 +20,7 @@ const Head: NextPage<HeadProps> = (props) => {
     <NextHead>
       <title>{_title}</title>
       <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-      <meta name="theme-color" content="antiquewhite" />
+      <meta name="theme-color" content="#EEEEEE" />
       <meta name="title" content="Akul Srivastava" />
       <meta
         name="keywords"

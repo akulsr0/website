@@ -23,8 +23,9 @@ const About: NextPage<AboutProps> = (props) => {
         metaDescription="About me | I am Akul, self trained software developer. I have done bachelors in Computer Science Engineering from Babu Banarasi Das: National Institute of Technology and Management, Lucknow."
       />
       <Header />
-      <br />
-      <div id="content" dangerouslySetInnerHTML={{ __html: aboutContent }} />
+      <article className="main-content">
+        <div id="content" dangerouslySetInnerHTML={{ __html: aboutContent }} />
+      </article>
       <Footer />
     </Container>
   );

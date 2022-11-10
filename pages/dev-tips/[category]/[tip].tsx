@@ -63,24 +63,26 @@ const DevTip: NextPage<DevTipProps> = (props) => {
     <Container>
       <Head title={title} metaDescription={title} ogImage={ogImgUrl} />
       <Header />
-      <div id="content">
-        <h3 className={styles.devTipsTitle}>{title}</h3>
-        <span className={styles.devTipInfoLine}>
-          {readTime.text} &nbsp;&bull;&nbsp; {`${dd} ${mm} ${yyyy}`}
-        </span>
-        <ShareButtons url={getDevTipLink(category, slug)} />
-        <div
-          className={styles.tipContent}
-          dangerouslySetInnerHTML={{ __html: content }}
-        />
-        <Comments />
-        <div className={styles.recommendedTips}>
-          {recommendedTips.prev &&
-            getRecommendedTipLink(recommendedTips.prev, "Previous")}
-          {recommendedTips.next &&
-            getRecommendedTipLink(recommendedTips.next, "Next")}
+      <article className="main-content">
+        <div id="content">
+          <h3 className={styles.devTipsTitle}>{title}</h3>
+          <span className={styles.devTipInfoLine}>
+            {readTime.text} &nbsp;&bull;&nbsp; {`${dd} ${mm} ${yyyy}`}
+          </span>
+          <ShareButtons url={getDevTipLink(category, slug)} />
+          <div
+            className={styles.tipContent}
+            dangerouslySetInnerHTML={{ __html: content }}
+          />
+          <Comments />
+          <div className={styles.recommendedTips}>
+            {recommendedTips.prev &&
+              getRecommendedTipLink(recommendedTips.prev, "Previous")}
+            {recommendedTips.next &&
+              getRecommendedTipLink(recommendedTips.next, "Next")}
+          </div>
         </div>
-      </div>
+      </article>
       <Footer />
     </Container>
   );
