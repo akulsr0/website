@@ -15,6 +15,21 @@ import styles from "../../styles/DevTips.module.css";
 
 const DEV_TIP_COUNT = defaults.dev_tips_count;
 
+const devTipsKeywords = [
+  "dev tips",
+  "development tips",
+  "dev tricks",
+  "development tricks",
+  "dev tips and tricks",
+  "development tips and tricks",
+  "programming tips and tricks",
+  "coding tips and tricks",
+  "javascript tips and tricks",
+  "react tips and tricks",
+  "vscode tips and tricks",
+  "github tips and tricks",
+];
+
 interface DevTipsProps {
   contents: Array<string>;
   devTips: Array<Record<string, string>>;
@@ -86,6 +101,7 @@ const DevTips: NextPage<DevTipsProps> = (props) => {
       <Head
         title="Dev Tips"
         metaDescription="I share useful development tips here."
+        keywords={devTipsKeywords}
       />
       <Header />
       <main className="main-content">
