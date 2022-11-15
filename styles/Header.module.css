@@ -1,11 +1,10 @@
 .header {
-  background-color: #EEEEEE;
+  background-color: #eeeeee;
   border-bottom: 0.25rem solid #a5a5a5;
   width: 100%;
   position: absolute;
   left: 0;
   right: 0;
-
 }
 
 .header > div {
@@ -36,6 +35,7 @@
 
 .links {
   margin-top: 10px;
+  display: flex;
 }
 
 .link {

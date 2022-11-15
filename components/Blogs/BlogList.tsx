@@ -13,12 +13,15 @@ interface BlogsListProps {
 const BlogsList: NextPage<BlogsListProps> = (props) => {
   const { blogs } = props;
 
-  const [showViewMore, setShowViewMore] = React.useState(true);
+  const [showViewMore, setShowViewMore] = React.useState(false);
   const [_blogs, setBlogs] = React.useState<Blog[]>([]);
 
   React.useEffect(() => {
-    setBlogs(blogs.slice(0, BLOGS_COUNT));
-    setShowViewMore(true);
+    setBlogs(() => {
+      const updatedBlogs = blogs.slice(0, BLOGS_COUNT);
+      setShowViewMore(blogs.length > updatedBlogs.length);
+      return updatedBlogs;
+    });
   }, [blogs]);
 
   const blogsList = _blogs.map((b) => (

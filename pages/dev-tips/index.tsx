@@ -99,8 +99,8 @@ const DevTips: NextPage<DevTipsProps> = (props) => {
   return (
     <Container>
       <Head
-        title="Dev Tips"
-        metaDescription="I share useful development tips here."
+        title="Development Tips"
+        metaDescription="I share useful development tips here. These tips are on various topics like web development, react, javascript, vscode, github, dev tools, etc..."
         keywords={devTipsKeywords}
       />
       <Header />

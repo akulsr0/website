@@ -1,6 +1,7 @@
 <style>
 .intro img{
-    width: 7.8rem;
+    width: 124px;
+    height: 164px;
     float: left;
     margin-right:12px;
 }
@@ -43,7 +44,7 @@ ul {
 </style>
 
 <p class='intro'>
-    <img class='akul-image' src='/images/akul/front-1.jpg' />
+    <img width="124" height="164" src='/images/akul/front-1.jpg' alt='akul-srivastava' title='akul srivastava' />
     I am Akul Srivastava, a self-trained software developer based in Lucknow and working remotely. I have done my bachelor's in Engineering (Computer Science) from <abbr title='Babu Banarasi Das: National Institute of Technology and Management, Lucknow'>BBD: NITM</abbr>. I primarily do web and mobile application development and am interested in the same.
     <br />
     I currently work at <a href='https://smallcase.com/' target='_blank'>smallcase</a> as a software engineer. Previously, I have worked at <a href='https://vogo.in/' target="_blank" >Vogo.</a>
@@ -80,9 +81,9 @@ ul {
 
 <p style="margin-top:1rem;">And, this is the place where I write code!</p>
 
-<img class='akul-desk-img' src='/images/workplace-desk.jpg' alt='akul-with-work-desk' />
+<img width="255" height="192" class='akul-desk-img' src='/images/workplace-desk.jpg' alt='akul-with-work-desk' title='akul with work desk' />
 
-<p style="margin:1rem 0;">Other than the day job and side-projects, I also like to explore opensource projects. I have also contributed to some of the opensource projects at Facebook, Microsoft, Vue etc...; references for which could be find <a href='/opensource'>here</a>.</p>
+<p style="margin:1rem 0;">Other than the day job and side-projects, I also like to explore opensource projects. I have also contributed to some of the opensource projects at Facebook, Microsoft, Vue etc...; references for which could be find <a href='/opensource' aria-label='akul srivastava opensource contributions'>here</a>.</p>
 
 You can find me at following places:
 

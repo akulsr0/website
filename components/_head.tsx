@@ -14,7 +14,8 @@ interface HeadProps {
 const Head: NextPage<HeadProps> = (props) => {
   const { title, metaDescription, ogImage, keywords } = props;
 
-  const _title = `${title ? `${title} | ` : ""}${name}`;
+  const _title = title ? `${title} | ` : "";
+  const finalTitle = `${_title}${name} - DevTips, Blogs, Learnings and more`;
   const _metaDescription = metaDescription || meta_description;
   const defaultKeywords =
     "akul srivastava, akul srivastava dev tips, akul srivastava blogs, akul srivastava learning,about akul srivastava, akul srivastava github, akulsr0, akul srivastava opensource";
@@ -24,7 +25,7 @@ const Head: NextPage<HeadProps> = (props) => {
 
   return (
     <NextHead>
-      <title>{_title}</title>
+      <title>{finalTitle}</title>
       <link rel="icon" type="image/x-icon" href="/favicon.ico" />
       <meta name="theme-color" content="#EEEEEE" />
       <meta name="title" content="Akul Srivastava" />
