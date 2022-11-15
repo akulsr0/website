@@ -18,7 +18,7 @@ const Home: NextPage<HomeProps> = (props) => {
 
   return (
     <Container>
-      <Head title="Home" />
+      <Head />
       <Header />
       <main className="main-content">
         <div id="content" dangerouslySetInnerHTML={{ __html: homeContent }} />

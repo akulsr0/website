@@ -1,6 +1,6 @@
 {
   "name": "Akul Srivastava",
-  "meta_description": "I am a self trained software engineer, currently working at Vogo. In my free time, I build web and mobile applications.",
+  "meta_description": "Akul is a self trained software engineer, currently working at smallcase. In his free time, he share dev tips, write blogs on technology, programming and some other thoughts.",
   "menu": [
     { "title": "home", "href": "/" },
     { "title": "blogs", "href": "/blogs" },
@@ -55,7 +55,7 @@
       }
     ]
   },
-  "dev_tips_count": 10,
-  "blogs_count": 8,
+  "dev_tips_count": 25,
+  "blogs_count": 10,
   "show_contact_form": true
 }

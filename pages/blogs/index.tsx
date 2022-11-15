@@ -47,7 +47,7 @@ const Blogs: NextPage<BlogsProps> = (props) => {
     <Container>
       <Head
         title="Blogs"
-        metaDescription="I do write sometimes, you can find my blogs here."
+        metaDescription="I do write sometimes, you can find my blogs on technology, programming and some other thoughts here."
       />
       <Header />
       <main className="main-content">
