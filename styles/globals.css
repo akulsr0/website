@@ -187,6 +187,12 @@ button,
 
 /* Subscribe Form End */
 
+@media only screen and (max-width: 460px) {
+  html {
+    zoom: 0.9;
+  }
+}
+
 @media only screen and (max-width: 540px) {
   img {
     max-width: 100%;
