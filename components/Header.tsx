@@ -13,7 +13,11 @@ interface IMenuItem {
 const Header: NextPage = () => {
   const Links = (menu as Array<IMenuItem>).map((link) => (
     <Link key={link.title} href={link.href} passHref>
-      <h4 className={styles.link}>{link.title}</h4>
+      <h4>
+        <a href="#" className={styles.link}>
+          {link.title}
+        </a>
+      </h4>
     </Link>
   ));
 
