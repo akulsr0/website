@@ -38,4 +38,4 @@ At the bottom you will get a link which you can share with anyone and anyone wit
 
 <br />
 
-**Note:** Once you exit the terminal, the link will work anymore.
+**Note:** Once you exit the terminal, the link will not work anymore.
