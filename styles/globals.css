@@ -177,6 +177,9 @@ button,
 .giscus {
   margin-top: 1rem;
 }
+iframe.giscus-frame {
+  min-height: 360px;
+}
 
 .socialShareButtonsWrapper {
   margin-top: 0.6rem;
