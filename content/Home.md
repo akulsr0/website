@@ -31,9 +31,8 @@ ul {
     color: black;
     font-weight: 500;
 }
-.box img {
-    width: 1rem;
-    margin-right: 0.4rem;
+.box span {
+    margin-left: 0.5rem;
 }
 .akul-desk-img {
     max-width: 16rem;
@@ -52,27 +51,27 @@ ul {
 
 <div class='wrapper'>
     <a class='box' href='/dev-tips'>
-        <img src='/icons/code.svg' alt='dev-tips' >
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-code"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
         <span>Dev Tips</span>
     </a>
     <a class='box' href='/learning'>
-        <img src='/icons/edit.svg' alt='learning' >
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
         <span>Learning</span>
     </a>
     <a class="box" href='/uses'>
-        <img src='/icons/tool.svg' alt='uses' >
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tool"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
         <span>Uses</span>
     </a>
     <a class="box" href='/work'>
-        <img src='/icons/briefcase.svg' alt='work' >
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-briefcase"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
         <span>Work</span>
     </a>
     <a class="box" href='resume.pdf' target='_blank' >
-        <img src='/icons/file.svg' alt='resume' >
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg>
         <span>Resume</span>
     </a>
     <a class="box" href='https://www.buymeacoffee.com/akulsr0' target='_blank' >
-        <img src='/icons/coffee.svg' alt='buymeacoffee' >
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-coffee"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
         <span>Support</span>
     </a>
 </div>
@@ -81,9 +80,9 @@ ul {
 
 <p style="margin-top:1rem;">And, this is the place where I write code!</p>
 
-<img width="255" height="192" class='akul-desk-img' src='/images/workplace-desk.jpg' alt='akul-with-work-desk' title='akul with work desk' />
+<img width="255" height="192" class='akul-desk-img' src='/images/workplace-desk.jpg' alt='akul-with-work-desk' title="akul's workplace" />
 
-<p style="margin:1rem 0;">Other than the day job and side-projects, I also like to explore opensource projects. I have also contributed to some of the opensource projects at Facebook, Microsoft, Vue etc...; references for which could be find <a href='/opensource' aria-label='akul srivastava opensource contributions'>here</a>.</p>
+<p style="margin:1rem 0;">Other than the day job and side-projects, I also like to explore opensource projects. You can find my contributions in some of those <a href='/opensource' >opensource projects - here</a>.
 
 You can find me at following places:
 
