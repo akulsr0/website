@@ -14,13 +14,6 @@ const otherRedirects = [
   { source: "/contact-us", destination: "/contact", permanent: true },
 ];
 
-const headers = [
-  {
-    key: "X-XSS-Protection",
-    value: "1; mode=block",
-  },
-];
-
 module.exports = {
   reactStrictMode: true,
   images: {
@@ -31,13 +24,5 @@ module.exports = {
   },
   async redirects() {
     return [...socialRedirects, ...otherRedirects];
-  },
-  async headers() {
-    return [
-      {
-        source: "/:path*",
-        headers,
-      },
-    ];
   },
 };
