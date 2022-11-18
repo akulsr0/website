@@ -24,9 +24,6 @@ const Header: NextPage = () => {
   return (
     <header className={styles.header}>
       <div>
-        <a className={styles.skipNavigation} href="#content">
-          Skip Navigation
-        </a>
         <Link href="/" passHref>
           <h1 className={styles.title}>{name}</h1>
         </Link>

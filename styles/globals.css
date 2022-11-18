@@ -1,20 +1,7 @@
-@font-face {
-  font-family: merriweather;
-  font-display: swap;
-  src: url("/fonts/merriweather-regular.ttf");
-}
-
-@font-face {
-  font-family: merriweather;
-  font-display: swap;
-  font-weight: 700;
-  src: url("/fonts/merriweather-bold.ttf");
-}
-
 * {
   margin: 0;
   padding: 0;
-  font-family: "merriweather", sans-serif;
+  font-family: sans-serif;
   box-sizing: border-box;
   overflow-x: hidden;
   line-height: 1.75em;
