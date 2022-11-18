@@ -2,10 +2,10 @@
   "name": "Akul Srivastava",
   "meta_description": "Akul is a self trained software engineer, currently working at smallcase. In his free time, he share dev tips, write blogs on technology, programming and some other thoughts.",
   "menu": [
-    { "title": "home", "href": "/" },
-    { "title": "blogs", "href": "/blogs" },
-    { "title": "about", "href": "/about" },
-    { "title": "contact", "href": "/contact" }
+    { "title": "Home", "href": "/" },
+    { "title": "Blogs", "href": "/blogs" },
+    { "title": "About", "href": "/about" },
+    { "title": "Contact", "href": "/contact" }
   ],
   "social_links": {
     "github": "https://github.com/akulsr0/",
