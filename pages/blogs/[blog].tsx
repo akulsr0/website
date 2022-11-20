@@ -58,7 +58,7 @@ const Blog: NextPage<BlogProps> = (props) => {
       <Header />
       <article className="main-content">
         <>
-          <h2>{blog.data.title}</h2>
+          <h1>{blog.data.title}</h1>
           <span className={styles.blogInfoLine}>
             {readTime.text} &nbsp;&bull;&nbsp; {`${dd} ${mm} ${yyyy}`}
           </span>

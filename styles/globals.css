@@ -16,6 +16,10 @@ body {
   background-color: #fdfdfd;
 }
 
+p {
+  text-align: justify;
+}
+
 img {
   max-width: -webkit-fill-available;
   border-radius: 4px;
