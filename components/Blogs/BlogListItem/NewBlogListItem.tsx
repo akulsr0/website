@@ -16,7 +16,7 @@ const NewBlogListItem: NextPage<BlogListItemProps> = (props) => {
       </div>
       <div>
         <Link href={`/blogs/${blog.data.slug}`} passHref>
-          <a href="#">{blog.data.title}</a>
+          {blog.data.title}
         </Link>
       </div>
     </div>

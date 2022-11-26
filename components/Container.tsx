@@ -1,7 +1,6 @@
-import { NextPage } from "next";
 import styles from "../styles/Container.module.css";
 
-const Container: NextPage = ({ children }) => {
+const Container = ({ children }: { children: React.ReactNode }) => {
   return <div className={styles.container}>{children}</div>;
 };
 

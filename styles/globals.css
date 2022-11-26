@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: var(--default-font);
   box-sizing: border-box;
   overflow-x: hidden;
   line-height: 1.75em;
@@ -28,6 +28,11 @@ img {
 
 a {
   word-break: break-word;
+}
+
+a:has(h1, h2, h3, h4, h5, h6) {
+  text-decoration: none;
+  color: initial;
 }
 
 ol {
