@@ -1,8 +1,10 @@
 import type { NextPage } from "next";
+import Link from "next/link";
 import fs from "fs";
 import path from "path";
-import marked from "marked";
 import matter from "gray-matter";
+import { serialize } from "next-mdx-remote/serialize";
+import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 
 import Container from "../components/Container";
 import Head from "../components/_head";
@@ -10,7 +12,10 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 interface HomeProps {
-  homeContent: string;
+  homeContent: MDXRemoteSerializeResult<
+    Record<string, unknown>,
+    Record<string, string>
+  >;
 }
 
 const Home: NextPage<HomeProps> = (props) => {
@@ -21,7 +26,7 @@ const Home: NextPage<HomeProps> = (props) => {
       <Head />
       <Header />
       <main className="main-content">
-        <div id="content" dangerouslySetInnerHTML={{ __html: homeContent }} />
+        <MDXRemote {...homeContent} components={{ Link }} />
       </main>
       <Footer />
     </Container>
@@ -30,9 +35,10 @@ const Home: NextPage<HomeProps> = (props) => {
 
 export async function getStaticProps() {
   const homeContentPath = path.join("content");
-  const homeContent = fs.readFileSync(homeContentPath + "/Home.md", "utf-8");
+  const homeContent = fs.readFileSync(homeContentPath + "/Home.mdx", "utf-8");
   const { content } = matter(homeContent);
-  return { props: { homeContent: marked(content) } };
+  const outputContent = await serialize(content);
+  return { props: { homeContent: outputContent } };
 }
 
 export default Home;
