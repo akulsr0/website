@@ -9,6 +9,7 @@ import "../styles/CodeHighlighting.css";
 const font = Font({
   subsets: ["latin"],
   weight: ["400", "500", "700", "800"],
+  fallback: ["sans-serif"],
   variable: "--default-font",
 });
 
