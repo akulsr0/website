@@ -1,8 +1,9 @@
-import type { NextPage } from "next";
 import Link from "next/link";
-import styles from "../styles/Header.module.css";
+import { withRouter } from "next/router";
+import { WithRouterProps } from "next/dist/client/with-router";
 import defaults from "../constants/default.json";
 
+import styles from "../styles/Header.module.css";
 const { name, menu } = defaults;
 
 interface IMenuItem {
@@ -10,14 +11,29 @@ interface IMenuItem {
   href: string;
 }
 
-const Header: NextPage = () => {
-  const Links = (menu as Array<IMenuItem>).map((link) => (
-    <h2 key={link.title}>
-      <Link href={link.href} passHref className={styles.link}>
-        {link.title}
-      </Link>
-    </h2>
-  ));
+interface IHeaderProps extends WithRouterProps {}
+
+const Links = (props: { currentPath: string }) => {
+  return (
+    <>
+      {(menu as Array<IMenuItem>).map((link) => (
+        <h2 key={link.title}>
+          <Link
+            href={link.href}
+            passHref
+            className={styles.link}
+            style={{ fontWeight: props.currentPath === link.href ? 500 : 300 }}
+          >
+            {link.title}
+          </Link>
+        </h2>
+      ))}
+    </>
+  );
+};
+
+const Header = (props: IHeaderProps) => {
+  const currentPath = props.router.pathname;
 
   return (
     <header className={styles.header}>
@@ -25,10 +41,12 @@ const Header: NextPage = () => {
         <Link href="/" passHref>
           <h1 className={styles.title}>{name}</h1>
         </Link>
-        <nav className={styles.links}>{Links}</nav>
+        <nav className={styles.links}>
+          <Links currentPath={currentPath} />
+        </nav>
       </div>
     </header>
   );
 };
 
-export default Header;
+export default withRouter(Header);
