@@ -6,6 +6,8 @@
   overflow-x: hidden;
   line-height: 1.75em;
   -webkit-tap-highlight-color: transparent;
+  font-family: "Open Sans";
+  font-display: optional;
 }
 
 html {
