@@ -86,10 +86,12 @@ input:not([type="submit"]) {
 }
 
 main.main-content {
-  margin-top: 9.2rem;
+  margin-top: 1.2rem;
+  padding: 0.4rem 0.8rem;
 }
 article.main-content {
-  margin-top: 9.2rem;
+  margin-top: 1.2rem;
+  padding: 0.4rem 0.8rem;
 }
 
 .not-found-wrapper {
