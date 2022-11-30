@@ -114,4 +114,4 @@ While I was in college, I started doing investing with my pocket money. After my
 
 ## Beyond?
 
-Throughout my journey I have find out the learning skills and upskilling yourself gives the highest ROI (returns on investment). And I will be doing the same (as I've done in past), I will be investing my time in learning and upskilling more and more. I can call myself a software engineer now but I would always be a student of the software engineering discipline.
+Throughout my journey I have find out that learning skills and upskilling yourself gives the highest ROI (returns on investment). And I will be doing the same (as I've done in past), I will be investing my time in learning and upskilling more and more. I can call myself a software engineer now but I would always be a student of the software engineering discipline.

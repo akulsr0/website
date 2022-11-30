@@ -1,4 +1,5 @@
 import { NextPage } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import fs from "fs";
 import path from "path";
@@ -29,7 +30,7 @@ const About: NextPage<AboutProps> = (props) => {
       />
       <Header />
       <article className="main-content">
-        <MDXRemote {...aboutContent} components={{ Link }} />
+        <MDXRemote {...aboutContent} components={{ Link, Image }} />
       </article>
       <Footer />
     </Container>
