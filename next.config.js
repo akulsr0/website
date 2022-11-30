@@ -1,4 +1,10 @@
 /** @type {import('next').NextConfig} */
+
+const withPWA = require("next-pwa")({
+  dest: "public",
+  disable: process.env.NODE_ENV === "development",
+});
+
 const { social_links } = require("./constants/default.json");
 
 const socialRedirects = Object.entries(social_links).map(([s, l]) => {
@@ -14,7 +20,7 @@ const otherRedirects = [
   { source: "/contact-us", destination: "/contact", permanent: true },
 ];
 
-module.exports = {
+module.exports = withPWA({
   reactStrictMode: true,
   images: {
     domains: ["user-images.githubusercontent.com"],
@@ -25,4 +31,4 @@ module.exports = {
   async redirects() {
     return [...socialRedirects, ...otherRedirects];
   },
-};
+});

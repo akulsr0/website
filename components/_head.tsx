@@ -35,6 +35,14 @@ const Head: NextPage<HeadProps> = (props) => {
       <meta property="og:site_name" content="Akul Srivastava" />
       {ogImage && <meta property="og:image" content={ogImage} />}
       <meta name="robots" content="index, follow" />
+
+      <link rel="manifest" href="/manifest.json" />
+      <meta name="application-name" content="Akul Srivastava" />
+      <meta name="apple-mobile-web-app-capable" content="yes" />
+      <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+      <meta name="apple-mobile-web-app-title" content="Akul Srivastava" />
+      <meta name="mobile-web-app-capable" content="yes" />
+      <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
     </NextHead>
   );
 };
