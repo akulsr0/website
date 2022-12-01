@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import NextHead from "next/head";
 import defaults from "../constants/default.json";
+import { useTheme } from "../context/ThemeContext";
 
 const { name, meta_description } = defaults;
 
@@ -12,6 +13,7 @@ interface HeadProps {
 }
 
 const Head: NextPage<HeadProps> = (props) => {
+  const { isDarkTheme } = useTheme();
   const { title, metaDescription, ogImage, keywords } = props;
 
   const _title = title ? `${title} | ` : "";
@@ -27,7 +29,7 @@ const Head: NextPage<HeadProps> = (props) => {
     <NextHead>
       <title>{finalTitle}</title>
       <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-      <meta name="theme-color" content="#EEEEEE" />
+      <meta name="theme-color" content={isDarkTheme ? "#2a2a2a" : "#EEEEEE"} />
       <meta name="title" content="Akul Srivastava" />
       <meta name="keywords" content={keywordsString} />
       <meta name="description" content={_metaDescription} />
