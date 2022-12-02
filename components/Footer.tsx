@@ -1,9 +1,19 @@
 import { NextPage } from "next";
+import { useTheme } from "../context/ThemeContext";
 import styles from "../styles/Footer.module.css";
 
 const Footer: NextPage = () => {
+  const { isDarkTheme } = useTheme();
+
   return (
     <footer className={styles.footer}>
+      <style jsx>{`
+        small,
+        a {
+          text-decoration: none;
+          color: ${isDarkTheme ? "#9b9786" : "#222"};
+        }
+      `}</style>
       <hr />
       <div>
         <small>

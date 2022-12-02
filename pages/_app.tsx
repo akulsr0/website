@@ -4,6 +4,7 @@ import { Open_Sans as Font } from "@next/font/google";
 import Script from "next/script";
 import marked from "marked";
 import prism from "prismjs";
+import { ThemeContextProvider, useTheme } from "../context/ThemeContext";
 import "../styles/CodeHighlighting.css";
 
 const font = Font({
@@ -12,6 +13,21 @@ const font = Font({
   fallback: ["sans-serif"],
   variable: "--default-font",
 });
+
+const ThemeStyle = () => {
+  const { isDarkTheme } = useTheme();
+  return (
+    <style jsx global>{`
+      body {
+        background-color: ${isDarkTheme ? "#3d3d3d" : "#fdfdfd"};
+        color: ${isDarkTheme ? "#f8f8f8" : "black"};
+      }
+      a {
+        color: ${isDarkTheme ? "#66d9ef" : "auto"};
+      }
+    `}</style>
+  );
+};
 
 function MyApp({ Component, pageProps }: AppProps) {
   marked.setOptions({
@@ -26,7 +42,10 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <div className={[font.className, font.variable].join(" ")}>
       <Script src="https://scripts.simpleanalyticscdn.com/latest.js" />
-      <Component {...pageProps} />
+      <ThemeContextProvider>
+        <ThemeStyle />
+        <Component {...pageProps} />
+      </ThemeContextProvider>
     </div>
   );
 }
