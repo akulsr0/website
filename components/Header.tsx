@@ -31,9 +31,9 @@ const Links = (props: { currentPath: string }) => {
               fontWeight: props.currentPath === link.href ? 600 : 300,
               color:
                 props.currentPath === link.href && isDarkTheme
-                  ? "#a59f8f"
+                  ? "#ece3cc"
                   : isDarkTheme
-                  ? "#9b9786"
+                  ? "#bababa"
                   : "#111",
             }}
           >
@@ -63,7 +63,7 @@ const Header = (props: IHeaderProps) => {
             <h1
               className={styles.title}
               style={{
-                color: isDarkTheme ? "#a59f8f" : "black",
+                color: isDarkTheme ? "#ece3cc" : "black",
               }}
             >
               {name}
@@ -72,7 +72,7 @@ const Header = (props: IHeaderProps) => {
           <DarkModeSwitch
             checked={isDarkTheme}
             onChange={toggleTheme}
-            color={isDarkTheme ? "#a59f8f" : "black"}
+            color={isDarkTheme ? "#ece3cc" : "black"}
           />
         </div>
         <nav className={styles.links}>
