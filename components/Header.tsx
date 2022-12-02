@@ -69,7 +69,11 @@ const Header = (props: IHeaderProps) => {
               {name}
             </h1>
           </Link>
-          <DarkModeSwitch checked={isDarkTheme} onChange={toggleTheme} />
+          <DarkModeSwitch
+            checked={isDarkTheme}
+            onChange={toggleTheme}
+            color={isDarkTheme ? "#a59f8f" : "black"}
+          />
         </div>
         <nav className={styles.links}>
           <Links currentPath={currentPath} />

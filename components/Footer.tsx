@@ -14,7 +14,9 @@ const Footer: NextPage = () => {
           color: ${isDarkTheme ? "#9b9786" : "#222"};
         }
       `}</style>
-      <hr />
+      <hr
+        style={{ border: `1px solid ${isDarkTheme ? "#a59f8f" : "#f8f8f8"}` }}
+      />
       <div>
         <small>
           &copy;{" "}

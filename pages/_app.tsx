@@ -25,6 +25,18 @@ const ThemeStyle = () => {
       a {
         color: ${isDarkTheme ? "#66d9ef" : "auto"};
       }
+      blockquote {
+        background-color: ${isDarkTheme ? "#a59f8f" : "#f9f9f9"};
+        border-left: 10px solid ${isDarkTheme ? "#9b9786" : "#ccc"};
+      }
+      code[class*="language-"],
+      pre {
+        background-color: ${isDarkTheme ? "#2a2a2a" : "#2c3e50"};
+      }
+      :not(pre) > code[class*="language-"],
+      pre[class*="language-"] {
+        background-color: ${isDarkTheme ? "#2a2a2a" : "#2c3e50"};
+      }
     `}</style>
   );
 };

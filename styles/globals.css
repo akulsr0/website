@@ -51,11 +51,11 @@ td {
 }
 
 blockquote {
-  background: #f9f9f9;
-  border-left: 10px solid #ccc;
   margin: 1.5em 10px;
   padding: 0.5em 10px;
+  border-radius: 4px;
   quotes: "\201C""\201D""\2018""\2019";
+  color: #3d3d3d;
 }
 blockquote:before {
   color: #ccc;
@@ -64,6 +64,7 @@ blockquote:before {
   line-height: 0.1em;
   margin-right: 0.1em;
   vertical-align: -0.4em;
+  color: #3d3d3d;
 }
 blockquote p {
   display: inline;
