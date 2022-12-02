@@ -24,6 +24,7 @@ img {
 
 a {
   word-break: break-word;
+  text-underline-position: under;
 }
 
 a:has(h1, h2, h3, h4, h5, h6) {

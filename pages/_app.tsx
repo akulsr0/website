@@ -23,7 +23,7 @@ const ThemeStyle = () => {
         color: ${isDarkTheme ? "#f8f8f8" : "black"};
       }
       a {
-        color: ${isDarkTheme ? "#66d9ef" : "auto"};
+        color: ${isDarkTheme ? "#F8EFBA" : "#2e86de"};
       }
       blockquote {
         background-color: ${isDarkTheme ? "#a59f8f" : "#f9f9f9"};

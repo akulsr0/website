@@ -33,6 +33,10 @@
   margin-right: 0;
 }
 
+.devTipSeach > input::placeholder {
+  color: #3d3d3d;
+}
+
 .devTipsList {
   margin-top: 0.5rem;
 }
