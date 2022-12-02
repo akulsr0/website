@@ -13,6 +13,10 @@
   border-radius: 4px;
 }
 
+.directContact textarea::placeholder {
+  color: #3d3d3d;
+}
+
 .directContact button {
   margin-top: 0.4rem;
   padding: 0.4rem 0;
