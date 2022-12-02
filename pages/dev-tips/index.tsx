@@ -56,7 +56,9 @@ const DevTips: NextPage<DevTipsProps> = (props) => {
     const [dd, mm, yyyy] = date.split("-");
     return (
       <div key={tip}>
-        <span>{`${mm} ${dd}, ${yyyy}`}</span>
+        <span
+          style={{ color: isDarkTheme ? "#bbb" : "#888" }}
+        >{`${mm} ${dd}, ${yyyy}`}</span>
         {"-"}
         <Link href={`/dev-tips/${category}/${tip}`}>
           {tip.split("-").join(" ")}
@@ -68,9 +70,7 @@ const DevTips: NextPage<DevTipsProps> = (props) => {
   function ViewMore() {
     return showViewMore ? (
       <span
-        style={{
-          color: isDarkTheme ? "#a59f8f" : "#3d3d3d",
-        }}
+        style={{ color: isDarkTheme ? "#a59f8f" : "#3d3d3d" }}
         onClick={onClickViewMore}
       >
         View More

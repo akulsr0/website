@@ -3,6 +3,7 @@ import { NextPage } from "next";
 import { Blog } from "../../interfaces/Blog";
 import BlogListItem from "./BlogListItem";
 import defaults from "../../constants/default.json";
+import { useTheme } from "../../context/ThemeContext";
 
 const BLOGS_COUNT = defaults.blogs_count;
 
@@ -11,6 +12,7 @@ interface BlogsListProps {
 }
 
 const BlogsList: NextPage<BlogsListProps> = (props) => {
+  const { isDarkTheme } = useTheme();
   const { blogs } = props;
 
   const [showViewMore, setShowViewMore] = React.useState(false);
@@ -36,7 +38,12 @@ const BlogsList: NextPage<BlogsListProps> = (props) => {
 
   function ViewMore() {
     return showViewMore ? (
-      <span onClick={onClickViewMore}>View More</span>
+      <span
+        onClick={onClickViewMore}
+        style={{ color: isDarkTheme ? "#a59f8f" : "#3d3d3d" }}
+      >
+        View More
+      </span>
     ) : null;
   }
 

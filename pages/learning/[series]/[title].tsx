@@ -20,6 +20,7 @@ import {
 } from "../../../helpers/learning";
 import Comments from "../../../components/Comments";
 import ShareButtons from "../../../components/SocialShareButtons";
+import { useTheme } from "../../../context/ThemeContext";
 
 interface ILearningContentPageProps {
   series: string;
@@ -31,6 +32,7 @@ interface ILearningContentPageProps {
 
 const LearningContentPage: NextPage<ILearningContentPageProps> = (props) => {
   const { series, content, recommended, title } = props;
+  const { isDarkTheme } = useTheme();
   const seriesTitle = getNameFromSlug(series);
 
   function getRecommendedTipLink(lc: string, title: string) {
@@ -51,7 +53,12 @@ const LearningContentPage: NextPage<ILearningContentPageProps> = (props) => {
       <Header />
       <article className="main-content">
         <Link href={`/learning/${series}`} passHref>
-          <h2 className={styles.pointer}>&#8592;&nbsp;&nbsp;{seriesTitle}</h2>
+          <h2
+            className={styles.pointer}
+            style={{ color: isDarkTheme ? "#a59f8f" : "#3d3d3d" }}
+          >
+            &#8592;&nbsp;&nbsp;{seriesTitle}
+          </h2>
         </Link>
         <ShareButtons url={getLearningLink(series, title)} />
         <div

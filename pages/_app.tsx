@@ -37,6 +37,10 @@ const ThemeStyle = () => {
       pre[class*="language-"] {
         background-color: ${isDarkTheme ? "#2a2a2a" : "#2c3e50"};
       }
+      .command-option {
+        background-color: ${isDarkTheme ? "#2a2a2a" : "#f3f3f3"};
+        color: ${isDarkTheme ? "#f8f8f8" : "#3d3d3d"};
+      }
     `}</style>
   );
 };

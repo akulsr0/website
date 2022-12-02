@@ -53,10 +53,10 @@
 }
 
 .devTipsList div span {
-  color: #888;
   min-width: 7.4rem;
   white-space: nowrap;
   font-weight: 700;
+  align-self: center;
 }
 
 .devTipsList > span {
