@@ -11,7 +11,7 @@ const Footer: NextPage = () => {
         small,
         a {
           text-decoration: none;
-          color: ${isDarkTheme ? "#9b9786" : "#222"};
+          color: ${isDarkTheme ? "#ece3cc" : "#222"};
         }
       `}</style>
       <hr
