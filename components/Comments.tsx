@@ -1,8 +1,10 @@
 import * as React from "react";
+import { useTheme } from "../context/ThemeContext";
 import { isProduction } from "../lib";
 
 const Comments = () => {
   const isProd = isProduction();
+  const { theme } = useTheme();
   const ref = React.useRef() as React.MutableRefObject<HTMLDivElement>;
 
   React.useEffect(() => {
@@ -18,7 +20,7 @@ const Comments = () => {
         "data-reactions-enabled": "1",
         "data-emit-metadata": "0",
         "data-input-position": "top",
-        "data-theme": "light",
+        "data-theme": theme,
         "data-lang": "en",
         "cross-origin": "anonymous",
         async: "true",
@@ -29,7 +31,7 @@ const Comments = () => {
       );
       ref.current?.appendChild(script);
     }
-  }, []);
+  }, [theme]);
 
   return isProd ? <div ref={ref} id="giscus"></div> : null;
 };

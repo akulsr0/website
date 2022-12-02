@@ -13,12 +13,14 @@ import styles from "../styles/Contact.module.css";
 
 import defaults from "../constants/default.json";
 import { api } from "../services/APIService";
+import { useTheme } from "../context/ThemeContext";
 
 interface ContactProps {
   contactContent: string;
 }
 
 const DirectContact: React.FC = () => {
+  const { isDarkTheme } = useTheme();
   const [message, setMessage] = useState<string | null>(null);
   const [isSending, setIsSending] = useState<boolean>(false);
 
@@ -43,10 +45,18 @@ const DirectContact: React.FC = () => {
   return (
     <div className={styles.directContact}>
       <textarea
+        style={{
+          backgroundColor: isDarkTheme ? "#a59f8f" : "#f0f0f0",
+          color: isDarkTheme ? "#3d3d3d" : "black",
+          opacity: isDarkTheme ? 0.75 : 1,
+        }}
         placeholder="You can write up here also"
         onChange={(e) => setMessage(e.target.value!)}
       ></textarea>
       <button
+        style={{
+          backgroundColor: isDarkTheme ? "#2a2a2a" : "#0e7afe",
+        }}
         className={isSending ? styles.btnSending : undefined}
         onClick={onSend}
         disabled={isSending}
