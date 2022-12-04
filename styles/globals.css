@@ -45,12 +45,6 @@ ul {
 li {
 }
 
-th,
-td {
-  border: 1px solid black;
-  padding: 0 2rem;
-}
-
 blockquote {
   margin: 1.5em 10px;
   padding: 0.5em 10px;

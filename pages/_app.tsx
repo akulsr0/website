@@ -29,6 +29,11 @@ const ThemeStyle = () => {
         background-color: ${isDarkTheme ? "#a59f8f" : "#f9f9f9"};
         border-left: 10px solid ${isDarkTheme ? "#9b9786" : "#ccc"};
       }
+      th,
+      td {
+        border: 1px solid ${isDarkTheme ? "#9b9786" : "black"};
+        padding: 0 2rem;
+      }
       code[class*="language-"],
       pre {
         background-color: ${isDarkTheme ? "#2a2a2a" : "#2c3e50"};
