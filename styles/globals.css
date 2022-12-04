@@ -12,10 +12,6 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
-  background-color: #fdfdfd;
-}
-
 p {
   text-align: justify;
 }
@@ -28,6 +24,7 @@ img {
 
 a {
   word-break: break-word;
+  text-underline-position: under;
 }
 
 a:has(h1, h2, h3, h4, h5, h6) {
@@ -48,18 +45,12 @@ ul {
 li {
 }
 
-th,
-td {
-  border: 1px solid black;
-  padding: 0 2rem;
-}
-
 blockquote {
-  background: #f9f9f9;
-  border-left: 10px solid #ccc;
   margin: 1.5em 10px;
   padding: 0.5em 10px;
+  border-radius: 4px;
   quotes: "\201C""\201D""\2018""\2019";
+  color: #3d3d3d;
 }
 blockquote:before {
   color: #ccc;
@@ -68,6 +59,7 @@ blockquote:before {
   line-height: 0.1em;
   margin-right: 0.1em;
   vertical-align: -0.4em;
+  color: #3d3d3d;
 }
 blockquote p {
   display: inline;
@@ -185,12 +177,6 @@ iframe.giscus-frame {
 }
 
 /* Subscribe Form End */
-
-@media only screen and (max-width: 460px) {
-  html {
-    zoom: 0.9;
-  }
-}
 
 @media only screen and (max-width: 540px) {
   img {

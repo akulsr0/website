@@ -1,16 +1,21 @@
 .header {
-  background-color: #eeeeee;
-  border-bottom: 0.25rem solid #a5a5a5;
   width: 100%;
   position: absolute;
   left: 0;
   right: 0;
+  user-select: none;
 }
 
 .header > div {
   max-width: 42rem;
   margin: 0 auto;
   padding: 0.4rem 0.8rem;
+}
+
+.header > div > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .skipNavigation {
@@ -41,7 +46,6 @@
   margin-right: 10px;
   text-decoration: none;
   font-weight: 500;
-  color: #111;
   cursor: pointer;
   font-size: 1.2rem;
 }

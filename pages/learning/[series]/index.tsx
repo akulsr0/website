@@ -12,6 +12,7 @@ import Footer from "../../../components/Footer";
 import { getNameFromSlug, toTitleCase } from "../../../helpers";
 
 import styles from "../../../styles/Learning.module.css";
+import { useTheme } from "../../../context/ThemeContext";
 
 interface ILearningSeries {
   series: string;
@@ -20,6 +21,7 @@ interface ILearningSeries {
 
 const LearningSeries: NextPage<ILearningSeries> = (props) => {
   const { series, indexContent } = props;
+  const { isDarkTheme } = useTheme();
   const title = toTitleCase(getNameFromSlug(series));
   const seriesIndexRef = React.useRef<HTMLDivElement>(null);
 
@@ -36,7 +38,12 @@ const LearningSeries: NextPage<ILearningSeries> = (props) => {
       <Header />
       <main className="main-content">
         <Link href="/learning" passHref>
-          <h2 className={styles.pointer}>&#8592;&nbsp;&nbsp;Learning</h2>
+          <h2
+            className={styles.pointer}
+            style={{ color: isDarkTheme ? "#a59f8f" : "#3d3d3d" }}
+          >
+            &#8592;&nbsp;&nbsp;Learning
+          </h2>
         </Link>
         <h3 className={styles.mt1}>{title}</h3>
         <div ref={seriesIndexRef}></div>

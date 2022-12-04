@@ -1,5 +1,5 @@
 .footer {
-  margin-top: 1.2rem;
+  margin-top: 2.4rem;
 }
 .footer > div {
   display: flex;
@@ -8,11 +8,4 @@
 }
 .footer > div span {
   padding: 10px;
-}
-.footer a {
-  text-decoration: none;
-  color: #222;
-}
-.footer a:hover {
-  color: black;
 }

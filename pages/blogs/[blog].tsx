@@ -25,6 +25,7 @@ import {
 import { getOGImageURL } from "../../helpers/seo";
 import Comments from "../../components/Comments";
 import ShareButtons from "../../components/SocialShareButtons";
+import { useTheme } from "../../context/ThemeContext";
 
 interface BlogProps {
   blog: BlogType;
@@ -33,6 +34,7 @@ interface BlogProps {
 
 const Blog: NextPage<BlogProps> = (props) => {
   const { blog, recommended } = props;
+  const { isDarkTheme } = useTheme();
   const { slug } = blog.data;
   const [dd, mm, yyyy] = props.blog.data.date.split("-");
   const readTime = readingTime(blog.content);
@@ -59,7 +61,12 @@ const Blog: NextPage<BlogProps> = (props) => {
       <article className="main-content">
         <>
           <h1>{blog.data.title}</h1>
-          <span className={styles.blogInfoLine}>
+          <span
+            className={styles.blogInfoLine}
+            style={{
+              color: isDarkTheme ? "#a59f8f" : "#595959",
+            }}
+          >
             {readTime.text} &nbsp;&bull;&nbsp; {`${dd} ${mm} ${yyyy}`}
           </span>
         </>

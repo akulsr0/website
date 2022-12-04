@@ -4,6 +4,7 @@ import Link from "next/link";
 import fs from "fs";
 import path from "path";
 
+import { useTheme } from "../../context/ThemeContext";
 import defaults from "../../constants/default.json";
 
 import Container from "../../components/Container";
@@ -36,6 +37,7 @@ interface DevTipsProps {
 }
 
 const DevTips: NextPage<DevTipsProps> = (props) => {
+  const { isDarkTheme } = useTheme();
   const { contents, devTips } = props;
 
   const _tips = devTips.slice(0, DEV_TIP_COUNT);
@@ -54,7 +56,9 @@ const DevTips: NextPage<DevTipsProps> = (props) => {
     const [dd, mm, yyyy] = date.split("-");
     return (
       <div key={tip}>
-        <span>{`${mm} ${dd}, ${yyyy}`}</span>
+        <span
+          style={{ color: isDarkTheme ? "#bbb" : "#888" }}
+        >{`${mm} ${dd}, ${yyyy}`}</span>
         {"-"}
         <Link href={`/dev-tips/${category}/${tip}`}>
           {tip.split("-").join(" ")}
@@ -65,7 +69,12 @@ const DevTips: NextPage<DevTipsProps> = (props) => {
 
   function ViewMore() {
     return showViewMore ? (
-      <span onClick={onClickViewMore}>View More</span>
+      <span
+        style={{ color: isDarkTheme ? "#a59f8f" : "#3d3d3d" }}
+        onClick={onClickViewMore}
+      >
+        View More
+      </span>
     ) : null;
   }
 
@@ -113,6 +122,11 @@ const DevTips: NextPage<DevTipsProps> = (props) => {
           </blockquote>
           <div className={styles.devTipSeach}>
             <input
+              style={{
+                backgroundColor: isDarkTheme ? "#a59f8f" : "#f0f0f0",
+                color: "#3d3d3d",
+                opacity: 0.75,
+              }}
               type="search"
               placeholder="Search"
               onChange={onSearchDevTip}
