@@ -20,7 +20,13 @@ const Footer: NextPage = () => {
   const { isDarkTheme } = useTheme();
 
   return (
-    <footer className={styles.footer}>
+    <footer
+      className={styles.footer}
+      style={{
+        backgroundColor: isDarkTheme ? "#2a2a2a" : "#eeeeee",
+        borderTop: `0.25rem solid ${isDarkTheme ? "#9b9786" : "#a5a5a5"}`,
+      }}
+    >
       <style jsx>{`
         small,
         a {
@@ -39,9 +45,10 @@ const Footer: NextPage = () => {
           text-decoration: underline;
         }
       `}</style>
-      <hr
-        style={{ border: `1px solid ${isDarkTheme ? "#a59f8f" : "#f8f8f8"}` }}
-      />
+
+      <h4 style={{ color: isDarkTheme ? "#ece3cc" : "#3d3d3d" }}>
+        connect with me
+      </h4>
 
       <ul>
         {footerLinks.map(({ link, text }) => (

@@ -79,9 +79,13 @@ input:not([type="submit"]) {
 
 main.main-content {
   margin-top: 9.2rem;
+  /* min-height = viewport height - (header height + footer height) */
+  min-height: calc(100vh - 350px);
 }
 article.main-content {
   margin-top: 9.2rem;
+  /* min-height = viewport height - (header height + footer height) */
+  min-height: calc(100vh - 350px);
 }
 
 .not-found-wrapper {
