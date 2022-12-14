@@ -29,6 +29,12 @@ const Head: NextPage<HeadProps> = (props) => {
     <NextHead>
       <title>{finalTitle}</title>
       <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="32x32"
+        href="/favicon-32x32.png"
+      />
       <meta name="theme-color" content={isDarkTheme ? "#2a2a2a" : "#EEEEEE"} />
       <meta name="title" content="Akul Srivastava" />
       <meta name="keywords" content={keywordsString} />
@@ -37,6 +43,7 @@ const Head: NextPage<HeadProps> = (props) => {
       <meta property="og:site_name" content="Akul Srivastava" />
       {ogImage && <meta property="og:image" content={ogImage} />}
       <meta name="robots" content="index, follow" />
+      <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     </NextHead>
   );
 };
