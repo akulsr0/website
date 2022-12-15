@@ -1,0 +1,18 @@
+.listWrapper {
+  flex: 1;
+  min-width: fit-content;
+  padding-top: 1.2rem;
+  padding-right: 2rem;
+}
+
+.listWrapper > ul {
+  display: block;
+  list-style: none;
+}
+
+.listWrapper > ul li::before {
+  content: "\2022";
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+}
