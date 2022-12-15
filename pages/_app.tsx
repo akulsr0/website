@@ -46,6 +46,9 @@ const ThemeStyle = () => {
         background-color: ${isDarkTheme ? "#2a2a2a" : "#f3f3f3"};
         color: ${isDarkTheme ? "#f8f8f8" : "#3d3d3d"};
       }
+      .list li::before {
+        color: ${isDarkTheme ? "#a59f8f" : "#2e86de"};
+      }
     `}</style>
   );
 };

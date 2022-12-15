@@ -57,5 +57,56 @@
   },
   "dev_tips_count": 25,
   "blogs_count": 10,
-  "show_contact_form": true
+  "show_contact_form": true,
+  "footer_links": {
+    "quickLinks": {
+      "title": "Quick Links",
+      "list": [
+        { "title": "Home", "href": "/" },
+        { "title": "Blogs", "href": "/blogs" },
+        { "title": "Dev Tips", "href": "/dev-tips" },
+        { "title": "Learning", "href": "/learning" },
+        { "title": "Uses", "href": "/uses" },
+        { "title": "Work", "href": "/work" }
+      ]
+    },
+    "otherLinks": {
+      "title": "Other Links",
+      "list": [
+        { "title": "Media Log", "href": "/media" },
+        { "title": "Sitemap", "href": "/sitemap.xml" },
+        { "title": "About", "href": "/about" },
+        { "title": "Contact", "href": "/contact" }
+      ]
+    },
+    "socialLinks": {
+      "title": "Connect with Me",
+      "list": [
+        { "href": "/github", "title": "Github", "openInNewTab": true },
+        { "href": "/instagram", "title": "Instagram", "openInNewTab": true },
+        { "href": "/linkedin", "title": "Linkedin", "openInNewTab": true },
+        { "href": "/twitter", "title": "Twitter", "openInNewTab": true },
+        {
+          "href": "/stackoverflow",
+          "title": "StackOverFlow",
+          "openInNewTab": true
+        },
+        {
+          "href": "https://akulsr0.gumroad.com/",
+          "title": "Gumroad",
+          "openInNewTab": true
+        },
+        {
+          "href": "https://www.npmjs.com/~akulsr0",
+          "title": "NPM",
+          "openInNewTab": true
+        },
+        {
+          "href": "https://play.google.com/store/apps/developer?id=Akul+Srivastava",
+          "title": "Google Playstore",
+          "openInNewTab": true
+        }
+      ]
+    }
+  }
 }
