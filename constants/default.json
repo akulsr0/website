@@ -67,12 +67,14 @@
         { "title": "Dev Tips", "href": "/dev-tips" },
         { "title": "Learning", "href": "/learning" },
         { "title": "Uses", "href": "/uses" },
-        { "title": "Work", "href": "/work" }
+        { "title": "Work", "href": "/work" },
+        { "title": "Opensource", "href": "/opensource" }
       ]
     },
     "otherLinks": {
       "title": "Other Links",
       "list": [
+        { "title": "Resume", "href": "/resume.pdf", "openInNewTab": true },
         { "title": "Media Log", "href": "/media" },
         { "title": "Sitemap", "href": "/sitemap.xml" },
         { "title": "About", "href": "/about" },

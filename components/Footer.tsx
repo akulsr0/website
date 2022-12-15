@@ -19,7 +19,7 @@ const Footer: NextPage = () => {
     >
       <section>
         {Object.values(footerLinks).map((fl) => (
-          <List list={fl.list} title={fl.title} />
+          <List key={fl.title} list={fl.list} title={fl.title} />
         ))}
       </section>
     </footer>

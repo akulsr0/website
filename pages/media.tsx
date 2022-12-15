@@ -46,7 +46,7 @@ const MediaGallery = (props: IMediaProps) => {
       <main className="main-content">
         <h3>Akul Srivastava - Media Log</h3>
         {Object.values(gallery).map((gallery) => (
-          <ImageGallery gallery={gallery} />
+          <ImageGallery key={gallery.title} gallery={gallery} />
         ))}
       </main>
       <Footer />
