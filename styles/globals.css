@@ -104,7 +104,7 @@ article.main-content {
 }
 
 .table-wrapper {
-  overflow: scroll;
+  overflow: auto;
 }
 
 details {
