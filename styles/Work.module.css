@@ -1,0 +1,49 @@
+.workWrapper {
+  margin-top: 0.6rem;
+  position: relative;
+}
+.workWrapper > div {
+  padding-left: 1.4rem;
+  position: relative;
+}
+.workWrapper > div:not(:first-child) {
+  margin-top: 1.2rem;
+}
+.workWrapper > div:first-child .pointer {
+  background: #2ecc71;
+}
+.pointer {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 16px;
+  left: 0;
+  top: 0.45rem;
+  z-index: 9;
+}
+.line {
+  position: absolute;
+  width: 4px;
+  height: 14rem;
+  top: 0.45rem;
+  left: 6px;
+  opacity: 0.75;
+}
+.expCallout {
+  display: inline;
+  padding: 0.2rem 1.2rem;
+  border-radius: 4px 4px 4px;
+  position: relative;
+  background: #b8e994;
+  color: #3d3d3d;
+}
+.expCallout::after {
+  content: "";
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  transform: rotate(45deg);
+  left: 2px;
+  top: 20px;
+  background: #b8e994;
+}
