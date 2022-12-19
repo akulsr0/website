@@ -10,17 +10,21 @@ export interface ILinkList {
   title: string;
 }
 
-interface IListProps extends ILinkList {}
+interface IListProps extends ILinkList {
+  showTitle?: boolean;
+}
 
 const List = (props: IListProps) => {
   const { isDarkTheme } = useTheme();
-  const { list, title } = props;
+  const { list, title, showTitle = true } = props;
 
   return (
     <div className={styles.listWrapper}>
-      <strong style={{ color: isDarkTheme ? "#ece3cc" : "#3d3d3d" }}>
-        {title}
-      </strong>
+      {showTitle ? (
+        <strong style={{ color: isDarkTheme ? "#ece3cc" : "#3d3d3d" }}>
+          {title}
+        </strong>
+      ) : null}
       <ul className="list">
         {list.map((l) => (
           <li key={l.title}>

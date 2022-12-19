@@ -34,7 +34,7 @@ const Work: NextPage<WorkProps> = (props) => {
     const [y, d, h] = [duration.years(), duration.days(), duration.hours()];
     const exp = `${y} years ${d} days ${h} hours`;
     expCalloutRef.current!.innerText = exp;
-  }, []);
+  }, [isDarkTheme]);
 
   return (
     <Container>

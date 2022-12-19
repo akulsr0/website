@@ -5,21 +5,21 @@ import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import Head from "../../components/_head";
 import { OPENSOURCE_CONTRIBUTIONS } from "../../constants/oss";
+import List from "../../components/List";
 
 const Opensource: React.FC<null> = (): JSX.Element => {
+  const linksList = OPENSOURCE_CONTRIBUTIONS.map((c) => ({
+    title: c,
+    href: `/opensource/${c}`,
+  }));
+
   return (
     <Container>
       <Head title="Opensource" />
       <Header />
       <main className="main-content">
         <h2>Opensource Work</h2>
-        <ul>
-          {OPENSOURCE_CONTRIBUTIONS.map((oss) => (
-            <li key={oss}>
-              <Link href={`/opensource/${oss}`}>{oss}</Link>
-            </li>
-          ))}
-        </ul>
+        <List list={linksList} title="Opensource" showTitle={false} />
       </main>
       <Footer />
     </Container>
