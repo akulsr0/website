@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState } from "react";
 
-const DEFAULT_THEME = "dark";
+const DEFAULT_THEME = "light";
 
 type ThemeMode = "light" | "dark";
 type Theme = {
