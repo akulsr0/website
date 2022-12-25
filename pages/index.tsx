@@ -7,7 +7,7 @@ import path from "path";
 import matter from "gray-matter";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
-import { getUserActivity } from "gh-recent-activity";
+import { getUserActivity, Activity } from "gh-recent-activity";
 
 import Container from "../components/Container";
 import Head from "../components/_head";
@@ -25,12 +25,14 @@ interface HomeProps {
 const Home: NextPage<HomeProps> = (props) => {
   const { homeContent } = props;
   const { theme } = useTheme();
-  const [recentActivity, setRecentActivity] = useState();
+  const [recentActivity, setRecentActivity] = useState<Activity>();
 
   useEffect(() => {
-    getUserActivity("akulsr0", { includeEmoji: true }).then((resp) => {
-      setRecentActivity(resp);
-    });
+    getUserActivity("akulsr0", { includeEmoji: true }).then(
+      (resp: Activity) => {
+        setRecentActivity(resp);
+      }
+    );
   }, []);
 
   return (

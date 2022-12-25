@@ -15,7 +15,7 @@
   "dependencies": {
     "@next/font": "^13.0.5",
     "@vercel/og": "^0.0.21",
-    "gh-recent-activity": "^1.0.3",
+    "gh-recent-activity": "^1.1.1",
     "gray-matter": "^4.0.3",
     "highlight.js": "^11.3.1",
     "marked": "^3.0.7",
