@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import type { NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -6,6 +7,7 @@ import path from "path";
 import matter from "gray-matter";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
+import { getUserActivity } from "gh-recent-activity";
 
 import Container from "../components/Container";
 import Head from "../components/_head";
@@ -23,6 +25,13 @@ interface HomeProps {
 const Home: NextPage<HomeProps> = (props) => {
   const { homeContent } = props;
   const { theme } = useTheme();
+  const [recentActivity, setRecentActivity] = useState();
+
+  useEffect(() => {
+    getUserActivity("akulsr0", { includeEmoji: true }).then((resp) => {
+      setRecentActivity(resp);
+    });
+  }, []);
 
   return (
     <Container>
@@ -32,7 +41,7 @@ const Home: NextPage<HomeProps> = (props) => {
         <MDXRemote
           {...homeContent}
           components={{ Link, Image }}
-          scope={{ theme }}
+          scope={{ theme, recentActivity }}
         />
       </main>
       <Footer />
