@@ -36,7 +36,7 @@
   }
   .recent-activity-list {
     display: block;
-    min-height: 420px;
+    min-height: 390px;
   }
 `}</style>
 
@@ -174,10 +174,4 @@ Other than the day job and side-projects, I also like to explore opensource proj
 
 <br />
 
-### Recent Activity
-
-<ul className="recent-activity-list">
-  {recentActivity?.map((act, idx) => (
-    <li key={`${act.type}-${idx}`}>{act.text}</li>
-  ))}
-</ul>
+<RecentActivity activity={recentActivity} show={showRecentActivity} />
