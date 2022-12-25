@@ -23,7 +23,7 @@ const ThemeStyle = () => {
         color: ${isDarkTheme ? "#f8f8f8" : "black"};
       }
       a {
-        color: ${isDarkTheme ? "#F8EFBA" : "#066cd1"};
+        color: ${isDarkTheme ? "#F8EFBA" : "#0459af"};
       }
       blockquote {
         background-color: ${isDarkTheme ? "#a59f8f" : "#f9f9f9"};
@@ -47,7 +47,7 @@ const ThemeStyle = () => {
         color: ${isDarkTheme ? "#f8f8f8" : "#3d3d3d"};
       }
       .list li::before {
-        color: ${isDarkTheme ? "#a59f8f" : "#066cd1"};
+        color: ${isDarkTheme ? "#a59f8f" : "#0459af"};
       }
     `}</style>
   );

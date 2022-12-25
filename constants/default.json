@@ -58,6 +58,7 @@
   "dev_tips_count": 25,
   "blogs_count": 10,
   "show_contact_form": true,
+  "show_recent_activity": true,
   "footer_links": {
     "quickLinks": {
       "title": "Quick Links",

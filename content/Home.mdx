@@ -34,6 +34,10 @@
   .box span {
     margin-left: 0.5rem;
   }
+  .recent-activity-list {
+    display: block;
+    min-height: 300px;
+  }
 `}</style>
 
 I am Akul Srivastava, a self-trained software engineer based in Lucknow and working remotely. I have done my bachelor's in Engineering (Computer Science) from <abbr title="Babu Banarasi Das: National Institute of Technology and Management, Lucknow">BBD: NITM</abbr>. I primarily do web and mobile application development and am interested in the same. I currently work at <a href="https://smallcase.com/"target="_blank">smallcase</a> as a software engineer. Previously, I have worked at <a href="https://vogo.in/" target="_blank">Vogo.</a>
@@ -167,3 +171,7 @@ programming and some other thoughts.
 <br />
 
 Other than the day job and side-projects, I also like to explore opensource projects. You can find my contributions in some of those <Link href='/opensource' >opensource projects - here</Link>.
+
+<br />
+
+<RecentActivity activity={recentActivity} show={showRecentActivity} />
