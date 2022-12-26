@@ -11,13 +11,16 @@ const font = Font({
   subsets: ["latin"],
   weight: ["400", "500", "700", "800"],
   fallback: ["sans-serif"],
-  variable: "--default-font",
+  display: "swap",
 });
 
 const ThemeStyle = () => {
   const { isDarkTheme } = useTheme();
   return (
     <style jsx global>{`
+      html {
+        font-family: ${font.style.fontFamily};
+      }
       body {
         background-color: ${isDarkTheme ? "#3d3d3d" : "#fdfdfd"};
         color: ${isDarkTheme ? "#f8f8f8" : "black"};
@@ -64,13 +67,13 @@ function MyApp({ Component, pageProps }: AppProps) {
   });
 
   return (
-    <div className={[font.className, font.variable].join(" ")}>
+    <>
       <Script src="https://scripts.simpleanalyticscdn.com/latest.js" />
       <ThemeContextProvider>
         <ThemeStyle />
         <Component {...pageProps} />
       </ThemeContextProvider>
-    </div>
+    </>
   );
 }
 export default MyApp;
