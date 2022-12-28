@@ -1,6 +1,6 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
-import { Open_Sans as Font } from "@next/font/google";
+import { Merriweather as Font } from "@next/font/google";
 import Script from "next/script";
 import marked from "marked";
 import prism from "prismjs";
@@ -9,7 +9,7 @@ import "../styles/CodeHighlighting.css";
 
 const font = Font({
   subsets: ["latin"],
-  weight: ["400", "500", "700", "800"],
+  weight: ["300", "400", "700", "900"],
   fallback: ["sans-serif"],
   display: "swap",
 });
