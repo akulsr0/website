@@ -77,6 +77,7 @@
       "list": [
         { "title": "Resume", "href": "/resume.pdf", "openInNewTab": true },
         { "title": "Media Log", "href": "/media" },
+        { "title": "Year in review", "href": "/year-in-review" },
         { "title": "Sitemap", "href": "/sitemap.xml" },
         { "title": "About", "href": "/about" },
         { "title": "Contact", "href": "/contact" }
