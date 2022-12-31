@@ -36,7 +36,7 @@ ol {
 ol,
 ul {
   margin: 10px;
-  list-style: circle;
+  list-style: disc;
   list-style-position: inside !important;
 }
 
