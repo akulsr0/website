@@ -38,7 +38,6 @@ export function getStaticProps() {
     .filter((y) => y.endsWith(".md"))
     .map((y) => y.split(".md")[0]);
 
-  console.log(years);
   return {
     props: {
       years,
