@@ -4,6 +4,11 @@
   padding-right: 2rem;
 }
 
+.listWrapper > strong {
+  font-variant: small-caps;
+  font-size: 1.2rem;
+}
+
 .listWrapper > ul {
   display: block;
   list-style: none;

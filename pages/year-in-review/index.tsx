@@ -24,7 +24,7 @@ const YearInReviewIndex = (props: IYearsInReviewIndexProps) => {
             title: y,
             href: `/year-in-review/${y}`,
           }))}
-          title="Year in review"
+          title="Year in Review"
         />
       </main>
       <Footer />
