@@ -11,6 +11,7 @@ import Container from "../components/Container";
 import Head from "../components/_head";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import Github from "../components/icons/Github";
 
 import { useTheme } from "../context/ThemeContext";
 import styles from "../styles/Work.module.css";
@@ -44,6 +45,7 @@ const Work: NextPage<WorkProps> = (props) => {
         <h2 style={{ marginBottom: "1rem" }}>Work Experience</h2>
         <MDXRemote
           {...workContent}
+          components={{ Github }}
           scope={{ styles, isDarkTheme, expCalloutRef }}
         />
       </article>
