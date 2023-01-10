@@ -6,7 +6,7 @@ function PageViews(props: { type: ContentType; slug: string }) {
   const { type, slug } = props;
   const isProd = isProduction();
 
-  if (isProd) return [];
+  if (isProd) return null;
 
   return (
     <>
