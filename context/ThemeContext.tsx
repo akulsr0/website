@@ -28,8 +28,14 @@ export const useTheme = () => {
   const { theme, setTheme } = useContext(ThemeContext);
   const isLightTheme = theme === "light";
   const isDarkTheme = theme === "dark";
-  const setLightTheme = () => setTheme!("light");
-  const setDarkTheme = () => setTheme!("dark");
+  const setLightTheme = () => {
+    localStorage.setItem("theme", "light");
+    setTheme!("light");
+  };
+  const setDarkTheme = () => {
+    localStorage.setItem("theme", "dark");
+    setTheme!("dark");
+  };
   const toggleTheme = () => {
     isDarkTheme ? setLightTheme() : setDarkTheme();
   };
