@@ -17,7 +17,10 @@ const otherRedirects = [
 module.exports = {
   reactStrictMode: true,
   images: {
-    domains: ["user-images.githubusercontent.com"],
+    domains: [
+      "user-images.githubusercontent.com",
+      "https://akulsr0-visitor-badge.glitch.me/",
+    ],
   },
   eslint: {
     ignoreDuringBuilds: true,

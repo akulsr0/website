@@ -11,21 +11,25 @@ import {
   BlogData,
   BlogRecommended,
 } from "../../interfaces/Blog";
-import styles from "../../styles/Blog.module.css";
+
+import { useTheme } from "../../context/ThemeContext";
 
 import Container from "../../components/Container";
 import Head from "../../components/_head";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import PageViews from "../../components/PageViews";
+import ShareButtons from "../../components/SocialShareButtons";
+import Comments from "../../components/Comments";
+
 import {
   getBlogLink,
   getNameFromSlug,
   getRecommendedBlog,
 } from "../../helpers";
 import { getOGImageURL } from "../../helpers/seo";
-import Comments from "../../components/Comments";
-import ShareButtons from "../../components/SocialShareButtons";
-import { useTheme } from "../../context/ThemeContext";
+
+import styles from "../../styles/Blog.module.css";
 
 interface BlogProps {
   blog: BlogType;
@@ -70,7 +74,11 @@ const Blog: NextPage<BlogProps> = (props) => {
             {readTime.text} &nbsp;&bull;&nbsp; {`${dd} ${mm} ${yyyy}`}
           </span>
         </>
-        <ShareButtons url={getBlogLink(slug)} />
+        <div className={styles.blogViewShareWrapper}>
+          {/* eslint-disable @next/next/no-img-element */}
+          <PageViews type="blog" slug={slug} />
+          <ShareButtons url={getBlogLink(slug)} />
+        </div>
         <div
           id="content"
           className={styles.blogContent}

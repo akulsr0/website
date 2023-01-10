@@ -47,6 +47,15 @@
   font-weight: bold;
 }
 
+.blogViewShareWrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.blogViewShareWrapper img {
+  margin: 0;
+}
+
 /* Recommended Blog */
 
 .recommendedBlog {

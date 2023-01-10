@@ -10,7 +10,9 @@ import Container from "../../../components/Container";
 import Footer from "../../../components/Footer";
 import Header from "../../../components/Header";
 import Head from "../../../components/_head";
+import PageViews from "../../../components/PageViews";
 import ShareButtons from "../../../components/SocialShareButtons";
+import Comments from "../../../components/Comments";
 
 import { IRecommendedTip } from "../../../interfaces/DevTips";
 import {
@@ -18,10 +20,9 @@ import {
   getNameFromSlug,
   getRecommendedDevTips,
 } from "../../../helpers";
+import { getOGImageURL } from "../../../helpers/seo";
 
 import styles from "../../../styles/DevTips.module.css";
-import { getOGImageURL } from "../../../helpers/seo";
-import Comments from "../../../components/Comments";
 
 interface ITip {
   data: {
@@ -69,7 +70,10 @@ const DevTip: NextPage<DevTipProps> = (props) => {
           <span className={styles.devTipInfoLine}>
             {readTime.text} &nbsp;&bull;&nbsp; {`${dd} ${mm} ${yyyy}`}
           </span>
-          <ShareButtons url={getDevTipLink(category, slug)} />
+          <div className={styles.devTipsViewShareWrapper}>
+            <PageViews type="dev-tip" slug={slug} />
+            <ShareButtons url={getDevTipLink(category, slug)} />
+          </div>
           <div
             className={styles.tipContent}
             dangerouslySetInnerHTML={{ __html: content }}
