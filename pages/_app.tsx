@@ -6,6 +6,7 @@ import marked from "marked";
 import prism from "prismjs";
 import { ThemeContextProvider, useTheme } from "../context/ThemeContext";
 import "../styles/CodeHighlighting.css";
+import React, { useLayoutEffect } from "react";
 
 const font = Font({
   subsets: ["latin"],
@@ -56,6 +57,23 @@ const ThemeStyle = () => {
   );
 };
 
+const ThemeSetter = ({ children }: { children: any }) => {
+  const { setLightTheme, setDarkTheme } = useTheme();
+
+  useLayoutEffect(() => {
+    const localTheme = localStorage.getItem("theme");
+    const isDeviceDarkMode =
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches;
+    if ((!localTheme && isDeviceDarkMode) || localTheme === "dark") {
+      setDarkTheme();
+    }
+    if (localTheme === "light") setLightTheme();
+  }, []);
+
+  return children;
+};
+
 function MyApp({ Component, pageProps }: AppProps) {
   marked.setOptions({
     highlight: (code, lang) => {
@@ -70,8 +88,10 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <Script src="https://scripts.simpleanalyticscdn.com/latest.js" />
       <ThemeContextProvider>
-        <ThemeStyle />
-        <Component {...pageProps} />
+        <ThemeSetter>
+          <ThemeStyle />
+          <Component {...pageProps} />
+        </ThemeSetter>
       </ThemeContextProvider>
     </>
   );
