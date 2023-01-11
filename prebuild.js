@@ -61,17 +61,6 @@ function getDevTips() {
   const contents = fs.readdirSync(contentPath);
   const devTips = [];
 
-  /**
-   * When new category introduced, append at end only
-   * This mapping is used to generate id for devtip
-   * DevTip Id Format - DT-[categoryId]-[serial]
-   * Example - DT-3-1
-   * From above id, we can know its 1(index) devtip from category[3] i.e. vscode
-   *
-   * NEVER CHANGE EXISTING INDEX::CATEGORY MAPPING
-   */
-  const DevTipCategories = ["github", "others", "react", "vscode", "webdev"];
-
   for (let content of contents) {
     const _cPath = path.join(contentPath, content);
     const _devTips = fs.readdirSync(_cPath);
@@ -79,10 +68,8 @@ function getDevTips() {
       const tipDate = matter(
         fs.readFileSync(path.join(contentPath, content, tip), "utf-8")
       ).data.date;
-      const categoryId = DevTipCategories.indexOf(content);
       devTips.push({
         category: content,
-        id: `DT-${categoryId}-${Number(tip.split("-")[0])}`,
         date: tipDate,
         serial: tip.split("-")[0],
         tip: tip.split("-").slice(1).join("-").replace(/.md/, ""),
@@ -96,7 +83,11 @@ function getDevTips() {
     }
     return Date.parse(b.date) - Date.parse(a.date);
   });
-  return devTips;
+
+  let l = devTips.length;
+  const devTipsWithId = devTips.map((d) => ({ ...d, id: l-- }));
+
+  return devTipsWithId;
 }
 
 function writeBlogsJSON(blogs) {
