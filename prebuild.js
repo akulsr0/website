@@ -61,6 +61,17 @@ function getDevTips() {
   const contents = fs.readdirSync(contentPath);
   const devTips = [];
 
+  /**
+   * When new category introduced, append at end only
+   * This mapping is used to generate id for devtip
+   * DevTip Id Format - DT-[categoryId]-[serial]
+   * Example - DT-3-1
+   * From above id, we can know its 1(index) devtip from category[3] i.e. vscode
+   *
+   * NEVER CHANGE EXISTING INDEX::CATEGORY MAPPING
+   */
+  const DevTipCategories = ["github", "others", "react", "vscode", "webdev"];
+
   for (let content of contents) {
     const _cPath = path.join(contentPath, content);
     const _devTips = fs.readdirSync(_cPath);
@@ -68,8 +79,10 @@ function getDevTips() {
       const tipDate = matter(
         fs.readFileSync(path.join(contentPath, content, tip), "utf-8")
       ).data.date;
+      const categoryId = DevTipCategories.indexOf(content);
       devTips.push({
         category: content,
+        id: `DT-${categoryId}-${Number(tip.split("-")[0])}`,
         date: tipDate,
         serial: tip.split("-")[0],
         tip: tip.split("-").slice(1).join("-").replace(/.md/, ""),
@@ -94,11 +107,16 @@ function writeBlogsJSON(blogs) {
 function getBlogs() {
   const blogsPath = path.join("content/blogs");
   const blogs = fs.readdirSync(blogsPath);
+  blogs.sort((a, b) => {
+    const firstId = Number(a.split("-")[0]);
+    const secondId = Number(b.split("-")[0]);
+    return firstId - secondId;
+  });
   const blogsContent = blogs
-    .map((blog) => {
+    .map((blog, idx) => {
       const blogContent = fs.readFileSync(path.join(blogsPath, blog));
       const { data } = matter(blogContent);
-      return { data };
+      return { data: { ...data, id: idx + 1 } };
     })
     .reverse();
   return blogsContent;
