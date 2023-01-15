@@ -1,6 +1,6 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
-import { Merriweather as Font } from "@next/font/google";
+import { Source_Sans_Pro as Font } from "@next/font/google";
 import Script from "next/script";
 import marked from "marked";
 import prism from "prismjs";
