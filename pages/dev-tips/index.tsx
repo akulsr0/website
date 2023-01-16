@@ -70,7 +70,7 @@ const DevTips: NextPage<DevTipsProps> = (props) => {
   function ViewMore() {
     return showViewMore ? (
       <span
-        style={{ color: isDarkTheme ? "#a59f8f" : "#3d3d3d" }}
+        style={{ color: isDarkTheme ? "#ced6e0" : "#3d3d3d" }}
         onClick={onClickViewMore}
       >
         View More
@@ -123,7 +123,7 @@ const DevTips: NextPage<DevTipsProps> = (props) => {
           <div className={styles.devTipSeach}>
             <input
               style={{
-                backgroundColor: isDarkTheme ? "#a59f8f" : "#f0f0f0",
+                backgroundColor: isDarkTheme ? "#ced6e0" : "#f0f0f0",
                 color: "#3d3d3d",
                 opacity: 0.75,
               }}

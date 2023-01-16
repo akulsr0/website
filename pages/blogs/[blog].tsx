@@ -68,7 +68,7 @@ const Blog: NextPage<BlogProps> = (props) => {
           <span
             className={styles.blogInfoLine}
             style={{
-              color: isDarkTheme ? "#a59f8f" : "#595959",
+              color: isDarkTheme ? "#ced6e0aa" : "#595959",
             }}
           >
             {readTime.text} &nbsp;&bull;&nbsp; {`${dd} ${mm} ${yyyy}`}

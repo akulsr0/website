@@ -55,7 +55,7 @@ const LearningContentPage: NextPage<ILearningContentPageProps> = (props) => {
         <Link href={`/learning/${series}`} passHref>
           <h2
             className={styles.pointer}
-            style={{ color: isDarkTheme ? "#a59f8f" : "#3d3d3d" }}
+            style={{ color: isDarkTheme ? "#ced6e0" : "#3d3d3d" }}
           >
             &#8592;&nbsp;&nbsp;{seriesTitle}
           </h2>

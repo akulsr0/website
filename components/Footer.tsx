@@ -13,8 +13,8 @@ const Footer: NextPage = () => {
     <footer
       className={styles.footer}
       style={{
-        backgroundColor: isDarkTheme ? "#2a2a2a" : "#eeeeee",
-        borderTop: `0.25rem solid ${isDarkTheme ? "#9b9786" : "#a5a5a5"}`,
+        backgroundColor: isDarkTheme ? "#192534" : "#eeeeee",
+        borderTop: `0.25rem solid ${isDarkTheme ? "#40739e" : "#a5a5a5"}`,
       }}
     >
       <section>

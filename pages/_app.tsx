@@ -1,4 +1,5 @@
 import "../styles/globals.css";
+import React, { useLayoutEffect } from "react";
 import type { AppProps } from "next/app";
 import { Source_Sans_Pro as Font } from "@next/font/google";
 import Script from "next/script";
@@ -6,7 +7,6 @@ import marked from "marked";
 import prism from "prismjs";
 import { ThemeContextProvider, useTheme } from "../context/ThemeContext";
 import "../styles/CodeHighlighting.css";
-import React, { useLayoutEffect } from "react";
 
 const font = Font({
   subsets: ["latin"],
@@ -23,35 +23,35 @@ const ThemeStyle = () => {
         font-family: ${font.style.fontFamily};
       }
       body {
-        background-color: ${isDarkTheme ? "#3d3d3d" : "#fdfdfd"};
-        color: ${isDarkTheme ? "#f8f8f8" : "black"};
+        background-color: ${isDarkTheme ? "#222f3e" : "#fdfdfd"};
+        color: ${isDarkTheme ? "#ced6e0" : "black"};
       }
       a {
-        color: ${isDarkTheme ? "#F8EFBA" : "#0459af"};
+        color: ${isDarkTheme ? "#7ed6df" : "#0459af"};
       }
       blockquote {
-        background-color: ${isDarkTheme ? "#a59f8f" : "#f9f9f9"};
-        border-left: 10px solid ${isDarkTheme ? "#9b9786" : "#ccc"};
+        background-color: ${isDarkTheme ? "#ced6e0" : "#f9f9f9"};
+        border-left: 10px solid ${isDarkTheme ? "#8e8e8e" : "#ccc"};
       }
       th,
       td {
-        border: 1px solid ${isDarkTheme ? "#9b9786" : "black"};
+        border: 1px solid ${isDarkTheme ? "#40739e" : "black"};
         padding: 0 2rem;
       }
       code[class*="language-"],
       pre {
-        background-color: ${isDarkTheme ? "#2a2a2a" : "#2c3e50"};
+        background-color: ${isDarkTheme ? "#1e1e1e" : "#2c3e50"};
       }
       :not(pre) > code[class*="language-"],
       pre[class*="language-"] {
-        background-color: ${isDarkTheme ? "#2a2a2a" : "#2c3e50"};
+        background-color: ${isDarkTheme ? "#1e1e1e" : "#2c3e50"};
       }
       .command-option {
         background-color: ${isDarkTheme ? "#2a2a2a" : "#f3f3f3"};
         color: ${isDarkTheme ? "#f8f8f8" : "#3d3d3d"};
       }
       .list li::before {
-        color: ${isDarkTheme ? "#a59f8f" : "#0459af"};
+        color: ${isDarkTheme ? "#7ed6df" : "#0459af"};
       }
     `}</style>
   );

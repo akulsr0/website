@@ -32,8 +32,13 @@ const Work: NextPage<WorkProps> = (props) => {
     const start = moment([2020, 11, 16]);
     const now = moment();
     const duration = moment.duration(now.diff(start));
-    const [y, d, h] = [duration.years(), duration.days(), duration.hours()];
-    const exp = `${y} years ${d} days ${h} hours`;
+    const [y, m, d, h] = [
+      duration.years(),
+      duration.months(),
+      duration.days(),
+      duration.hours(),
+    ];
+    const exp = `${y} years ${m} months ${d} days ${h} hours`;
     expCalloutRef.current!.innerText = exp;
   }, [isDarkTheme]);
 
