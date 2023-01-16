@@ -46,7 +46,7 @@ const DirectContact: React.FC = () => {
     <div className={styles.directContact}>
       <textarea
         style={{
-          backgroundColor: isDarkTheme ? "#a59f8f" : "#f0f0f0",
+          backgroundColor: isDarkTheme ? "#ced6e0" : "#f0f0f0",
           color: isDarkTheme ? "#3d3d3d" : "black",
           opacity: isDarkTheme ? 0.75 : 1,
         }}
@@ -55,7 +55,7 @@ const DirectContact: React.FC = () => {
       ></textarea>
       <button
         style={{
-          backgroundColor: isDarkTheme ? "#2a2a2a" : "#0e7afe",
+          backgroundColor: isDarkTheme ? "#40739e" : "#0e7afe",
         }}
         className={isSending ? styles.btnSending : undefined}
         onClick={onSend}

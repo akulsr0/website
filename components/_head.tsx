@@ -35,7 +35,7 @@ const Head: NextPage<HeadProps> = (props) => {
         sizes="32x32"
         href="/favicon-32x32.png"
       />
-      <meta name="theme-color" content={isDarkTheme ? "#2a2a2a" : "#EEEEEE"} />
+      <meta name="theme-color" content={isDarkTheme ? "#192534" : "#EEEEEE"} />
       <meta name="title" content="Akul Srivastava" />
       <meta name="keywords" content={keywordsString} />
       <meta name="description" content={_metaDescription} />

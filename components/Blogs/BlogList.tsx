@@ -40,7 +40,7 @@ const BlogsList: NextPage<BlogsListProps> = (props) => {
     return showViewMore ? (
       <span
         onClick={onClickViewMore}
-        style={{ color: isDarkTheme ? "#a59f8f" : "#3d3d3d" }}
+        style={{ color: isDarkTheme ? "#ced6e0" : "#3d3d3d" }}
       >
         View More
       </span>

@@ -21,7 +21,7 @@ const List = (props: IListProps) => {
   return (
     <div className={styles.listWrapper}>
       {showTitle ? (
-        <strong style={{ color: isDarkTheme ? "#ece3cc" : "#3d3d3d" }}>
+        <strong style={{ color: isDarkTheme ? "#ced6e0" : "#3d3d3d" }}>
           {title}
         </strong>
       ) : null}
