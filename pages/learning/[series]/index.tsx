@@ -54,13 +54,16 @@ const LearningSeries: NextPage<ILearningSeries> = (props) => {
 
 export async function getServerSideProps(ctx: GetStaticPropsContext) {
   const series = ctx.params?.series;
-  const indexContent = fs.readFileSync(
-    `content/learning/${series}/index.md`,
-    "utf-8"
-  );
+  console.log("----> 1", "coming here");
+  const contents = fs.readdirSync("content/learning");
+  console.log("----> 2", contents);
+  // const indexContent = fs.readFileSync(
+  //   `content/learning/${series}/index.md`,
+  //   "utf-8"
+  // );
 
   return {
-    props: { series, indexContent },
+    props: { series, indexContent: "" },
   };
 }
 
