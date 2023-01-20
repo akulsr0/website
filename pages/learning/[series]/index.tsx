@@ -1,8 +1,8 @@
 import * as React from "react";
+import fs from "fs";
+import path from "path";
 import { GetStaticPropsContext, NextPage } from "next";
 import Link from "next/link";
-
-import fs from "fs";
 
 import Container from "../../../components/Container";
 import Head from "../../../components/_head";
@@ -55,15 +55,16 @@ const LearningSeries: NextPage<ILearningSeries> = (props) => {
 export async function getServerSideProps(ctx: GetStaticPropsContext) {
   const series = ctx.params?.series;
   console.log("----> 1", "coming here");
-  const contents = fs.readdirSync("content/learning");
+  console.log("===>", path.resolve("content/learning"));
+  const contents = fs.readdirSync(path.resolve("content/learning"));
   console.log("----> 2", contents);
-  // const indexContent = fs.readFileSync(
-  //   `content/learning/${series}/index.md`,
-  //   "utf-8"
-  // );
+  const indexContent = fs.readFileSync(
+    path.resolve(`content/learning/${series}/index.md`),
+    "utf-8"
+  );
 
   return {
-    props: { series, indexContent: "" },
+    props: { series, indexContent },
   };
 }
 
