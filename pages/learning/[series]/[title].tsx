@@ -91,7 +91,7 @@ export async function getServerSideProps(ctx: GetStaticPropsContext) {
     f.match(`${title}.md`)
   );
   const rawContent = fs.readFileSync(
-    `content/learning/${series}/${fileTitle}`,
+    path.resolve(`content/learning/${series}/${fileTitle}`),
     "utf-8"
   );
   const { content, data } = matter(rawContent);
