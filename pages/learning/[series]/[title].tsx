@@ -84,7 +84,6 @@ export async function getServerSideProps(ctx: GetStaticPropsContext) {
   const learningContent = JSON.parse(
     fs.readFileSync("content/learning.json", "utf-8")
   );
-
   const seriesContent = learningContent.find(
     (c: ILearning) => c.slug === series
   );

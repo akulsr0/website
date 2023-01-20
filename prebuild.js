@@ -9,36 +9,35 @@ function main() {
   const blogs = getBlogs();
   writeDevTipsJSON(JSON.stringify(devTips));
   writeBlogsJSON(JSON.stringify(blogs));
-  // writeLearningSeriesIndex();
+  writeLearningSeriesIndex();
   writeLearningContentJSON();
 }
 
-// function writeLearningSeriesIndex() {
-//   const learningPath = path.join("content/learning");
-//   const learningContent = fs.readdirSync(learningPath);
-//   for (const series of learningContent) {
-//     const seriesPath = path.join(learningPath, series);
-//     const seriesContent = fs.readdirSync(seriesPath);
-//     const res = [];
-//     console.log(seriesContent);
-//     for (const sc of seriesContent) {
-//       if (sc === "index.md") continue;
-//       const id = sc.split("_")[0];
-//       const slug = sc.split("_")[1].split(".md")[0];
-//       const p = path.join(learningPath, series, sc);
-//       const data = fs.readFileSync(p, "utf-8");
-//       const metaData = matter(data);
-//       const title = metaData.data.title;
-//       const markup = `<li>&nbsp;<a href='/learning/${series}/${slug}'>${title}</a></li>`;
-//       res.push({ id, markup });
-//     }
-//     const finalMarkupArr = res
-//       .sort((a, b) => Number(a.id) - Number(b.id))
-//       .map((e) => e.markup);
-//     const finalMarkup = `<ol>${finalMarkupArr.join("")}</ol>`;
-//     fs.writeFileSync(seriesPath + "/index.md", finalMarkup);
-//   }
-// }
+function writeLearningSeriesIndex() {
+  const learningPath = path.join("content/learning");
+  const learningContent = fs.readdirSync(learningPath);
+  for (const series of learningContent) {
+    const seriesPath = path.join(learningPath, series);
+    const seriesContent = fs.readdirSync(seriesPath);
+    const res = [];
+    for (const sc of seriesContent) {
+      if (sc === "index.md") continue;
+      const id = sc.split("_")[0];
+      const slug = sc.split("_")[1].split(".md")[0];
+      const p = path.join(learningPath, series, sc);
+      const data = fs.readFileSync(p, "utf-8");
+      const metaData = matter(data);
+      const title = metaData.data.title;
+      const markup = `<li>&nbsp;<a href='/learning/${series}/${slug}'>${title}</a></li>`;
+      res.push({ id, markup });
+    }
+    const finalMarkupArr = res
+      .sort((a, b) => Number(a.id) - Number(b.id))
+      .map((e) => e.markup);
+    const finalMarkup = `<ol>${finalMarkupArr.join("")}</ol>`;
+    fs.writeFileSync(seriesPath + "/index.md", finalMarkup);
+  }
+}
 
 function writeLearningContentJSON() {
   const learningPath = path.join("content/learning");
