@@ -39,7 +39,7 @@ const LearningContentPage: NextPage<ILearningContentPageProps> = (props) => {
     return (
       <div>
         <strong>{title}</strong>
-        <Link href={`/learning/${series}/${lc}`}>{lc}</Link>
+        <Link href={`/learning/${series}/${lc}`}>{getNameFromSlug(lc)}</Link>
       </div>
     );
   }
@@ -77,28 +77,7 @@ const LearningContentPage: NextPage<ILearningContentPageProps> = (props) => {
   );
 };
 
-export async function getStaticPaths() {
-  let paths;
-
-  const lcArray: Array<ILearning> = JSON.parse(
-    fs.readFileSync("content/learning.json", "utf-8")
-  );
-  for (const lc of lcArray) {
-    const lcChilds = lc.children.map((child) => {
-      const title = child.match(/[a-zA-Z-]+/)?.[0];
-      if (child === "index.md") return null;
-      return { params: { series: lc.slug, title } };
-    });
-    paths = lcChilds.filter(Boolean);
-  }
-
-  return {
-    paths,
-    fallback: false,
-  };
-}
-
-export async function getStaticProps(ctx: GetStaticPropsContext) {
+export async function getServerSideProps(ctx: GetStaticPropsContext) {
   const series = ctx.params!.series as string;
   const title = ctx.params!.title as string;
 
@@ -125,7 +104,7 @@ export async function getStaticProps(ctx: GetStaticPropsContext) {
   return {
     props: {
       series,
-      title,
+      title: title.split("-").join(" "),
       content: marked(content),
       data,
       recommended,

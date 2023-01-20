@@ -1,7 +1,7 @@
 ---
 id: 0
-title: echo command
-date: 7-Jun-2021
+title: echo
+date: 7-Jun-2022
 ---
 
 ### echo command

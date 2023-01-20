@@ -1,7 +1,7 @@
 ---
 id: 17
-title: kill command
-date: 18-Jun-2021
+title: kill
+date: 18-Jun-2022
 ---
 
 ### kill command

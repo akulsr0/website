@@ -1,7 +1,7 @@
 ---
 id: 2
-title: touch command
-date: 8-Jun-2021
+title: touch
+date: 8-Jun-2022
 ---
 
 ### touch command

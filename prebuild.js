@@ -23,8 +23,12 @@ function writeLearningSeriesIndex() {
     for (const sc of seriesContent) {
       if (sc === "index.md") continue;
       const id = sc.split("_")[0];
-      const title = sc.split("_")[1].split(".md")[0];
-      const markup = `<li>&nbsp;<a href='/learning/${series}/${title}'>${title}</a></li>`;
+      const slug = sc.split("_")[1].split(".md")[0];
+      const p = path.join(learningPath, series, sc);
+      const data = fs.readFileSync(p, "utf-8");
+      const metaData = matter(data);
+      const title = metaData.data.title;
+      const markup = `<li>&nbsp;<a href='/learning/${series}/${slug}'>${title}</a></li>`;
       res.push({ id, markup });
     }
     const finalMarkupArr = res

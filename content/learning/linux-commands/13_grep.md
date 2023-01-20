@@ -1,7 +1,7 @@
 ---
 id: 13
-title: grep command
-date: 14-Jun-2021
+title: grep
+date: 14-Jun-2022
 ---
 
 ### grep command

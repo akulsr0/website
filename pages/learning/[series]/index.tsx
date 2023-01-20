@@ -3,7 +3,6 @@ import { GetStaticPropsContext, NextPage } from "next";
 import Link from "next/link";
 
 import fs from "fs";
-import path from "path";
 
 import Container from "../../../components/Container";
 import Head from "../../../components/_head";
@@ -53,20 +52,7 @@ const LearningSeries: NextPage<ILearningSeries> = (props) => {
   );
 };
 
-export async function getStaticPaths() {
-  const learningPath = path.join("content/learning");
-  const learningContent = fs.readdirSync(learningPath);
-  const paths = learningContent.map((lc) => ({
-    params: { series: lc },
-  }));
-
-  return {
-    fallback: false,
-    paths,
-  };
-}
-
-export async function getStaticProps(ctx: GetStaticPropsContext) {
+export async function getServerSideProps(ctx: GetStaticPropsContext) {
   const series = ctx.params?.series;
   const indexContent = fs.readFileSync(
     `content/learning/${series}/index.md`,

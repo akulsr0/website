@@ -1,7 +1,7 @@
 ---
 id: 4
-title: mkdir command
-date: 10-Jun-2021
+title: mkdir
+date: 10-Jun-2022
 ---
 
 ### mkdir command

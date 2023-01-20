@@ -1,7 +1,7 @@
 ---
 id: 6
-title: find command
-date: 11-Jun-2021
+title: find
+date: 11-Jun-2022
 ---
 
 ### find command

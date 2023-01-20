@@ -1,7 +1,7 @@
 ---
 id: 14
-title: head command
-date: 18-Jun-2021
+title: head
+date: 18-Jun-2022
 ---
 
 ### head command
