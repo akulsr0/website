@@ -1,8 +1,9 @@
 import * as React from "react";
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
 import { GetStaticPropsContext, NextPage } from "next";
 import Link from "next/link";
-
-import fs from "fs";
 
 import Container from "../../../components/Container";
 import Head from "../../../components/_head";
@@ -55,11 +56,28 @@ const LearningSeries: NextPage<ILearningSeries> = (props) => {
 export async function getServerSideProps(ctx: GetStaticPropsContext) {
   const series = ctx.params?.series;
   const contents = fs.readdirSync(`content/learning/${series}`);
-  console.log(contents);
-  const indexContent = fs.readFileSync(
-    `content/learning/${series}/index.md`,
-    "utf-8"
-  );
+
+  function getIndexList(series: string, contents: string[]) {
+    const res = [];
+    for (const sc of contents) {
+      if (sc === "index.md") continue;
+      const id = sc.split("_")[0];
+      const slug = sc.split("_")[1].split(".md")[0];
+      const p = path.join(`content/learning/${series}`, sc);
+      const data = fs.readFileSync(p, "utf-8");
+      const metaData = matter(data);
+      const title = metaData.data.title;
+      const markup = `<li>&nbsp;<a href='/learning/${series}/${slug}'>${title}</a></li>`;
+      res.push({ id, markup });
+    }
+    const finalMarkupArr = res
+      .sort((a, b) => Number(a.id) - Number(b.id))
+      .map((e) => e.markup);
+    const finalMarkup = `<ol>${finalMarkupArr.join("")}</ol>`;
+    return finalMarkup;
+  }
+
+  const indexContent = getIndexList(series as string, contents);
 
   return {
     props: { series, indexContent },
