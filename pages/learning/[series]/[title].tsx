@@ -1,10 +1,10 @@
 import * as React from "react";
+import fs from "fs";
+import path from "path";
 import { GetStaticPropsContext, NextPage } from "next";
 import Link from "next/link";
 import matter from "gray-matter";
 import marked from "marked";
-
-import fs from "fs";
 
 import Container from "../../../components/Container";
 import Head from "../../../components/_head";
@@ -82,7 +82,7 @@ export async function getServerSideProps(ctx: GetStaticPropsContext) {
   const title = ctx.params!.title as string;
 
   const learningContent = JSON.parse(
-    fs.readFileSync("content/learning.json", "utf-8")
+    fs.readFileSync(path.resolve("content/learning.json"), "utf-8")
   );
   const seriesContent = learningContent.find(
     (c: ILearning) => c.slug === series

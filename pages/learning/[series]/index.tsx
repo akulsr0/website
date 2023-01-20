@@ -54,10 +54,6 @@ const LearningSeries: NextPage<ILearningSeries> = (props) => {
 
 export async function getServerSideProps(ctx: GetStaticPropsContext) {
   const series = ctx.params?.series;
-  console.log("----> 1", "coming here");
-  console.log("===>", path.resolve("content/learning"));
-  const contents = fs.readdirSync(path.resolve("content/learning"));
-  console.log("----> 2", contents);
   const indexContent = fs.readFileSync(
     path.resolve(`content/learning/${series}/index.md`),
     "utf-8"
