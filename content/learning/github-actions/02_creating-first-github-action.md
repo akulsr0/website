@@ -28,4 +28,6 @@ jobs:
 
 ### Result
 
-<img style="margin: 0.6rem 0" src='https://user-images.githubusercontent.com/43666833/213723226-73ece491-e3c7-469a-93ef-864fecab8770.png' alt='hello-world-result'>
+Following is the <a href='https://github.com/akulsr0/github-action-examples/actions/runs/3968510289/jobs/6801767708' target='_blank'>output</a> for the above github action-
+
+<img style="margin: 1rem 0" src='https://user-images.githubusercontent.com/43666833/213723226-73ece491-e3c7-469a-93ef-864fecab8770.png' alt='hello-world-result'>
