@@ -3,10 +3,9 @@ import React, { useLayoutEffect } from "react";
 import type { AppProps } from "next/app";
 import { Source_Sans_Pro as Font } from "@next/font/google";
 import Script from "next/script";
-import marked from "marked";
-import prism from "prismjs";
 import { ThemeContextProvider, useTheme } from "../context/ThemeContext";
-import "../styles/CodeHighlighting.css";
+
+import "highlight.js/styles/base16/gruvbox-dark-hard.css";
 
 const font = Font({
   subsets: ["latin"],
@@ -38,14 +37,6 @@ const ThemeStyle = () => {
         border: 1px solid ${isDarkTheme ? "#40739e" : "black"};
         padding: 0 2rem;
       }
-      code[class*="language-"],
-      pre {
-        background-color: ${isDarkTheme ? "#1e1e1e" : "#2c3e50"};
-      }
-      :not(pre) > code[class*="language-"],
-      pre[class*="language-"] {
-        background-color: ${isDarkTheme ? "#1e1e1e" : "#2c3e50"};
-      }
       .command-option {
         background-color: ${isDarkTheme ? "#2a2a2a" : "#f3f3f3"};
         color: ${isDarkTheme ? "#f8f8f8" : "#3d3d3d"};
@@ -75,15 +66,6 @@ const ThemeSetter = ({ children }: { children: any }) => {
 };
 
 function MyApp({ Component, pageProps }: AppProps) {
-  marked.setOptions({
-    highlight: (code, lang) => {
-      if (prism.languages[lang]) {
-        return prism.highlight(code, prism.languages[lang], lang);
-      }
-      return prism.highlight(code, prism.languages.plaintext, lang);
-    },
-  });
-
   return (
     <>
       <Script src="https://scripts.simpleanalyticscdn.com/latest.js" />
