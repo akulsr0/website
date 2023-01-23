@@ -1,12 +1,12 @@
 import "../styles/globals.css";
-import React, { useLayoutEffect } from "react";
+import React, { useEffect, useLayoutEffect } from "react";
 import type { AppProps } from "next/app";
 import { Source_Sans_Pro as Font } from "@next/font/google";
 import Script from "next/script";
-import marked from "marked";
-import prism from "prismjs";
+import hljs from "highlight.js";
 import { ThemeContextProvider, useTheme } from "../context/ThemeContext";
-import "../styles/CodeHighlighting.css";
+
+import "highlight.js/styles/base16/gruvbox-dark-hard.css";
 
 const font = Font({
   subsets: ["latin"],
@@ -40,7 +40,8 @@ const ThemeStyle = () => {
       }
       code[class*="language-"],
       pre {
-        background-color: ${isDarkTheme ? "#1e1e1e" : "#2c3e50"};
+        margin: 0.6rem 0;
+        border-radius: 0.4rem;
       }
       :not(pre) > code[class*="language-"],
       pre[class*="language-"] {
@@ -75,13 +76,8 @@ const ThemeSetter = ({ children }: { children: any }) => {
 };
 
 function MyApp({ Component, pageProps }: AppProps) {
-  marked.setOptions({
-    highlight: (code, lang) => {
-      if (prism.languages[lang]) {
-        return prism.highlight(code, prism.languages[lang], lang);
-      }
-      return prism.highlight(code, prism.languages.plaintext, lang);
-    },
+  useEffect(() => {
+    hljs.highlightAll();
   });
 
   return (
