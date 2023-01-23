@@ -3,7 +3,6 @@ import React, { useEffect, useLayoutEffect } from "react";
 import type { AppProps } from "next/app";
 import { Source_Sans_Pro as Font } from "@next/font/google";
 import Script from "next/script";
-import hljs from "highlight.js";
 import { ThemeContextProvider, useTheme } from "../context/ThemeContext";
 
 import "highlight.js/styles/base16/gruvbox-dark-hard.css";
@@ -76,10 +75,6 @@ const ThemeSetter = ({ children }: { children: any }) => {
 };
 
 function MyApp({ Component, pageProps }: AppProps) {
-  useEffect(() => {
-    hljs.highlightAll();
-  });
-
   return (
     <>
       <Script src="https://scripts.simpleanalyticscdn.com/latest.js" />

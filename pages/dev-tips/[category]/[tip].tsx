@@ -21,6 +21,7 @@ import {
   getRecommendedDevTips,
 } from "../../../helpers";
 import { getOGImageURL } from "../../../helpers/seo";
+import { useHighlightJS } from "../../../hooks/useHLJS";
 
 import styles from "../../../styles/DevTips.module.css";
 
@@ -40,6 +41,7 @@ interface DevTipProps {
 }
 
 const DevTip: NextPage<DevTipProps> = (props) => {
+  useHighlightJS();
   const title = props?.tip?.data.title || "";
   const content = props?.tip?.content;
   const { category, slug } = props.tip.data;
