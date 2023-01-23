@@ -12,8 +12,8 @@ import Header from "../../../components/Header";
 import Footer from "../../../components/Footer";
 import { ILearning, ILearningRecommended } from "../../../interfaces/Learning";
 import { getNameFromSlug } from "../../../helpers";
+import { useHighlightJS } from "../../../hooks/useHLJS";
 
-import styles from "../../../styles/Learning.module.css";
 import {
   getLearningLink,
   getRecommendedLearningContent,
@@ -21,6 +21,8 @@ import {
 import Comments from "../../../components/Comments";
 import ShareButtons from "../../../components/SocialShareButtons";
 import { useTheme } from "../../../context/ThemeContext";
+
+import styles from "../../../styles/Learning.module.css";
 
 interface ILearningContentPageProps {
   series: string;
@@ -33,6 +35,7 @@ interface ILearningContentPageProps {
 const LearningContentPage: NextPage<ILearningContentPageProps> = (props) => {
   const { series, content, recommended, title } = props;
   const { isDarkTheme } = useTheme();
+  useHighlightJS();
   const seriesTitle = getNameFromSlug(series);
 
   function getRecommendedTipLink(lc: string, title: string) {

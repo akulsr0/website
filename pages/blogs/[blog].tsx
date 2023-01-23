@@ -28,6 +28,7 @@ import {
   getRecommendedBlog,
 } from "../../helpers";
 import { getOGImageURL } from "../../helpers/seo";
+import { useHighlightJS } from "../../hooks/useHLJS";
 
 import styles from "../../styles/Blog.module.css";
 
@@ -37,6 +38,7 @@ interface BlogProps {
 }
 
 const Blog: NextPage<BlogProps> = (props) => {
+  useHighlightJS();
   const { blog, recommended } = props;
   const { isDarkTheme } = useTheme();
   const { slug } = blog.data;

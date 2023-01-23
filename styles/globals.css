@@ -75,6 +75,16 @@ input:not([type="submit"]) {
   outline: none;
 }
 
+code[class*="language-"],
+pre {
+  margin: 0.6rem 0;
+  border-radius: 0.4rem;
+}
+
+code[class*="language-"] {
+  max-height: 80vh;
+}
+
 .dev-tip-img {
   max-width: 340px;
   display: flex;

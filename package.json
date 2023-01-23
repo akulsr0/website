@@ -21,7 +21,7 @@
     "moment": "^2.29.1",
     "next": "13.0.5",
     "next-mdx-remote": "^4.2.0",
-    "prismjs": "^1.25.0",
+    "highlight.js": "^11.7.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-share": "^4.4.1",
