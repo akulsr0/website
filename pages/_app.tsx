@@ -1,5 +1,5 @@
 import "../styles/globals.css";
-import React, { useEffect, useLayoutEffect } from "react";
+import React, { useLayoutEffect } from "react";
 import type { AppProps } from "next/app";
 import { Source_Sans_Pro as Font } from "@next/font/google";
 import Script from "next/script";
@@ -36,15 +36,6 @@ const ThemeStyle = () => {
       td {
         border: 1px solid ${isDarkTheme ? "#40739e" : "black"};
         padding: 0 2rem;
-      }
-      code[class*="language-"],
-      pre {
-        margin: 0.6rem 0;
-        border-radius: 0.4rem;
-      }
-      :not(pre) > code[class*="language-"],
-      pre[class*="language-"] {
-        background-color: ${isDarkTheme ? "#1e1e1e" : "#2c3e50"};
       }
       .command-option {
         background-color: ${isDarkTheme ? "#2a2a2a" : "#f3f3f3"};
