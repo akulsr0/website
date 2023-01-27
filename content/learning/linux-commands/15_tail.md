@@ -1,7 +1,7 @@
 ---
 id: 15
-title: tail command
-date: 18-Jun-2021
+title: tail
+date: 18-Jun-2022
 ---
 
 ### tail command

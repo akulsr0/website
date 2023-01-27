@@ -1,7 +1,7 @@
 ---
 id: 3
-title: cat command
-date: 8-Jun-2021
+title: cat
+date: 8-Jun-2022
 ---
 
 ### cat command

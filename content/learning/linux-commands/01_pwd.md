@@ -1,7 +1,7 @@
 ---
 id: 1
-title: pwd command
-date: 8-Jun-2021
+title: pwd
+date: 8-Jun-2022
 ---
 
 ### pwd command

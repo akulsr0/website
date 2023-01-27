@@ -1,7 +1,7 @@
 ---
 id: 5
-title: rmdir command
-date: 11-Jun-2021
+title: rmdir
+date: 11-Jun-2022
 ---
 
 ### rmdir command

@@ -1,10 +1,10 @@
 import * as React from "react";
+import fs from "fs";
+import path from "path";
 import { GetStaticPropsContext, NextPage } from "next";
 import Link from "next/link";
 import matter from "gray-matter";
 import marked from "marked";
-
-import fs from "fs";
 
 import Container from "../../../components/Container";
 import Head from "../../../components/_head";
@@ -42,7 +42,7 @@ const LearningContentPage: NextPage<ILearningContentPageProps> = (props) => {
     return (
       <div>
         <strong>{title}</strong>
-        <Link href={`/learning/${series}/${lc}`}>{lc}</Link>
+        <Link href={`/learning/${series}/${lc}`}>{getNameFromSlug(lc)}</Link>
       </div>
     );
   }
@@ -80,33 +80,12 @@ const LearningContentPage: NextPage<ILearningContentPageProps> = (props) => {
   );
 };
 
-export async function getStaticPaths() {
-  let paths;
-
-  const lcArray: Array<ILearning> = JSON.parse(
-    fs.readFileSync("content/learning.json", "utf-8")
-  );
-  for (const lc of lcArray) {
-    const lcChilds = lc.children.map((child) => {
-      const title = child.match(/[a-zA-Z-]+/)?.[0];
-      if (child === "index.md") return null;
-      return { params: { series: lc.slug, title } };
-    });
-    paths = lcChilds.filter(Boolean);
-  }
-
-  return {
-    paths,
-    fallback: false,
-  };
-}
-
-export async function getStaticProps(ctx: GetStaticPropsContext) {
+export async function getServerSideProps(ctx: GetStaticPropsContext) {
   const series = ctx.params!.series as string;
   const title = ctx.params!.title as string;
 
   const learningContent = JSON.parse(
-    fs.readFileSync("content/learning.json", "utf-8")
+    fs.readFileSync(path.resolve("content/learning.json"), "utf-8")
   );
   const seriesContent = learningContent.find(
     (c: ILearning) => c.slug === series
@@ -115,7 +94,7 @@ export async function getStaticProps(ctx: GetStaticPropsContext) {
     f.match(`${title}.md`)
   );
   const rawContent = fs.readFileSync(
-    `content/learning/${series}/${fileTitle}`,
+    path.resolve(`content/learning/${series}/${fileTitle}`),
     "utf-8"
   );
   const { content, data } = matter(rawContent);
@@ -128,7 +107,7 @@ export async function getStaticProps(ctx: GetStaticPropsContext) {
   return {
     props: {
       series,
-      title,
+      title: title.split("-").join(" "),
       content: marked(content),
       data,
       recommended,

@@ -1,7 +1,7 @@
 ---
 id: 12
-title: ping command
-date: 13-Jun-2021
+title: ping
+date: 13-Jun-2022
 ---
 
 ### ping command
