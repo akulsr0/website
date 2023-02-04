@@ -11,6 +11,7 @@ We can write a workflow to automate the deployments of our static website. There
 The prerequisite for this are:
 
 - **A static website (or build folder).** This is the folder where your _index.html_ stays. If you're using any lib/framework, this would be generated after building your project.
+- **Github Personal Access Token** - official documentation for <a href='https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token' target='_blank'>creating a personal access token</a>.
 - **Surge email id** stored in github secrets.
 - **Surge token** stored in github secrets.
 
