@@ -85,6 +85,13 @@ code[class*="language-"] {
   max-height: 80vh;
 }
 
+em {
+  color: #d5c4a1;
+  background: #1d2021;
+  padding: 0.05rem 0.25rem;
+  border-radius: 4px;
+}
+
 .dev-tip-img {
   max-width: 340px;
   display: flex;
