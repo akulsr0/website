@@ -97,6 +97,9 @@ em {
   display: flex;
   margin: 0 auto;
 }
+.mw-full {
+  max-width: 100% !important;
+}
 
 main.main-content {
   margin-top: 8.6rem;
