@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import learning from "../../content/learning.json";
+import learning from "../../../content/learning.json";
 
 export default function getLearningList(
   req: NextApiRequest,

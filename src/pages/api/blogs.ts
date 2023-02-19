@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import blogs from "../../content/blogs.json";
+import blogs from "../../../content/blogs.json";
 
 export default function getBlogsList(
   req: NextApiRequest,
