@@ -29,6 +29,8 @@ import {
 } from "../../helpers";
 import { getOGImageURL } from "../../helpers/seo";
 import { useHighlightJS } from "../../hooks/useHLJS";
+import { ContentType } from "../../constants/content";
+import { usePageViews } from "../../lib/supabase";
 
 import styles from "../../styles/Blog.module.css";
 
@@ -44,6 +46,15 @@ const Blog: NextPage<BlogProps> = (props) => {
   const { slug } = blog.data;
   const [dd, mm, yyyy] = props.blog.data.date.split("-");
   const readTime = readingTime(blog.content);
+
+  const views = usePageViews({
+    category: blog.data.isTechBlog ? "tech" : "non-tech",
+    slug,
+    path: `/blogs/${slug}`,
+    url: `https://akulsrivastava.com/blogs/${slug}`,
+    date: new Date(blog.data.date),
+    type: ContentType.blog,
+  });
 
   function getRecommendedBlogLink(blog: BlogData, title: string) {
     return (
@@ -77,8 +88,7 @@ const Blog: NextPage<BlogProps> = (props) => {
           </span>
         </>
         <div className={styles.blogViewShareWrapper}>
-          {/* eslint-disable @next/next/no-img-element */}
-          <PageViews type="blog" slug={slug} />
+          <PageViews views={views} />
           <ShareButtons url={getBlogLink(slug)} />
         </div>
         <div

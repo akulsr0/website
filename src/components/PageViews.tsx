@@ -1,18 +1,18 @@
 import React from "react";
-import { ContentType, getPageViewsImgUrl } from "../helpers";
-import { isProduction } from "../lib";
+import { useTheme } from "../context/ThemeContext";
 
-function PageViews(props: { type: ContentType; slug: string }) {
-  const { type, slug } = props;
-  const isProd = isProduction();
-
-  if (!isProd) return null;
+function PageViews(props: { views: null | number }) {
+  const { views } = props;
+  const { isDarkTheme } = useTheme();
 
   return (
-    <>
-      {/* eslint-disable @next/next/no-img-element */}
-      <img height={20} src={getPageViewsImgUrl(type, slug)} alt="view-count" />
-    </>
+    <strong
+      style={{
+        color: isDarkTheme ? "#ced6e0aa" : "#595959",
+      }}
+    >
+      Views: {views}
+    </strong>
   );
 }
 

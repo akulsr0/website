@@ -21,22 +21,35 @@ import {
 import Comments from "../../../components/Comments";
 import ShareButtons from "../../../components/SocialShareButtons";
 import { useTheme } from "../../../context/ThemeContext";
+import { usePageViews } from "../../../lib/supabase";
+import PageViews from "../../../components/PageViews";
 
 import styles from "../../../styles/Learning.module.css";
+import { ContentType } from "../../../constants/content";
 
 interface ILearningContentPageProps {
   series: string;
   title: string;
+  slug: string;
   content: string;
   data: Record<string, string | number>;
   recommended: ILearningRecommended;
 }
 
 const LearningContentPage: NextPage<ILearningContentPageProps> = (props) => {
-  const { series, content, recommended, title } = props;
+  const { series, content, slug, data, recommended, title } = props;
   const { isDarkTheme } = useTheme();
   useHighlightJS();
   const seriesTitle = getNameFromSlug(series);
+
+  const views = usePageViews({
+    category: series,
+    slug,
+    path: `/learning/${series}/${slug}`,
+    url: `https://akulsrivastava.com/learning/${series}/${slug}`,
+    date: new Date(data.date),
+    type: ContentType.learning,
+  });
 
   function getRecommendedTipLink(lc: string, title: string) {
     return (
@@ -63,11 +76,14 @@ const LearningContentPage: NextPage<ILearningContentPageProps> = (props) => {
             &#8592;&nbsp;&nbsp;{seriesTitle}
           </h2>
         </Link>
-        <ShareButtons url={getLearningLink(series, title)} />
+        <div className={styles.flexRow}>
+          <PageViews views={views} />
+          <ShareButtons url={getLearningLink(series, title)} />
+        </div>
         <div
           className={`${styles.mt1} ${styles.flexColumn}`}
           dangerouslySetInnerHTML={{ __html: content }}
-        ></div>
+        />
         <Comments />
         <div className={styles.recommended}>
           {recommended.prev &&
@@ -107,6 +123,7 @@ export async function getServerSideProps(ctx: GetStaticPropsContext) {
   return {
     props: {
       series,
+      slug: title,
       title: title.split("-").join(" "),
       content: marked(content),
       data,
