@@ -1,0 +1,41 @@
+name: Website Tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+    types: [opened, synchronize, reopened]
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    name: Website Tests
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16.x
+
+      - name: Install deps (with cache)
+        uses: bahmutov/npm-install@v1.7.10
+        with:
+          working-directory: "./"
+          useLockFile: false
+
+      - name: jest tests
+        run: npm run test
+
+      - name: Waiting for Vercel Preview
+        uses: patrickedqvist/wait-for-vercel-preview@v1.2.0
+        id: vercelPreview
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          check_interval: 30
+          max_timeout: 180
+
+      - name: playwright tests
+        run: WEBSITE_URL=${{steps.vercelPreview.outputs.url}} npm run test:playwright

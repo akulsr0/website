@@ -2,12 +2,15 @@ const fs = require("fs");
 const path = require("path");
 const { test, expect } = require("@playwright/test");
 
+const WEBSITE_URL = process.env.WEBSITE_URL || "https://akulsrivastava.com";
+
 test.describe("DevTips - Web", function () {
   const categoriesPath = path.join("content/dev-tips");
   const categories = fs.readdirSync(categoriesPath);
 
   test.beforeEach(async function ({ page }) {
-    await page.goto("https://akulsrivastava.com/dev-tips/");
+    console.log(`Running DevTips test on - ${WEBSITE_URL}`);
+    await page.goto(`${WEBSITE_URL}/dev-tips/`);
   });
 
   test("categories should be visible", async function ({ page }) {
