@@ -1,8 +1,11 @@
 const { test, expect } = require("@playwright/test");
 
+const WEBSITE_URL = process.env.WEBSITE_URL || "https://akulsrivastava.com";
+
 test.describe("Home", function () {
   test.beforeEach(async function ({ page }) {
-    await page.goto("https://akulsrivastava.com/");
+    console.log(`Running Home tests on - ${WEBSITE_URL}`);
+    await page.goto(WEBSITE_URL);
   });
 
   test("title", async function ({ page }) {

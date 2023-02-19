@@ -16,7 +16,7 @@ jobs:
           max_timeout: 180
 
       - name: Lighthouse
-        uses: treosh/lighthouse-ci-action@v8
+        uses: treosh/lighthouse-ci-action@v9
         id: lighthouse_audit
         with:
           urls: ${{steps.vercelPreview.outputs.url}}
