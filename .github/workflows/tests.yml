@@ -37,5 +37,8 @@ jobs:
           check_interval: 30
           max_timeout: 180
 
+      - name: playwright install
+        run: npx playwright install
+
       - name: playwright tests
         run: WEBSITE_URL=${{steps.vercelPreview.outputs.url}} npm run test:playwright
