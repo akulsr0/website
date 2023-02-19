@@ -19,8 +19,8 @@ test.describe("DevTips - Web", function () {
   test("every category should have tips inside it", async function ({ page }) {
     for (let category of categories) {
       await page.locator(`text=${category}`).first().click();
-      const tips = await page.locator("#content > ol > li").count();
-      expect(tips).toBeGreaterThan(0);
+      const tipsCount = (await page.$$("#content > ol > li")).length;
+      expect(tipsCount).toBeGreaterThan(0);
       await page.goBack();
     }
   });
