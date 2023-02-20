@@ -28,7 +28,7 @@ const Links = (props: { currentPath: string }) => {
             passHref
             className={styles.link}
             style={{
-              fontWeight: props.currentPath === link.href ? 600 : 300,
+              opacity: props.currentPath === link.href ? 1 : 0.6,
               color:
                 props.currentPath === link.href && isDarkTheme
                   ? "#ced6e0"
