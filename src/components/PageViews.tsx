@@ -6,12 +6,9 @@ function PageViews(props: { views: null | number }) {
   const { isDarkTheme } = useTheme();
 
   return (
-    <strong
-      style={{
-        color: isDarkTheme ? "#ced6e0aa" : "#595959",
-      }}
-    >
-      Views: {views}
+    <strong style={{ color: "#888", display: "flex", gap: "0.4rem" }}>
+      <span>Views:</span>
+      <span>{views}</span>
     </strong>
   );
 }
