@@ -8,6 +8,12 @@
   display: flex;
   flex-direction: column;
 }
+.flexRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
 
 .recommended {
   margin-top: 2rem;

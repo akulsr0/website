@@ -22,6 +22,8 @@ import {
 } from "../../../helpers";
 import { getOGImageURL } from "../../../helpers/seo";
 import { useHighlightJS } from "../../../hooks/useHLJS";
+import { usePageViews } from "../../../lib/supabase";
+import { ContentType } from "../../../constants/content";
 
 import styles from "../../../styles/DevTips.module.css";
 
@@ -49,6 +51,15 @@ const DevTip: NextPage<DevTipProps> = (props) => {
   const recommendedTips = props?.tip?.recommended;
   const readTime = readingTime(content);
 
+  const views = usePageViews({
+    category,
+    slug,
+    path: `/dev-tips/${category}/${slug}`,
+    url: `https://akulsrivastava.com/dev-tips/${category}/${slug}`,
+    date: new Date(props?.tip?.data.date),
+    type: ContentType.devTip,
+  });
+
   function getRecommendedTipLink(tip: Record<string, string>, title: string) {
     return (
       <div>
@@ -73,7 +84,7 @@ const DevTip: NextPage<DevTipProps> = (props) => {
             {readTime.text} &nbsp;&bull;&nbsp; {`${dd} ${mm} ${yyyy}`}
           </span>
           <div className={styles.devTipsViewShareWrapper}>
-            <PageViews type="dev-tip" slug={slug} />
+            <PageViews views={views} />
             <ShareButtons url={getDevTipLink(category, slug)} />
           </div>
           <div
