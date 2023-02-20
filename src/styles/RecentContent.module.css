@@ -1,0 +1,40 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.list {
+  margin: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.list > li {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.4rem;
+}
+
+.list > li > a {
+  font-weight: 600;
+}
+
+.info span {
+  opacity: 0.75;
+  font-weight: 500;
+}
+
+.info a {
+  opacity: 0.75;
+  font-style: italic;
+}
+
+.viewMore {
+  margin-top: 0.6rem;
+  cursor: pointer;
+  opacity: 0.75;
+  text-decoration: underline;
+  text-underline-position: under;
+}

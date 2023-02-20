@@ -57,8 +57,10 @@
   },
   "dev_tips_count": 25,
   "blogs_count": 10,
+  "recent_content_count": 5,
+  "show_recent_content": true,
   "show_contact_form": true,
-  "show_recent_activity": true,
+  "show_recent_activity": false,
   "footer_links": {
     "quickLinks": {
       "title": "Quick Links",

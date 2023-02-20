@@ -3,6 +3,8 @@
 /content/devTips.json
 /content/blogs.json
 /content/learning.json
+/content/learningAll.json
+/content/allContent.json
 
 /content/learning/**/index.md
 
