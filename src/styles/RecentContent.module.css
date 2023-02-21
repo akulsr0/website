@@ -30,7 +30,7 @@
 }
 
 .info a {
-  color: #0459afdd;
+  opacity: 0.8;
   font-style: italic;
   text-decoration: none;
   border-bottom: 1px dotted #7ed6df;
