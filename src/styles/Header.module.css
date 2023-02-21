@@ -6,30 +6,23 @@
   user-select: none;
 }
 
-.header > div {
+.header > section {
   max-width: 42rem;
   margin: 0 auto;
   padding: 0.4rem 0.8rem;
-}
-
-.header > div > div {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
 }
 
-.skipNavigation {
-  background-color: black;
-  color: white;
-  position: absolute;
-  outline: none;
-  padding: 0.6rem;
-  border-radius: 0.2rem;
-  transform: translateY(-200%);
-  transition: ease 0.5s;
+.header > section > img {
+  margin: 12px auto;
+  border-radius: 100px;
 }
-.skipNavigation:focus {
-  transform: translateY(120%);
+
+.header > section > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .title {
@@ -40,10 +33,17 @@
 
 .links {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding-bottom: 0.6rem;
+}
+
+.links > h2 {
+  line-height: 1;
 }
 
 .link {
-  margin-right: 10px;
   text-decoration: none;
   font-weight: 500;
   cursor: pointer;

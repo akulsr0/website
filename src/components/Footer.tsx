@@ -10,14 +10,12 @@ const Footer: NextPage = () => {
   const { isDarkTheme } = useTheme();
 
   return (
-    <footer
-      className={styles.footer}
-      style={{
-        backgroundColor: isDarkTheme ? "#192534" : "#eeeeee",
-        borderTop: `0.25rem solid ${isDarkTheme ? "#40739e" : "#a5a5a5"}`,
-      }}
-    >
-      <section>
+    <footer className={styles.footer}>
+      <section
+        style={{
+          borderTop: `1px solid ${isDarkTheme ? "#fefefe33" : "lightgrey"}`,
+        }}
+      >
         {Object.values(footerLinks).map((fl) => (
           <List key={fl.title} list={fl.list} title={fl.title} />
         ))}
