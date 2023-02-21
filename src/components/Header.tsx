@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { withRouter } from "next/router";
 import { WithRouterProps } from "next/dist/client/with-router";
 import { DarkModeSwitch } from "react-toggle-dark-mode";
@@ -17,7 +18,7 @@ interface IMenuItem {
 interface IHeaderProps extends WithRouterProps {}
 
 const Links = (props: { currentPath: string }) => {
-  const { isDarkTheme } = useTheme();
+  const { isDarkTheme, toggleTheme } = useTheme();
 
   return (
     <>
@@ -41,6 +42,12 @@ const Links = (props: { currentPath: string }) => {
           </Link>
         </h2>
       ))}
+      <DarkModeSwitch
+        size={24}
+        checked={isDarkTheme}
+        onChange={toggleTheme}
+        color={isDarkTheme ? "#ced6e0" : "black"}
+      />
     </>
   );
 };
@@ -50,14 +57,14 @@ const Header = (props: IHeaderProps) => {
   const currentPath = props.router.pathname;
 
   return (
-    <header
-      className={styles.header}
-      style={{
-        backgroundColor: isDarkTheme ? "#192534" : "#eeeeee",
-        borderBottom: `0.25rem solid ${isDarkTheme ? "#40739e" : "#a5a5a5"}`,
-      }}
-    >
-      <div>
+    <header className={styles.header}>
+      <section>
+        <Image
+          width="120"
+          height="120"
+          src="/images/akul/anim-600.JPG"
+          alt="akul"
+        />
         <div>
           <Link href="/" passHref>
             <h1
@@ -69,16 +76,18 @@ const Header = (props: IHeaderProps) => {
               {name}
             </h1>
           </Link>
-          <DarkModeSwitch
-            checked={isDarkTheme}
-            onChange={toggleTheme}
-            color={isDarkTheme ? "#ced6e0" : "black"}
-          />
         </div>
-        <nav className={styles.links}>
+        <nav
+          className={styles.links}
+          style={{
+            borderBottom: `1px solid ${
+              isDarkTheme ? "#fefefe33" : "lightgrey"
+            }`,
+          }}
+        >
           <Links currentPath={currentPath} />
         </nav>
-      </div>
+      </section>
     </header>
   );
 };

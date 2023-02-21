@@ -102,14 +102,12 @@ em {
 }
 
 main.main-content {
-  margin-top: 8.6rem;
-  /* min-height = viewport height - (header height + footer height) */
-  min-height: calc(100vh - 350px);
+  margin-top: 16.6rem;
+  min-height: 50vh;
 }
 article.main-content {
-  margin-top: 8.6rem;
-  /* min-height = viewport height - (header height + footer height) */
-  min-height: calc(100vh - 350px);
+  margin-top: 16.6rem;
+  min-height: 50vh;
 }
 
 .not-found-wrapper {
