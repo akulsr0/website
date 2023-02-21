@@ -7,10 +7,29 @@ main();
 function main() {
   const devTips = getDevTips();
   const blogs = getBlogs();
+  const learningAll = getLearningAllContent();
   writeDevTipsJSON(JSON.stringify(devTips));
   writeBlogsJSON(JSON.stringify(blogs));
+  writeLearningAllContentJSON(learningAll);
   writeLearningSeriesIndex();
   writeLearningContentJSON();
+  const allContent = [
+    blogs.map((d) => ({ ...d.data })),
+    devTips,
+    learningAll,
+  ].flat();
+  writeAllContent(allContent);
+}
+
+function writeAllContent(allContent) {
+  const sortedAllContent = allContent.sort((a, b) => {
+    if (a.date === b.date) {
+      return b.serial - a.serial;
+    }
+    return Date.parse(b.date) - Date.parse(a.date);
+  });
+  const filepath = path.join("./content/allContent.json");
+  fs.writeFileSync(filepath, JSON.stringify(sortedAllContent));
 }
 
 function writeLearningSeriesIndex() {
@@ -37,6 +56,36 @@ function writeLearningSeriesIndex() {
     const finalMarkup = `<ol>${finalMarkupArr.join("")}</ol>`;
     fs.writeFileSync(seriesPath + "/index.md", finalMarkup);
   }
+}
+
+function getLearningAllContent() {
+  const learningPath = path.join("content/learning");
+  const learningContent = fs.readdirSync(learningPath);
+  const learning = [];
+  for (const series of learningContent) {
+    const learningFiles = fs
+      .readdirSync(`content/learning/${series}`)
+      .filter((f) => !["index.md"].includes(f));
+    for (const file of learningFiles) {
+      const fileContent = fs.readFileSync(
+        `content/learning/${series}/${file}`,
+        "utf-8"
+      );
+      const { data } = matter(fileContent);
+      learning.push({
+        ...data,
+        series,
+        slug: file.split("_")[1].replace(".md", ""),
+        type: "learning",
+      });
+    }
+  }
+  return learning;
+}
+
+function writeLearningAllContentJSON(learning) {
+  const filepath = path.join("./content/learningAll.json");
+  fs.writeFileSync(filepath, JSON.stringify({ learning }));
 }
 
 function writeLearningContentJSON() {
@@ -89,7 +138,7 @@ function getDevTips() {
   });
 
   let l = devTips.length;
-  const devTipsWithId = devTips.map((d) => ({ ...d, id: l-- }));
+  const devTipsWithId = devTips.map((d) => ({ ...d, id: l--, type: "devtip" }));
 
   return devTipsWithId;
 }
@@ -111,7 +160,7 @@ function getBlogs() {
     .map((blog, idx) => {
       const blogContent = fs.readFileSync(path.join(blogsPath, blog));
       const { data } = matter(blogContent);
-      return { data: { ...data, id: idx + 1 } };
+      return { data: { ...data, id: idx + 1, type: "blog" } };
     })
     .reverse();
   return blogsContent;

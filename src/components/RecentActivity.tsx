@@ -10,6 +10,7 @@ const RecentActivity = ({
   if (!show) return null;
   return (
     <>
+      <br />
       <h3>Recent Activity</h3>
       <ul className="recent-activity-list">
         {activity?.map((act, idx) => (

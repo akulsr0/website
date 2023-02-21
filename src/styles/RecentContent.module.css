@@ -1,0 +1,45 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.list {
+  margin: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.list > li {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.8rem;
+  border-left: 4px solid #40739ecc;
+  padding-left: 0.6rem;
+}
+
+.list > li > a {
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.info span {
+  opacity: 0.75;
+  font-weight: 500;
+}
+
+.info a {
+  opacity: 0.8;
+  font-style: italic;
+  text-decoration: none;
+  border-bottom: 1px dotted #7ed6df;
+}
+
+.viewMore {
+  margin-top: 0.6rem;
+  cursor: pointer;
+  opacity: 0.75;
+  text-decoration: underline;
+  text-underline-position: under;
+}

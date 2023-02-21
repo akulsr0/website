@@ -21,7 +21,7 @@ const Uses: NextPage = () => {
               {val.text}
             </a>
           ) : (
-            <span style={{ fontWeight: "lighter" }}>{val}</span>
+            <span style={{ opacity: 0.75 }}>{val}</span>
           )}
         </div>
       );

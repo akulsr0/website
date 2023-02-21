@@ -1,6 +1,7 @@
 import { NextPage } from "next";
 import React from "react";
 import Link from "next/link";
+import moment from "moment";
 import fs from "fs";
 import path from "path";
 
@@ -53,12 +54,12 @@ const DevTips: NextPage<DevTipsProps> = (props) => {
   ));
 
   const DevTipsList = tips.map(({ category, date, tip }) => {
-    const [dd, mm, yyyy] = date.split("-");
+    const formattedDate = moment(date).format("DD-MM-YYYY");
     return (
       <div key={tip}>
-        <span
-          style={{ color: isDarkTheme ? "#bbb" : "#888" }}
-        >{`${mm} ${dd}, ${yyyy}`}</span>
+        <span style={{ color: isDarkTheme ? "#bbb" : "#888" }}>
+          {formattedDate}
+        </span>
         {"-"}
         <Link href={`/dev-tips/${category}/${tip}`}>
           {tip.split("-").join(" ")}

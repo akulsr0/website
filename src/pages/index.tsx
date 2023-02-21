@@ -15,6 +15,7 @@ import Head from "../components/_head";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import RecentActivity from "../components/RecentActivity";
+import RecentContent from "../components/RecentContent";
 import { useTheme } from "../context/ThemeContext";
 
 interface HomeProps {
@@ -22,10 +23,11 @@ interface HomeProps {
     Record<string, unknown>,
     Record<string, string>
   >;
+  recentContent: Record<string, unknown>[];
 }
 
 const Home: NextPage<HomeProps> = (props) => {
-  const { homeContent } = props;
+  const { homeContent, recentContent } = props;
   const { theme } = useTheme();
   const [recentActivity, setRecentActivity] = useState<Activity[]>();
 
@@ -46,8 +48,8 @@ const Home: NextPage<HomeProps> = (props) => {
       <main className="main-content">
         <MDXRemote
           {...homeContent}
-          components={{ Link, Image, RecentActivity }}
-          scope={{ theme, showRecentActivity, recentActivity }}
+          components={{ Link, Image, RecentActivity, RecentContent }}
+          scope={{ theme, showRecentActivity, recentActivity, recentContent }}
         />
       </main>
       <Footer />
@@ -60,7 +62,12 @@ export async function getStaticProps() {
   const homeContent = fs.readFileSync(homeContentPath + "/Home.mdx", "utf-8");
   const { content } = matter(homeContent);
   const outputContent = await serialize(content);
-  return { props: { homeContent: outputContent } };
+
+  const recentContent = JSON.parse(
+    fs.readFileSync("content/allContent.json", "utf-8")
+  );
+
+  return { props: { homeContent: outputContent, recentContent } };
 }
 
 export default Home;
