@@ -21,6 +21,9 @@ const ThemeStyle = () => {
       html {
         font-family: ${font.style.fontFamily};
       }
+      textarea {
+        font-family: ${font.style.fontFamily};
+      }
       body {
         background-color: ${isDarkTheme ? "#222f3e" : "#fdfdfd"};
         color: ${isDarkTheme ? "#ced6e0" : "black"};
