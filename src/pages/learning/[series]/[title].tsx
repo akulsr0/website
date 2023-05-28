@@ -1,7 +1,7 @@
 import * as React from "react";
 import fs from "fs";
 import path from "path";
-import { GetStaticPropsContext, NextPage } from "next";
+import { GetServerSidePropsContext, NextPage } from "next";
 import Link from "next/link";
 import matter from "gray-matter";
 import marked from "marked";
@@ -96,7 +96,7 @@ const LearningContentPage: NextPage<ILearningContentPageProps> = (props) => {
   );
 };
 
-export async function getServerSideProps(ctx: GetStaticPropsContext) {
+export async function getServerSideProps(ctx: GetServerSidePropsContext) {
   const series = ctx.params!.series as string;
   const title = ctx.params!.title as string;
 

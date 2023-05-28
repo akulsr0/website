@@ -1,4 +1,4 @@
-import { GetStaticPropsContext, NextPage } from "next";
+import { GetServerSidePropsContext, NextPage } from "next";
 import Link from "next/link";
 import fs from "fs";
 import matter from "gray-matter";
@@ -105,7 +105,7 @@ const DevTip: NextPage<DevTipProps> = (props) => {
   );
 };
 
-export async function getStaticProps(ctx: GetStaticPropsContext) {
+export async function getServerSideProps(ctx: GetServerSidePropsContext) {
   const params = ctx.params!;
   const { category, tip } = params;
 
@@ -137,30 +137,6 @@ export async function getStaticProps(ctx: GetStaticPropsContext) {
         recommended,
       },
     },
-  };
-}
-
-export async function getStaticPaths() {
-  const paths: Array<{ params: { category: string; tip: string } }> = [];
-
-  const devTipsCategoriesPath = path.join("content/dev-tips");
-  const devTipsCategories = fs.readdirSync(devTipsCategoriesPath);
-  devTipsCategories.forEach((category) => {
-    const devTips = fs.readdirSync(`content/dev-tips/${category}`);
-    devTips.forEach((tip) => {
-      const path = {
-        params: {
-          category,
-          tip: tip.split("-").slice(1).join("-").replace(".md", ""),
-        },
-      };
-      paths.push(path);
-    });
-  });
-
-  return {
-    paths,
-    fallback: false,
   };
 }
 

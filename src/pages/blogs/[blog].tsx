@@ -1,4 +1,4 @@
-import { NextPage, GetStaticPropsContext } from "next";
+import { NextPage, GetServerSidePropsContext } from "next";
 import fs from "fs";
 import path from "path";
 import Link from "next/link";
@@ -109,7 +109,7 @@ const Blog: NextPage<BlogProps> = (props) => {
   );
 };
 
-export async function getStaticProps(ctx: GetStaticPropsContext) {
+export async function getServerSideProps(ctx: GetServerSidePropsContext) {
   const blogsPath = path.join("content/blogs");
   const blogs = fs.readdirSync(blogsPath);
   const slug = ctx.params!.blog as string;
@@ -130,23 +130,6 @@ export async function getStaticProps(ctx: GetStaticPropsContext) {
       },
       recommended,
     },
-  };
-}
-
-export async function getStaticPaths() {
-  const blogsPath = path.join("content/blogs");
-  const blogs = fs.readdirSync(blogsPath);
-  const paths = blogs.map((blog) => {
-    return {
-      params: {
-        blog: blog.split("-").slice(1).join("-").replace(".md", ""),
-      },
-    };
-  });
-
-  return {
-    paths,
-    fallback: false,
   };
 }
 
