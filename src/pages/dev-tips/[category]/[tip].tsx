@@ -113,12 +113,12 @@ export async function getServerSideProps(ctx: GetServerSidePropsContext) {
   const tips = fs.readdirSync(tipsPath);
   const _tip = tips.find((b) => b.toLowerCase().includes(tip as string))!;
   const tipContent = fs.readFileSync(
-    path.join(`content/dev-tips/${category}/${_tip}`),
+    path.resolve(`content/dev-tips/${category}/${_tip}`),
     "utf-8"
   );
 
   const devTipsString = fs.readFileSync(
-    path.join("content/devtips.json"),
+    path.resolve("content/devtips.json"),
     "utf-8"
   );
   const { devTips } = JSON.parse(devTipsString);
