@@ -109,7 +109,7 @@ export async function getServerSideProps(ctx: GetServerSidePropsContext) {
   const params = ctx.params!;
   const { category, tip } = params;
 
-  const tipsPath = path.join(`content/dev-tips/${category}`);
+  const tipsPath = path.resolve(`content/dev-tips/${category}`);
   const tips = fs.readdirSync(tipsPath);
   const _tip = tips.find((b) => b.toLowerCase().includes(tip as string))!;
   const tipContent = fs.readFileSync(

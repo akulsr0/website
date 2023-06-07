@@ -110,15 +110,15 @@ const Blog: NextPage<BlogProps> = (props) => {
 };
 
 export async function getServerSideProps(ctx: GetServerSidePropsContext) {
-  const blogsPath = path.join("content/blogs");
+  const blogsPath = path.resolve("content/blogs");
   const blogs = fs.readdirSync(blogsPath);
   const slug = ctx.params!.blog as string;
   const blog = blogs.find((b) => b.includes(slug))!;
-  const blogContent = fs.readFileSync(path.join(blogsPath, blog), "utf-8");
+  const blogContent = fs.readFileSync(path.resolve(blogsPath, blog), "utf-8");
   const { data, content } = matter(blogContent);
 
   const { blogs: _blogs } = JSON.parse(
-    fs.readFileSync(path.join("content/blogs.json"), "utf-8")
+    fs.readFileSync(path.resolve("content/blogs.json"), "utf-8")
   );
   const recommended = getRecommendedBlog(_blogs, blog);
 
