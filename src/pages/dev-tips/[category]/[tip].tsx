@@ -1,4 +1,4 @@
-import { GetStaticPropsContext, NextPage } from "next";
+import { GetServerSidePropsContext, NextPage } from "next";
 import Link from "next/link";
 import fs from "fs";
 import matter from "gray-matter";
@@ -105,20 +105,20 @@ const DevTip: NextPage<DevTipProps> = (props) => {
   );
 };
 
-export async function getStaticProps(ctx: GetStaticPropsContext) {
+export async function getServerSideProps(ctx: GetServerSidePropsContext) {
   const params = ctx.params!;
   const { category, tip } = params;
 
-  const tipsPath = path.join(`content/dev-tips/${category}`);
+  const tipsPath = path.resolve(`content/dev-tips/${category}`);
   const tips = fs.readdirSync(tipsPath);
   const _tip = tips.find((b) => b.toLowerCase().includes(tip as string))!;
   const tipContent = fs.readFileSync(
-    path.join(`content/dev-tips/${category}/${_tip}`),
+    path.resolve(`content/dev-tips/${category}/${_tip}`),
     "utf-8"
   );
 
   const devTipsString = fs.readFileSync(
-    path.join("content/devtips.json"),
+    path.resolve("content/devtips.json"),
     "utf-8"
   );
   const { devTips } = JSON.parse(devTipsString);
@@ -137,30 +137,6 @@ export async function getStaticProps(ctx: GetStaticPropsContext) {
         recommended,
       },
     },
-  };
-}
-
-export async function getStaticPaths() {
-  const paths: Array<{ params: { category: string; tip: string } }> = [];
-
-  const devTipsCategoriesPath = path.join("content/dev-tips");
-  const devTipsCategories = fs.readdirSync(devTipsCategoriesPath);
-  devTipsCategories.forEach((category) => {
-    const devTips = fs.readdirSync(`content/dev-tips/${category}`);
-    devTips.forEach((tip) => {
-      const path = {
-        params: {
-          category,
-          tip: tip.split("-").slice(1).join("-").replace(".md", ""),
-        },
-      };
-      paths.push(path);
-    });
-  });
-
-  return {
-    paths,
-    fallback: false,
   };
 }
 
