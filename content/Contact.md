@@ -1,1 +1,1 @@
-If you have any feedback or would like to say something, you can dm me on <a href='https://instagram.com/akulsr0/' target='_blank'>instagram</a> or <a href='mailto:akulsr0@gmail.com'>mail me</a>.
+If you have any feedback or would like to say something, you can dm me on <a href='https://instagram.com/akulsr0/' target='_blank'>instagram</a> or <a href='mailto:contact@akulsrivastava.com'>mail me</a>.
