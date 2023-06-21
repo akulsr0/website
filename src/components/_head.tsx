@@ -21,9 +21,10 @@ const Head: NextPage<HeadProps> = (props) => {
   const _metaDescription = metaDescription || meta_description;
   const defaultKeywords =
     "akul srivastava, akul srivastava dev tips, akul srivastava blogs, akul srivastava learning,about akul srivastava, akul srivastava github, akulsr0, akul srivastava opensource";
-  const keywordsString = keywords
-    ? [...keywords, defaultKeywords].join(", ")
-    : defaultKeywords;
+  const keywordsString =
+    keywords && keywords.length
+      ? [...keywords, defaultKeywords].join(", ")
+      : defaultKeywords;
 
   return (
     <NextHead>
