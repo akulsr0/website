@@ -30,6 +30,7 @@ import styles from "../../../styles/DevTips.module.css";
 interface ITip {
   data: {
     title: string;
+    keywords?: string;
     category: string;
     date: string;
     slug: string;
@@ -50,6 +51,10 @@ const DevTip: NextPage<DevTipProps> = (props) => {
   const [dd, mm, yyyy] = props?.tip?.data.date.split("-");
   const recommendedTips = props?.tip?.recommended;
   const readTime = readingTime(content);
+  const keywords = (props.tip.data.keywords || "")
+    .split(",")
+    .map((kw) => kw.trim())
+    .filter(Boolean);
 
   const views = usePageViews({
     category,
@@ -75,7 +80,12 @@ const DevTip: NextPage<DevTipProps> = (props) => {
 
   return (
     <Container>
-      <Head title={title} metaDescription={title} ogImage={ogImgUrl} />
+      <Head
+        title={title}
+        metaDescription={title}
+        ogImage={ogImgUrl}
+        keywords={keywords}
+      />
       <Header />
       <article className="main-content">
         <div id="content">

@@ -118,12 +118,14 @@ function getDevTips() {
     const _cPath = path.join(contentPath, content);
     const _devTips = fs.readdirSync(_cPath);
     _devTips.forEach((tip) => {
-      const tipDate = matter(
+      const data = matter(
         fs.readFileSync(path.join(contentPath, content, tip), "utf-8")
-      ).data.date;
+      ).data;
+      const tipDate = data.date;
       devTips.push({
         category: content,
         date: tipDate,
+        keywords: data?.keywords,
         serial: tip.split("-")[0],
         tip: tip.split("-").slice(1).join("-").replace(/.md/, ""),
       });
