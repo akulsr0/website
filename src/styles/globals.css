@@ -92,6 +92,12 @@ em {
   border-radius: 4px;
 }
 
+br[height="1"] {
+  display: block;
+  content: "";
+  margin: 5px 0;
+}
+
 .dev-tip-img {
   max-width: 340px;
   display: flex;
