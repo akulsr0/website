@@ -1,6 +1,6 @@
 ---
 title: running a function only once in javascript
-category: others
+category: javascript
 date: 21-June-2023
 keywords: how to run a function once in javascript, run a function once js
 ---
