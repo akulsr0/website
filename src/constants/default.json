@@ -12,7 +12,8 @@
     "instagram": "https://instagram.com/akulsr0/",
     "linkedin": "https://linkedin.com/in/akulsr0/",
     "twitter": "https://twitter.com/akulsr0/",
-    "stackoverflow": "https://stackoverflow.com/users/11447138/akul-srivastava"
+    "stackoverflow": "https://stackoverflow.com/users/11447138/akul-srivastava",
+    "youtube": "https://www.youtube.com/@akulsr0"
   },
   "uses": {
     "Hardware": {
@@ -92,6 +93,7 @@
         { "href": "/instagram", "title": "Instagram", "openInNewTab": true },
         { "href": "/linkedin", "title": "Linkedin", "openInNewTab": true },
         { "href": "/twitter", "title": "Twitter", "openInNewTab": true },
+        { "href": "/youtube", "title": "YouTube", "openInNewTab": true },
         {
           "href": "/stackoverflow",
           "title": "StackOverFlow",
