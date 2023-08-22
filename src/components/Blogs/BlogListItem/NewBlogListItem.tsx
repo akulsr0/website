@@ -17,9 +17,7 @@ const NewBlogListItem: NextPage<BlogListItemProps> = (props) => {
         <span style={{ color: isDarkTheme ? "#aaa" : "#3d3d3d" }}>{yyyy}</span>
       </div>
       <div>
-        <Link href={`/blogs/${blog.data.slug}`} passHref>
-          {blog.data.title}
-        </Link>
+        <a href={`/blogs/${blog.data.slug}`}>{blog.data.title}</a>
       </div>
     </div>
   );

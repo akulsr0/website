@@ -58,9 +58,7 @@ export default function RecentContent({
       <ul className={styles.list}>
         {list.map((l) => (
           <li key={getSlug(l)}>
-            <Link href={getLink(l)} prefetch={false}>
-              {getTitle(l)}
-            </Link>
+            <a href={getLink(l)}>{getTitle(l)}</a>
             <div className={styles.info}>
               on
               <span> {getDate(l)}</span>

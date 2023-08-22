@@ -61,9 +61,9 @@ const DevTips: NextPage<DevTipsProps> = (props) => {
           {formattedDate}
         </span>
         {"-"}
-        <Link href={`/dev-tips/${category}/${tip}`}>
+        <a href={`/dev-tips/${category}/${tip}`}>
           {tip.split("-").join(" ")}
-        </Link>
+        </a>
       </div>
     );
   });
