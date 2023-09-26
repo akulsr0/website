@@ -54,7 +54,7 @@ export default function RecentContent({
 
   return (
     <section className={styles.wrapper}>
-      <h3>Recent Content</h3>
+      <h3>Archive</h3>
       <ul className={styles.list}>
         {list.map((l) => (
           <li key={getSlug(l)}>

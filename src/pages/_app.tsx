@@ -1,7 +1,7 @@
 import "../styles/globals.css";
 import React, { useLayoutEffect } from "react";
 import type { AppProps } from "next/app";
-import { Source_Sans_Pro as Font } from "@next/font/google";
+import { EB_Garamond as Font } from "@next/font/google";
 import Script from "next/script";
 import { ThemeContextProvider, useTheme } from "../context/ThemeContext";
 
@@ -9,7 +9,7 @@ import "highlight.js/styles/base16/gruvbox-dark-hard.css";
 
 const font = Font({
   subsets: ["latin"],
-  weight: ["300", "400", "700", "900"],
+  weight: ["400", "500", "700"],
   fallback: ["sans-serif"],
   display: "swap",
 });
