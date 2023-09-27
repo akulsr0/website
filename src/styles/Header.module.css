@@ -14,15 +14,15 @@
   flex-direction: column;
 }
 
-.header > section > img {
-  margin: 12px auto;
-  border-radius: 100px;
-}
-
 .header > section > div {
   display: flex;
-  justify-content: center;
   align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.header > section > div > img {
+  border-radius: 100px;
 }
 
 .title {
@@ -34,7 +34,6 @@
 .links {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 1rem;
   padding-bottom: 0.6rem;
 }

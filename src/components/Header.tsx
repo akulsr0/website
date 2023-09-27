@@ -59,13 +59,13 @@ const Header = (props: IHeaderProps) => {
   return (
     <header className={styles.header}>
       <section>
-        <Image
-          width="120"
-          height="120"
-          src="/images/akul/anim-600.JPG"
-          alt="akul"
-        />
         <div>
+          <Image
+            width="60"
+            height="60"
+            src="/images/akul/anim-800.JPG"
+            alt="akul"
+          />
           <Link href="/" passHref>
             <h1
               className={styles.title}
