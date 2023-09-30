@@ -23,6 +23,7 @@
 
 .header > section > div > img {
   border-radius: 100px;
+  margin: 0;
 }
 
 .title {
