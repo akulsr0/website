@@ -1,5 +1,6 @@
 import { NextPage } from "next";
-import { useLayoutEffect, useRef } from "react";
+import Link from "next/link";
+import { useEffect, useLayoutEffect, useRef } from "react";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
@@ -42,6 +43,21 @@ const Work: NextPage<WorkProps> = (props) => {
     expCalloutRef.current!.innerText = exp;
   }, [isDarkTheme]);
 
+  useEffect(() => {
+    const workWrapperChilds =
+      document.getElementById("work-wrapper")?.children || [];
+    const workWrapperChildsExceptLast = Array.from(workWrapperChilds).slice(
+      0,
+      workWrapperChilds.length - 2
+    );
+    const workLineHeight = workWrapperChildsExceptLast.reduce(
+      (acc, val) => acc + val.clientHeight + 21,
+      0
+    );
+    const workLine = document.getElementById("work-line")!;
+    workLine.style.height = `${workLineHeight}px`;
+  }, []);
+
   return (
     <Container>
       <Head title="Work" />
@@ -50,7 +66,7 @@ const Work: NextPage<WorkProps> = (props) => {
         <h2 style={{ marginBottom: "1rem" }}>Work Experience</h2>
         <MDXRemote
           {...workContent}
-          components={{ Github }}
+          components={{ Github, Link }}
           scope={{ styles, isDarkTheme, expCalloutRef }}
         />
       </article>

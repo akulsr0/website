@@ -26,6 +26,10 @@
   margin: 0;
 }
 
+.header > section > div > a {
+  text-decoration: none;
+}
+
 .title {
   font-size: 2rem;
   font-weight: 800;

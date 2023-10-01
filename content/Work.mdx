@@ -1,12 +1,17 @@
 <div className={styles.expCallout} ref={expCalloutRef}></div>
 
-<div className={styles.workWrapper}>
+<div className={styles.workWrapper} id='work-wrapper'>
   <div>
     <div className={styles.pointer}></div>
     <h3>Software Engineer</h3>
     <a href="https://smallcase.com" target="_blank">
       smallcase
     </a>
+    <ul>
+      <li>Work on Publisher's Team at smallcase.</li>
+      <li>Revamped microsite (manager's website for end users).</li>
+      <li>Built Subscription Retargeting Widget (enables scheduling one-on-one session or callback from the manager) from scratch and integrated it into smallcase app.</li>
+    </ul>
     <Github
       style={{ marginTop: 12 }}
       asLink
@@ -26,6 +31,12 @@
     <a href="https://vogo.in" target="_blank" rel="noreferrer">
       Vogo Automotive Pvt. Ltd.
     </a>
+    <ul>
+      <li>Contributed to different projects including Consumer PWA (React), iOS Application (React Native), Website (WordPress), etc...</li>
+      <li>Built the exchange scooter feature from scratch.</li>
+      <li>Worked on VOGO's website revamp and built the careers' website.</li>
+      <li>Added GitHub Actions to ensure Coding Guidelines checks, monitoring bundle size difference, and running unit tests.</li>
+    </ul>
     <Github
       style={{ marginTop: 12 }}
       asLink
@@ -45,6 +56,9 @@
     <a href="https://vogo.in" target="_blank" rel="noreferrer">
       Vogo Automotive Pvt. Ltd.
     </a>
+    <ul>
+      <li>Worked on the redesign of the help section for better user experience.</li>
+    </ul>
     <Github
       style={{ marginTop: 12 }}
       asLink
@@ -54,9 +68,14 @@
     <small>(Dec 2020 - June 2021)</small>
   </div>
   <span
+    id='work-line'
     className={styles.line}
     style={{
       background: isDarkTheme ? "#7ed6df" : "#ccc",
     }}
   ></span>
 </div>
+
+<br />
+
+<p>Other than fulltime job, I have also contributed to these <Link href='/opensource'>opensource projects</Link>.</p>

@@ -24,7 +24,6 @@
 .line {
   position: absolute;
   width: 4px;
-  height: 20rem;
   top: 0.45rem;
   left: 6px;
   opacity: 0.75;
@@ -43,7 +42,7 @@
   height: 12px;
   position: absolute;
   transform: rotate(45deg);
-  left: 2px;
-  top: 20px;
+  left: 1px;
+  top: 22px;
   background: #b8e994;
 }
