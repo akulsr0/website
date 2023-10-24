@@ -1,3 +1,7 @@
+:root {
+  --code-block-font-size: 0.8rem;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -76,6 +80,16 @@ input:not([type="submit"]) {
   outline: none;
 }
 
+code {
+  font-size: var(--code-block-font-size);
+}
+
+code > span,
+code > span > *,
+code > span > * > * {
+  font-size: var(--code-block-font-size);
+}
+
 code[class*="language-"],
 pre {
   margin: 0.6rem 0;
@@ -87,10 +101,14 @@ code[class*="language-"] {
 }
 
 em {
-  color: #d5c4a1;
-  background: #1d2021;
+  color: #1d2021;
+  background: #d5c4a1;
   padding: 0.05rem 0.25rem;
+  padding-left: 0.15rem;
+  margin: 0 2px;
   border-radius: 4px;
+  font-weight: 500;
+  font-size: initial;
 }
 
 br[height="1"] {
