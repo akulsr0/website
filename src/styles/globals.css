@@ -45,7 +45,8 @@ ul {
   list-style-position: inside !important;
 }
 
-li {
+ul.year-in-review > li {
+  margin-top: 0.6rem;
 }
 
 blockquote {
@@ -186,6 +187,21 @@ button,
   font-size: 1rem;
   background-color: #0e7afe;
   color: white;
+}
+
+li > p {
+  display: inline;
+}
+.row-imgs {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.row-imgs img {
+  max-width: 80%;
+  max-height: 220px;
+  display: flex;
 }
 
 /* Learning Content CSS */

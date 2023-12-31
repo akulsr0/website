@@ -20,7 +20,7 @@ const YearInReviewIndex = (props: IYearsInReviewIndexProps) => {
       <Header />
       <main className="main-content">
         <List
-          list={props.years.map((y) => ({
+          list={props.years.reverse().map((y) => ({
             title: y,
             href: `/year-in-review/${y}`,
           }))}
