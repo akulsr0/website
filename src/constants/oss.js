@@ -8,4 +8,5 @@ export const OPENSOURCE_CONTRIBUTIONS = [
   "reactjs/react.dev",
   "vercel/satori",
   "jsx-eslint/eslint-plugin-react",
+  "eslint/eslint",
 ].sort();
