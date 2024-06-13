@@ -56,7 +56,7 @@ const Work: NextPage<WorkProps> = (props) => {
     );
     const workLine = document.getElementById("work-line")!;
     workLine.style.height = `${workLineHeight}px`;
-  }, []);
+  }, [isDarkTheme]);
 
   return (
     <Container>
