@@ -42,7 +42,7 @@ const Repository: React.FC<null> = (): JSX.Element => {
       getFormattedPRData(item)
     );
     const result: any = [];
-    for (let i = 0; i < formattedData.length - 1; i++) {
+    for (let i = 0; i < formattedData.length; i++) {
       const item = formattedData[i];
       const payload = {
         org: org as string,
