@@ -4,4 +4,10 @@ interface GetPullRequestsOptions {
   author?: string;
 }
 
-export type { GetPullRequestsOptions };
+interface GetPullRequestReviewStatus {
+  org: string;
+  repo: string;
+  prNumber: number;
+}
+
+export type { GetPullRequestsOptions, GetPullRequestReviewStatus };
