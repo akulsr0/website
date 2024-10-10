@@ -41,6 +41,7 @@ const Repository: React.FC<null> = (): JSX.Element => {
     const formattedData = data!.items.map((item: Record<string, any>) =>
       getFormattedPRData(item)
     );
+    setData(formattedData);
     const result: any = [];
     for (let i = 0; i < formattedData.length; i++) {
       const item = formattedData[i];
