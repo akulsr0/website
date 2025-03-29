@@ -82,7 +82,8 @@ const Contact: NextPage<ContactProps> = (props) => {
           id="content"
           dangerouslySetInnerHTML={{ __html: contactContent }}
         />
-        <DirectContact />
+        {/* FIXME: some twillio issue */}
+        {/* <DirectContact /> */}
       </article>
       <Footer />
     </Container>

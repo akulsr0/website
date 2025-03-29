@@ -17,8 +17,8 @@
   },
   "uses": {
     "Hardware": {
-      "Laptop": "Macbook Air 2017",
-      "Phone": "iPhone 14 Pro Max & iPhone 8"
+      "Laptop": "Lenovo Yoga Slim 7 14IMH9",
+      "Phone": "iPhone 14 Pro Max"
     },
     "Code": {
       "Languages": "Javascript, Typescript",
@@ -28,19 +28,19 @@
       "Editor": "VSCode"
     },
     "Productivity": {
-      "Todos": "Google Tasks",
+      "Todos": "Obsidian",
       "Documentation": "Notion",
       "Notes": "Apple Notes"
     },
     "Others": {
-      "Browser": "Chrome",
+      "Browser": "Chrome, Firefox",
       "Code Snapshots": "Carbon",
       "Clipboard": {
         "text": "Pelican",
         "link": "https://apps.apple.com/us/app/id1524721688"
       },
       "Storage": "Apple iCloud",
-      "API Testing": "Postman, Insomnia",
+      "API Testing": "Postman",
       "Emoji": "Rocket",
       "VCS": "Github Desktop",
       "Terminal": "iTerm2, oh-my-fish, fig"

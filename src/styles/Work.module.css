@@ -6,6 +6,10 @@
   padding-left: 1.4rem;
   position: relative;
 }
+.orgLink {
+  display: inline-block;
+  width: fit-content;
+}
 .workWrapper > div:not(:first-child) {
   margin-top: 1.2rem;
 }
