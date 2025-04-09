@@ -12,6 +12,8 @@ import Head from "../components/_head";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
+import styles from '../styles/About.module.css'
+
 interface AboutProps {
   aboutContent: MDXRemoteSerializeResult<
     Record<string, unknown>,
@@ -30,6 +32,7 @@ const About: NextPage<AboutProps> = (props) => {
       />
       <Header />
       <article className="main-content">
+        <Image className={styles.aboutImage} width={280} height={360} src='/images/akul/other-img-600.jpg' alt="That's me" onClick={() => window.open('/images/akul/other-img-600.jpg', '_blank')} />
         <MDXRemote {...aboutContent} components={{ Link, Image }} />
       </article>
       <Footer />

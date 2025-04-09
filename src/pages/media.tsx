@@ -29,6 +29,7 @@ const ImageGallery = (props: { gallery: GalleryCollection }) => {
             src={`/images/akul/${img}`}
             alt={img}
             priority
+            onClick={() => window.open(`/images/akul/${img}`, '_blank')}
           />
         ))}
       </div>
