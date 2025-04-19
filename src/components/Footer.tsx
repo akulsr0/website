@@ -7,7 +7,7 @@ import styles from "../styles/Footer.module.css";
 const { footer_links: footerLinks } = defaults;
 
 interface FooterProps {
-  enableFooterMargin: boolean;
+  enableFooterMargin?: boolean;
 }
 
 const Footer: NextPage<FooterProps> = (props) => {
