@@ -1,0 +1,259 @@
+:root {
+  --code-block-font-size: 0.8rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  line-height: 1.75em;
+  -webkit-tap-highlight-color: transparent;
+  font-size: 1.08rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+p {
+}
+
+img {
+  max-width: -webkit-fill-available;
+  border-radius: 4px;
+  user-select: none;
+}
+
+a {
+  word-break: break-word;
+  text-underline-position: under;
+}
+
+a:has(h1, h2, h3, h4, h5, h6) {
+  text-decoration: none;
+  color: initial;
+}
+
+ol {
+  list-style: decimal-leading-zero !important;
+}
+ol,
+ul {
+  margin: 10px;
+  list-style: disc;
+  list-style-position: inside !important;
+}
+
+ul.year-in-review > li {
+  margin-top: 0.6rem;
+}
+
+blockquote {
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  border-radius: 4px;
+  quotes: "\201C""\201D""\2018""\2019";
+  color: #3d3d3d;
+}
+blockquote:before {
+  color: #ccc;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.1em;
+  vertical-align: -0.4em;
+  color: #3d3d3d;
+}
+blockquote p {
+  display: inline;
+}
+
+input:not([type="submit"]) {
+  flex: 1 1;
+  margin-right: 0.4rem;
+  padding: 0 0.8rem;
+  min-height: 2.2rem;
+  border: none;
+  background-color: #f0f0f0;
+  border-radius: 0.2rem;
+  font-size: 1rem;
+  outline: none;
+}
+
+code {
+  font-size: var(--code-block-font-size);
+}
+
+code:not([class]) {
+  background: #eeeeee;
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: black;
+}
+
+code > span,
+code > span > *,
+code > span > * > * {
+  font-size: var(--code-block-font-size);
+}
+
+code[class*="language-"],
+pre {
+  margin: 0.6rem 0;
+  border-radius: 0.4rem;
+}
+
+code[class*="language-"] {
+  max-height: 80vh;
+}
+
+em {
+  color: #1d2021;
+  background: #d5c4a1;
+  padding: 0.05rem 0.25rem;
+  padding-left: 0.15rem;
+  margin: 0 2px;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: initial;
+}
+
+br[height="1"] {
+  display: block;
+  content: "";
+  margin: 5px 0;
+}
+
+.dev-tip-img {
+  max-width: 340px;
+  display: flex;
+  margin: 0 auto;
+}
+.mw-full {
+  max-width: 100% !important;
+}
+
+main.main-content {
+  margin-top: 10rem;
+  min-height: 50vh;
+}
+article.main-content {
+  margin-top: 10rem;
+  min-height: 50vh;
+}
+
+.not-found-wrapper {
+  height: 50vh;
+  display: grid;
+  place-items: center;
+}
+.not-found-wrapper > p {
+  font-size: 1.4rem;
+}
+
+.table-wrapper {
+  overflow: auto;
+}
+
+details {
+  margin: 10px 0;
+}
+details summary {
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+}
+
+/* Subscribe Form Start */
+
+.subscribe-form {
+  padding: 0.5rem;
+  border: 1px solid lightgrey;
+  border-style: dashed;
+  border-radius: 4px;
+  font-size: 1rem;
+  margin: 1rem 0;
+}
+.subscribe-form > p {
+  font-weight: bold;
+}
+.subscribe-form div {
+  display: flex;
+  flex-direction: row;
+  margin-top: 0.5rem;
+}
+button,
+.subscribe-form div input[type="submit"] {
+  padding: 0 0.5rem;
+  cursor: pointer;
+  -webkit-appearance: button;
+  min-height: 2rem;
+  border: none;
+  border-radius: 0.2rem;
+  font-size: 1rem;
+  background-color: #0e7afe;
+  color: white;
+}
+
+li > p {
+  display: inline;
+}
+.row-imgs {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.row-imgs img {
+  max-width: 80%;
+  max-height: 220px;
+  display: flex;
+}
+
+/* Learning Content CSS */
+.lc-paragraph {
+  margin-top: 12px;
+}
+.lc-img {
+  border-radius: 4px;
+}
+/* Learning - Linux Commands Content CSS */
+.command-option {
+  display: flex;
+  flex-direction: row;
+  padding: 8px 10px;
+  border-left: 8px solid burlywood;
+  margin: 10px 0;
+}
+.command-option:not(:first-of-type) {
+  margin-top: 24px;
+}
+.command-option > strong {
+  flex: 1;
+}
+.command-option > span {
+  flex: 3;
+}
+
+.giscus {
+  margin-top: 1rem;
+}
+iframe.giscus-frame {
+  min-height: 360px;
+}
+
+.socialShareButtonsWrapper {
+  margin-top: 0.6rem;
+  display: flex;
+  flex-direction: row;
+  gap: 0.4rem;
+}
+
+/* Subscribe Form End */
+
+@media only screen and (max-width: 540px) {
+  img {
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,24 @@
+.productsList {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.productCard {
+  flex: 1;
+  min-width: 150;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.productCard h4 {
+  margin-top: 6px;
+  font-weight: 700;
+}
+
+.productCard p {
+  margin-top: 2px;
+  font-size: 14px;
+  opacity: 0.6;
+}

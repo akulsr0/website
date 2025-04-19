@@ -1,0 +1,22 @@
+.gallery {
+  margin-top: 1.2rem;
+}
+
+.gallery .images {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  gap: 0.4rem;
+  row-gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.gallery .images img {
+  object-fit: cover;
+  height: auto;
+  width: 28%;
+  max-width: 130px;
+  aspect-ratio: 1/1;
+  cursor: pointer;
+}

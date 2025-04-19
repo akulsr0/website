@@ -1,0 +1,34 @@
+.pointer {
+  cursor: pointer;
+}
+.mt1 {
+  margin-top: 1rem;
+}
+.flexColumn {
+  display: flex;
+  flex-direction: column;
+}
+.flexRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
+.recommended {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.recommended > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.recommended > div:first-child {
+  text-align: left !important;
+}
+.recommended > div:last-child {
+  text-align: right;
+}

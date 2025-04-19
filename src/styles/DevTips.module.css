@@ -1,0 +1,99 @@
+.devTipsTitle {
+}
+
+.devTipInfoLine {
+  display: flex;
+  margin-top: 0.4rem;
+  color: #888;
+  font-weight: bold;
+}
+
+.devTipsViewShareWrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.devTipsCategories {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.devTipsCategories span {
+  margin-right: 10px;
+  white-space: nowrap;
+}
+
+.devTipsTagline {
+  margin: 1rem 0;
+  overflow: hidden;
+}
+
+.devTipSeach {
+  display: flex;
+}
+
+.devTipSeach > input {
+  margin-right: 0;
+}
+
+.devTipSeach > input::placeholder {
+  color: #3d3d3d;
+}
+
+.devTipsList {
+  margin-top: 0.5rem;
+}
+
+.devTipsList div {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  gap: 0.8rem;
+}
+
+.devTipsList div a {
+  font-size: 1.1rem;
+}
+
+.devTipsList div span {
+  min-width: fit-content;
+  white-space: nowrap;
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+.devTipsList > span {
+  display: flex;
+  margin-top: 1rem;
+  justify-content: center;
+  cursor: pointer;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.tipContent {
+  margin-top: 1rem;
+}
+
+.recommendedTips {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.recommendedTips > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.recommendedTips > div:first-child {
+  text-align: left !important;
+}
+.recommendedTips > div:last-child {
+  text-align: right;
+}

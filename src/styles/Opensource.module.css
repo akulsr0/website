@@ -1,0 +1,31 @@
+.ossCard:first-of-type {
+  margin-top: 1rem;
+}
+.ossCard:not(:first-of-type) {
+  margin-top: 2rem;
+}
+
+.ossCard > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.ossCard > div > a {
+  font-weight: 700;
+}
+.ossCard > div > p {
+  min-width: min-content;
+  font-weight: bold;
+}
+
+.ossCard > p {
+  margin-top: 0.2rem;
+  overflow: hidden;
+}
+.ossCard > p > span {
+  color: white;
+  font-weight: bold;
+  padding: 4px 6px;
+  margin-right: 4px;
+  border-radius: 4px;
+}

@@ -1,0 +1,53 @@
+<style jsx="true">{`
+  .intro img {
+    width: 124px;
+    height: 164px;
+    float: left;
+    margin-right: 12px;
+  }
+  ul {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    column-gap: 0.6rem;
+  }
+  .wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.4rem 0.4rem;
+    margin-top: 1rem;
+  }
+  .box {
+    background: ${theme === "dark" ? "#7ed6dfbb" : "#eeeeee"};
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0.5rem 0.6rem;
+    border-radius: 0.2rem;
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+  }
+  .box span {
+    margin-left: 0.5rem;
+  }
+  .recent-activity-list {
+    display: block;
+    min-height: 300px;
+  }
+`}</style>
+
+I am Akul Srivastava, a self-trained software engineer based in Lucknow and working remotely. I have done my bachelor's in Engineering (Computer Science) from <abbr title="Babu Banarasi Das: National Institute of Technology and Management, Lucknow">BBD: NITM</abbr>. I primarily do web and mobile application development and am interested in the same. I currently work at <a href="https://smallcase.com/"target="_blank">smallcase</a> as a software engineer. Previously, I have worked at <a href="https://vogo.in/" target="_blank">Vogo.</a>
+
+<br />
+
+I have been creating websites for quite some time now, and the <a href='https://web.archive.org/web/20171109102724/http://akulsrivastava.com/' target="_blank">snapshots</a> for which are recorded over history. In my free time I also share <Link href="/dev-tips">development tips</Link>, and write <Link href="/blogs">blogs</Link> on technology, software engineering, programming and some other thoughts. Other than the day job and side-projects, I also like to explore opensource projects. You can find my contributions in some of those <Link href='/opensource' >opensource projects - here</Link>.
+
+<br />
+
+<RecentContent recentContent={recentContent} />
+
+<RecentActivity activity={recentActivity} show={showRecentActivity} />
