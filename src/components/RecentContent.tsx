@@ -73,6 +73,9 @@ export default function RecentContent({
           View More
         </span>
       ) : null}
+      <div className={styles.imageWrapper}>
+        <img src="/images/home-image.png" alt="akulsr0" />
+      </div>
     </section>
   );
 }
