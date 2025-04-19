@@ -6,11 +6,25 @@ import styles from "../styles/Footer.module.css";
 
 const { footer_links: footerLinks } = defaults;
 
-const Footer: NextPage = () => {
+interface FooterProps {
+  enableFooterMargin?: boolean;
+}
+
+const Footer: NextPage<FooterProps> = (props) => {
   const { isDarkTheme } = useTheme();
+  const { enableFooterMargin = true } = props;
 
   return (
-    <footer className={styles.footer}>
+    <footer
+      className={styles.footer}
+      style={
+        !enableFooterMargin
+          ? {
+              marginTop: 0,
+            }
+          : {}
+      }
+    >
       <section
         style={{
           borderTop: `1px solid ${isDarkTheme ? "#fefefe33" : "lightgrey"}`,

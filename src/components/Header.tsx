@@ -63,7 +63,7 @@ const Header = (props: IHeaderProps) => {
           <Image
             width="60"
             height="60"
-            src="/images/akul/anim-800.JPG"
+            src="/images/akul/anim-600.JPG"
             alt="akul"
           />
           <Link href="/" passHref>

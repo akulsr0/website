@@ -52,7 +52,7 @@ const Home: NextPage<HomeProps> = (props) => {
           scope={{ theme, showRecentActivity, recentActivity, recentContent }}
         />
       </main>
-      <Footer />
+      <Footer enableFooterMargin={false} />
     </Container>
   );
 };
