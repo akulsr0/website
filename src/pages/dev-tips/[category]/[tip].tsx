@@ -19,6 +19,7 @@ import {
   getDevTipLink,
   getNameFromSlug,
   getRecommendedDevTips,
+  toTitleCase,
 } from "../../../helpers";
 import { getOGImageURL } from "../../../helpers/seo";
 import { useHighlightJS } from "../../../hooks/useHLJS";
@@ -45,7 +46,7 @@ interface DevTipProps {
 
 const DevTip: NextPage<DevTipProps> = (props) => {
   useHighlightJS();
-  const title = props?.tip?.data.title || "";
+  const title = toTitleCase(props?.tip?.data.title) || "";
   const content = props?.tip?.content;
   const { category, slug } = props.tip.data;
   const [dd, mm, yyyy] = props?.tip?.data.date.split("-");
