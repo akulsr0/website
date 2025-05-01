@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import NextHead from "next/head";
 import defaults from "../constants/default.json";
 import { useTheme } from "../context/ThemeContext";
+import { AdsenseScript } from "./ads/Adsense";
 
 const { name, meta_description } = defaults;
 
@@ -45,6 +46,7 @@ const Head: NextPage<HeadProps> = (props) => {
       {ogImage && <meta property="og:image" content={ogImage} />}
       <meta name="robots" content="index, follow" />
       <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+      <AdsenseScript />
     </NextHead>
   );
 };
