@@ -1,7 +1,7 @@
 import "../styles/globals.css";
 import React, { useLayoutEffect } from "react";
 import type { AppProps } from "next/app";
-import { EB_Garamond as Font } from "@next/font/google";
+import { Crimson_Pro as Font } from "@next/font/google";
 import Script from "next/script";
 import { ThemeContextProvider, useTheme } from "../context/ThemeContext";
 

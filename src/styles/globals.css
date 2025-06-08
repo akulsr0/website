@@ -134,6 +134,10 @@ br[height="1"] {
   max-width: 100% !important;
 }
 
+.spacer {
+  height: 16px;
+}
+
 main.main-content {
   margin-top: 10rem;
   min-height: 50vh;
