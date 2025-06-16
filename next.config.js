@@ -12,6 +12,7 @@ const socialRedirects = Object.entries(social_links).map(([s, l]) => {
 const otherRedirects = [
   { source: "/about-us", destination: "/about", permanent: true },
   { source: "/contact-us", destination: "/contact", permanent: true },
+  { source: "/resume", destination: "/resume.pdf", permanent: true },
 ];
 
 module.exports = {
