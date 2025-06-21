@@ -1,6 +1,9 @@
 import React from "react";
+import defaults from "../../constants/default.json";
 
 export function AdsenseScript() {
+  if (!defaults.adsConfig.adsense) return null;
+
   return (
     <script
       async

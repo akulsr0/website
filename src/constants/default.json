@@ -116,5 +116,8 @@
         }
       ]
     }
+  },
+  "adsConfig": {
+    "adsense": { "enabled": false }
   }
 }

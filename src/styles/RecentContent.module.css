@@ -49,6 +49,7 @@
   bottom: 0;
   right: 0;
   height: 100%;
+  max-width: max-content;
   max-height: 512px;
   display: flex;
   align-items: end;
@@ -56,4 +57,5 @@
 }
 .imageWrapper img {
   height: 85%;
+  max-width: max-content;
 }
