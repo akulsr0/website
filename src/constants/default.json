@@ -70,6 +70,7 @@
         { "title": "Blogs", "href": "/blogs" },
         { "title": "Dev Tips", "href": "/dev-tips" },
         { "title": "Learning", "href": "/learning" },
+        { "title": "Projects", "href": "/projects" },
         { "title": "Uses", "href": "/uses" },
         { "title": "Work", "href": "/work" },
         { "title": "Opensource", "href": "/opensource" }
@@ -119,5 +120,36 @@
   },
   "adsConfig": {
     "adsense": { "enabled": false }
-  }
+  },
+  "projects": [
+    {
+      "title": "SpeedRace",
+      "description": "Test your internet speed with friends in real-time & compete live!",
+      "links": [
+        ["Link", "https://speedrace.site/"],
+        ["Github", "https://github.com/sanesource/speedy"]
+      ],
+      "tags": ["Web", "WebSockets", "Fullstack", "VibeCoded"]
+    },
+    {
+      "title": "CSS Playgrounds",
+      "description": "Sandbox to play with different CSS Frameworks.",
+      "links": [
+        ["Link", "https://css-playgrounds.vercel.app/"],
+        ["Github", "https://github.com/sanesource/css-playgrounds"]
+      ],
+      "tags": ["Web", "Playground"]
+    },
+    {
+      "title": "React Native UI",
+      "description": "React Native UI helps mobile application developers to build different UI Components using React Native.",
+      "links": [
+        [
+          "Link",
+          "https://play.google.com/store/apps/details?id=com.akul.reactnativeui"
+        ]
+      ],
+      "tags": ["React Native", "Android App", "Play Store"]
+    }
+  ]
 }
