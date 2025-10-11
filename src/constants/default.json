@@ -123,10 +123,19 @@
   },
   "projects": [
     {
+      "title": "MultiMaze",
+      "description": "A competitive multiplayer maze game where players race against time to navigate through procedurally generated mazes.",
+      "links": [
+        ["multimaze.sanesource.org", "https://multimaze.sanesource.org/"],
+        ["Github", "https://github.com/sanesource/multimaze"]
+      ],
+      "tags": ["Web", "Multiplayer", "Fullstack", "VibeCoded"]
+    },
+    {
       "title": "SpeedRace",
       "description": "Test your internet speed with friends in real-time & compete live!",
       "links": [
-        ["Link", "https://speedrace.site/"],
+        ["speedrace.site", "https://speedrace.site/"],
         ["Github", "https://github.com/sanesource/speedy"]
       ],
       "tags": ["Web", "WebSockets", "Fullstack", "VibeCoded"]
@@ -135,7 +144,7 @@
       "title": "CSS Playgrounds",
       "description": "Sandbox to play with different CSS Frameworks.",
       "links": [
-        ["Link", "https://css-playgrounds.vercel.app/"],
+        ["css-playgrounds.vercel.app", "https://css-playgrounds.vercel.app/"],
         ["Github", "https://github.com/sanesource/css-playgrounds"]
       ],
       "tags": ["Web", "Playground"]
