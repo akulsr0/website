@@ -126,7 +126,7 @@
       "title": "MultiMaze",
       "description": "A competitive multiplayer maze game where players race against time to navigate through procedurally generated mazes.",
       "links": [
-        ["multimaze.sanesource.org", "https://multimaze.sanesource.org/"],
+        ["multimaze.site", "https://multimaze.site/"],
         ["Github", "https://github.com/sanesource/multimaze"]
       ],
       "tags": ["Web", "Multiplayer", "Fullstack", "VibeCoded"]
