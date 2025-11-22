@@ -4,6 +4,7 @@
   "menu": [
     { "title": "Home", "href": "/" },
     { "title": "Blogs", "href": "/blogs" },
+    { "title": "Projects", "href": "/projects" },
     { "title": "About", "href": "/about" },
     { "title": "Contact", "href": "/contact" }
   ],
@@ -122,6 +123,15 @@
     "adsense": { "enabled": false }
   },
   "projects": [
+    {
+      "title": "Bazaar",
+      "description": "A cross-platform Electron desktop application for displaying real-time Indian stock market information",
+      "links": [
+        ["Releases", "https://github.com/sanesource/bazaar/releases"],
+        ["Github", "https://github.com/sanesource/bazaar"]
+      ],
+      "tags": ["Electron", "Desktop", "Stock Market"]
+    },
     {
       "title": "MultiMaze",
       "description": "A competitive multiplayer maze game where players race against time to navigate through procedurally generated mazes.",
