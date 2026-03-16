@@ -15,10 +15,7 @@ import Footer from "../components/Footer";
 import styles from '../styles/About.module.css'
 
 interface AboutProps {
-  aboutContent: MDXRemoteSerializeResult<
-    Record<string, unknown>,
-    Record<string, string>
-  >;
+  aboutContent: MDXRemoteSerializeResult;
 }
 
 const About: NextPage<AboutProps> = (props) => {

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import type { NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -19,16 +19,58 @@ import RecentContent from "../components/RecentContent";
 import { useTheme } from "../context/ThemeContext";
 
 interface HomeProps {
-  homeContent: MDXRemoteSerializeResult<
-    Record<string, unknown>,
-    Record<string, string>
-  >;
+  homeContent: MDXRemoteSerializeResult;
   recentContent: Record<string, unknown>[];
 }
 
+const HomeStyles = () => {
+  const { theme } = useTheme();
+  const css = `
+  .intro img {
+    width: 124px;
+    height: 164px;
+    float: left;
+    margin-right: 12px;
+  }
+  ul {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    column-gap: 0.6rem;
+  }
+  .wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.4rem 0.4rem;
+    margin-top: 1rem;
+  }
+  .box {
+    background: ${theme === "dark" ? "#7ed6dfbb" : "#eeeeee"};
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0.5rem 0.6rem;
+    border-radius: 0.2rem;
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+  }
+  .box span {
+    margin-left: 0.5rem;
+  }
+  .recent-activity-list {
+    display: block;
+    min-height: 300px;
+  }
+`;
+  return <style>{css}</style>;
+};
+
 const Home: NextPage<HomeProps> = (props) => {
   const { homeContent, recentContent } = props;
-  const { theme } = useTheme();
   const [recentActivity, setRecentActivity] = useState<Activity[]>();
 
   const { show_recent_activity: showRecentActivity } = defaults;
@@ -41,16 +83,25 @@ const Home: NextPage<HomeProps> = (props) => {
     }
   }, []);
 
+  const components = useMemo(
+    () => ({
+      Link,
+      Image,
+      HomeStyles,
+      RecentActivity: () => (
+        <RecentActivity activity={recentActivity ?? []} show={showRecentActivity} />
+      ),
+      RecentContent: () => <RecentContent recentContent={recentContent} />,
+    }),
+    [recentActivity, showRecentActivity, recentContent]
+  );
+
   return (
     <Container>
       <Head />
       <Header />
       <main className="main-content">
-        <MDXRemote
-          {...homeContent}
-          components={{ Link, Image, RecentActivity, RecentContent }}
-          scope={{ theme, showRecentActivity, recentActivity, recentContent }}
-        />
+        <MDXRemote {...homeContent} components={components} />
       </main>
       <Footer enableFooterMargin={false} />
     </Container>
@@ -64,7 +115,7 @@ export async function getStaticProps() {
   const outputContent = await serialize(content);
 
   const recentContent = JSON.parse(
-    fs.readFileSync("content/allContent.json", "utf-8")
+    fs.readFileSync("content/allContent.json", "utf-8"),
   );
 
   return { props: { homeContent: outputContent, recentContent } };
