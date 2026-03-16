@@ -13,6 +13,11 @@ const otherRedirects = [
   { source: "/about-us", destination: "/about", permanent: true },
   { source: "/contact-us", destination: "/contact", permanent: true },
   { source: "/resume", destination: "/resume.pdf", permanent: true },
+  {
+    source: "/fincalcy/privacy-policy",
+    destination: "/fincalcy/privacy-policy.html",
+    permanent: true,
+  },
 ];
 
 module.exports = {
