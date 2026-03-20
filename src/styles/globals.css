@@ -141,6 +141,7 @@ br[height="1"] {
 main.main-content {
   margin-top: 10rem;
   min-height: 50vh;
+  text-align: justify;
 }
 article.main-content {
   margin-top: 10rem;

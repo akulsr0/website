@@ -41,10 +41,17 @@
   align-items: center;
   gap: 1rem;
   padding-bottom: 0.6rem;
+  overflow-x: scroll;
+}
+
+.links::-webkit-scrollbar {
+  display: none;
 }
 
 .links > h2 {
   line-height: 1;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .link {

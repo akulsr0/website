@@ -34,20 +34,22 @@ const Links = (props: { currentPath: string }) => {
                 props.currentPath === link.href && isDarkTheme
                   ? "#ced6e0"
                   : isDarkTheme
-                  ? "lightgrey"
-                  : "#111",
+                    ? "lightgrey"
+                    : "#111",
             }}
           >
             {link.title}
           </Link>
         </h2>
       ))}
-      <DarkModeSwitch
-        size={24}
-        checked={isDarkTheme}
-        onChange={toggleTheme}
-        color={isDarkTheme ? "#ced6e0" : "black"}
-      />
+      <h2>
+        <DarkModeSwitch
+          size={24}
+          checked={isDarkTheme}
+          onChange={toggleTheme}
+          color={isDarkTheme ? "#ced6e0" : "black"}
+        />
+      </h2>
     </>
   );
 };

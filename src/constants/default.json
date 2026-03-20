@@ -124,6 +124,17 @@
   },
   "projects": [
     {
+      "title": "FinCalcy",
+      "description": "FinCalcy — India's All-in-One Finance Calculator Make smarter money decisions with FinCalcy — the most comprehensive finance calculator app built for Indian investors, salaried employees, loan borrowers, and tax payers.",
+      "links": [
+        [
+          "Link",
+          "https://play.google.com/store/apps/details?id=com.akulsrivastava.fincalcy"
+        ]
+      ],
+      "tags": ["Finance", "Android App", "Play Store", "React Native"]
+    },
+    {
       "title": "Bazaar",
       "description": "A cross-platform Electron desktop application for displaying real-time Indian stock market information",
       "links": [
