@@ -52,6 +52,9 @@
   line-height: 1;
   white-space: nowrap;
   flex-shrink: 0;
+  min-height: -webkit-fill-available;
+  display: flex;
+  align-items: center;
 }
 
 .link {
