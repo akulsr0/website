@@ -2,11 +2,11 @@
   "name": "Akul Srivastava",
   "meta_description": "Akul is a self trained software engineer, currently working at smallcase. In his free time, he share dev tips, write blogs on technology, programming and some other thoughts.",
   "menu": [
-    { "title": "Home", "href": "/" },
-    { "title": "Blogs", "href": "/blogs" },
-    { "title": "Projects", "href": "/projects" },
-    { "title": "About", "href": "/about" },
-    { "title": "Contact", "href": "/contact" }
+    { "title": "home", "href": "/" },
+    { "title": "blogs", "href": "/blogs" },
+    { "title": "projects", "href": "/projects" },
+    { "title": "about", "href": "/about" },
+    { "title": "contact", "href": "/contact" }
   ],
   "social_links": {
     "github": "https://github.com/akulsr0/",
@@ -132,7 +132,8 @@
           "https://play.google.com/store/apps/details?id=com.akulsrivastava.fincalcy"
         ]
       ],
-      "tags": ["Finance", "Android App", "Play Store", "React Native"]
+      "tags": ["Finance", "Android App", "Play Store", "React Native"],
+      "logo": "https://play-lh.googleusercontent.com/s7LLvOjRnSFLMsuDBykGX-Pq-pLr9x3TVrvjVrWC4YhQoXXeo09m8uKsa4tLP3Ofn4WqTmhZxAZLl69KC4IswA=w480-h960-rw"
     },
     {
       "title": "Bazaar",
@@ -141,7 +142,8 @@
         ["Releases", "https://github.com/sanesource/bazaar/releases"],
         ["Github", "https://github.com/sanesource/bazaar"]
       ],
-      "tags": ["Electron", "Desktop", "Stock Market"]
+      "tags": ["Electron", "Desktop", "Stock Market"],
+      "logo": "https://raw.githubusercontent.com/sanesource/bazaar/refs/heads/main/assets/icon.ico"
     },
     {
       "title": "MultiMaze",
@@ -179,7 +181,8 @@
           "https://play.google.com/store/apps/details?id=com.akul.reactnativeui"
         ]
       ],
-      "tags": ["React Native", "Android App", "Play Store"]
+      "tags": ["React Native", "Android App", "Play Store"],
+      "logo": "https://play-lh.googleusercontent.com/tbhh0QnhiXBJW5mDL9dt4CKAUk5y6fFpsAbCIQ7Aj2caZ2XDiEqC-LQ58h-X5aAq_w=w480-h960-rw"
     }
   ]
 }

@@ -26,6 +26,8 @@ module.exports = {
     domains: [
       "user-images.githubusercontent.com",
       "https://akulsr0-visitor-badge.glitch.me/",
+      "play-lh.googleusercontent.com",
+      "raw.githubusercontent.com",
     ],
   },
   eslint: {

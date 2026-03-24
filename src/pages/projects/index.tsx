@@ -5,6 +5,7 @@ import Header from "../../components/Header";
 import Head from "../../components/_head";
 
 import defaults from "../../constants/default.json";
+import Image from "next/image";
 
 const { projects } = defaults;
 
@@ -14,34 +15,66 @@ interface ProjectItemProps {
     description: string;
     links?: string[][];
     tags?: string[];
+    logo?: string;
   };
 }
 
 const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
   return (
     <div style={{ marginTop: 32 }}>
-      <h3 style={{ margin: 0 }}>{project.title}</h3>
-      {project.tags && (
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          gap: "1rem",
+        }}
+      >
+        {project.logo ? (
+          <div className="logoContainer">
+            <Image
+              src={project.logo}
+              alt={project.title}
+              width={70}
+              height={70}
+            />
+          </div>
+        ) : null}
         <div
-          style={{ display: "flex", gap: 8, flexWrap: "wrap", margin: "4px 0" }}
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+          }}
         >
-          {project.tags.map((tag) => (
-            <span
-              key={tag}
+          <h3 style={{ margin: 0 }}>{project.title}</h3>
+          {project.tags && (
+            <div
               style={{
-                backgroundColor: "#f0f0f0",
-                color: "#333",
-                padding: "2px 8px",
-                borderRadius: "12px",
-                fontSize: "12px",
-                fontWeight: "500",
+                display: "flex",
+                gap: 8,
+                flexWrap: "wrap",
+                margin: "4px 0",
               }}
             >
-              {tag}
-            </span>
-          ))}
+              {project.tags.map((tag) => (
+                <span
+                  key={tag}
+                  style={{
+                    backgroundColor: "#f0f0f0",
+                    color: "#333",
+                    padding: "2px 8px",
+                    borderRadius: "12px",
+                    fontSize: "12px",
+                    fontWeight: "500",
+                  }}
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          )}
         </div>
-      )}
+      </div>
       <p style={{ margin: "8px 0" }}>{project.description}</p>
       <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
         {project.links?.map(([label, url]) => (
