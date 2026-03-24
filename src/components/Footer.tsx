@@ -3,6 +3,7 @@ import List from "../components/List";
 import defaults from "../constants/default.json";
 import { useTheme } from "../context/ThemeContext";
 import styles from "../styles/Footer.module.css";
+import Link from "next/link";
 
 const { footer_links: footerLinks } = defaults;
 
@@ -34,6 +35,14 @@ const Footer: NextPage<FooterProps> = (props) => {
           <List key={fl.title} list={fl.list} title={fl.title} />
         ))}
       </section>
+      <div className={styles.footerExtra}>
+        <div className={styles.copyrightWrapper}>
+          <p>
+            &copy; 2026{" "}
+            <Link href="https://akulsrivastava.com">Akul Srivastava</Link>
+          </p>
+        </div>
+      </div>
     </footer>
   );
 };
