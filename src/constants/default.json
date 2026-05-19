@@ -124,6 +124,12 @@
   },
   "projects": [
     {
+      "title": "UpiQR.site",
+      "description": "Zero-install, URL-native UPI payment tool.",
+      "links": [["upiqr.site", "https://upiqr.site"]],
+      "tags": ["Finance", "Web"]
+    },
+    {
       "title": "FinCalcy",
       "description": "FinCalcy — India's All-in-One Finance Calculator Make smarter money decisions with FinCalcy — the most comprehensive finance calculator app built for Indian investors, salaried employees, loan borrowers, and tax payers.",
       "links": [

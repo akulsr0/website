@@ -69,7 +69,9 @@ const Work: NextPage = () => {
               CASE Platforms (smallcase)
             </a>
             <ul>
-              <li>Built wealth management tech</li>
+              <li>
+                Building wealth management tech aka &ldquo;Wealth Office&rdquo;
+              </li>
               <li>
                 Worked on <strong>smallcase naming framework</strong> changes
                 for publisher platform.
